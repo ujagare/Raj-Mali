@@ -1,4 +1,5 @@
 import heroPortrait from '../assets/images/ChatGPT Image Jun 10, 2026, 10_40_55 AM.png';
+import heroMobilePortrait from '../assets/images/Mobile/ChatGPT Image Jun 11, 2026, 12_00_28 AM.png';
 import workshopImage from '../assets/images/ChatGPT Image Jun 10, 2026, 10_49_13 AM.png';
 import notebookImage from '../assets/images/ChatGPT Image Jun 10, 2026, 10_54_30 AM.png';
 import horizonImage from '../assets/images/ChatGPT Image Jun 10, 2026, 10_56_32 AM.png';
@@ -29,6 +30,7 @@ import volkswagenLogo from '../assets/images/Icons/volkswagon-logo.webp';
 
 export const images = {
   heroPortrait,
+  heroMobilePortrait,
   workshopImage,
   notebookImage,
   horizonImage,

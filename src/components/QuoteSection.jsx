@@ -1,4 +1,5 @@
 import { images } from '../data/assets';
+import { ImageReveal, Reveal } from './ScrollAnimations';
 
 export default function QuoteSection() {
   return (
@@ -8,21 +9,21 @@ export default function QuoteSection() {
 
       <div className="site-shell quote-grid">
         <div className="quote-copy">
-          <div className="quote-mark">&ldquo;</div>
-          <p className="quote-kicker">A Playful Note On Presence</p>
-          <blockquote className="quote-text">
+          <Reveal className="quote-mark">&ldquo;</Reveal>
+          <Reveal as="p" className="quote-kicker" delay={0.06}>A Playful Note On Presence</Reveal>
+          <Reveal as="blockquote" className="quote-text" delay={0.1}>
             &ldquo;The Tao that doesn&apos;t giggle is not the Giggling Tao.&rdquo;
             <cite className="quote-author">Raj Mali</cite>
-          </blockquote>
+          </Reveal>
         </div>
 
-        <div className="quote-art">
+        <ImageReveal className="quote-art" intensity={18}>
           <img
             src={images.bookStackImage}
             alt="Books and a plant"
             className="quote-image"
           />
-        </div>
+        </ImageReveal>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { icons } from '../data/assets';
+import { Reveal, Stagger, StaggerItem } from './ScrollAnimations';
 
 const pillars = [
   {
@@ -27,16 +28,19 @@ export default function Pillars() {
 
       <div className="site-shell relative py-20">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="eyebrow mb-5">Three Pillars of Transformation</p>
-          <h2 className="section-title">The inner architecture of conscious leadership.</h2>
-          <p className="body-copy mx-auto mt-5 max-w-2xl">
+          <Reveal as="p" className="eyebrow mb-5">Three Pillars of Transformation</Reveal>
+          <Reveal as="h2" className="section-title" delay={0.06}>
+            The inner architecture of conscious leadership.
+          </Reveal>
+          <Reveal as="p" className="body-copy mx-auto mt-5 max-w-2xl" delay={0.1}>
             A simple, rigorous pathway for leaders who want clarity, perspective and meaningful action.
-          </p>
+          </Reveal>
         </div>
 
-        <div className="grid gap-7 lg:grid-cols-3">
+        <Stagger className="grid gap-7 lg:grid-cols-3">
           {pillars.map((pillar) => (
-            <article
+            <StaggerItem
+              as="article"
               key={pillar.title}
               className="pillar-card group relative overflow-hidden rounded-md border border-ink/10 bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-navy/25 hover:shadow-premium"
             >
@@ -48,9 +52,9 @@ export default function Pillars() {
                 <h3 className="font-serif text-3xl font-semibold leading-tight text-ink">{pillar.title}</h3>
                 <p className="mt-5 text-sm font-semibold leading-7 text-ink/72">{pillar.text}</p>
               </div>
-            </article>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

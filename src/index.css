@@ -118,6 +118,12 @@
     @apply absolute inset-0 bg-gradient-to-t from-ink/45 via-ink/5 to-transparent;
   }
 
+  .hero-wash {
+    background:
+      linear-gradient(90deg, rgb(244 247 249 / 0.96) 0%, rgb(244 247 249 / 0.78) 36%, rgb(244 247 249 / 0.2) 70%, rgb(244 247 249 / 0) 100%),
+      linear-gradient(0deg, rgb(244 247 249 / 0.74) 0%, rgb(244 247 249 / 0.06) 42%, rgb(244 247 249 / 0.38) 100%);
+  }
+
   .marquee-mask {
     @apply relative overflow-hidden;
   }
@@ -1205,25 +1211,95 @@
     }
 
     #home .site-shell {
-      min-height: 640px;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+      align-items: end;
+      position: relative;
+      min-height: calc(100svh - 5rem);
+      padding-top: 2rem;
+      padding-bottom: 1.75rem;
+    }
+
+    #home .hero-portrait {
+      object-position: 60% center;
+    }
+
+    #home .hero-wash {
+      display: none;
+    }
+
+    #home .hero-copy {
+      width: 100%;
+      max-width: 100%;
+      padding-top: 0;
+      text-align: center;
+    }
+
+    #home .hero-headline {
+      position: absolute;
+      top: 1.75rem;
+      left: 50%;
+      width: calc(100% - 2.5rem);
+      max-width: 20rem;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    #home .hero-actions {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 17.5rem;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
     }
 
     #home .editorial-title {
-      font-size: 2.85rem;
+      font-size: 2.28rem;
+      line-height: 0.98;
+    }
+
+    #home .hero-title-line {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    #home .eyebrow {
+      margin-bottom: 1.25rem;
+      max-width: 15rem;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 0.2em;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    #home .hero-copy .my-8 {
+      margin-top: 1.35rem;
+      margin-bottom: 1.45rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     #home .body-copy {
-      max-width: 19.5rem;
-      font-size: 0.9rem;
-      line-height: 1.65;
+      display: none;
+      max-width: 17.5rem;
+      font-size: 0.82rem;
+      line-height: 1.72;
+      text-align: center;
+    }
+
+    #home .hero-copy .mt-9 {
+      margin-top: 1.55rem;
+      gap: 0.75rem;
     }
 
     #home .primary-button,
     #home .secondary-button,
     .cta-button {
       width: 100%;
+      max-width: 17.5rem;
+      margin-left: auto;
+      margin-right: auto;
       padding-left: 1rem;
       padding-right: 1rem;
       text-align: center;
@@ -1398,22 +1474,108 @@
       padding-bottom: 3.5rem;
     }
 
+    #testimonials .site-shell > div {
+      margin-bottom: 1.75rem;
+      gap: 0.8rem;
+    }
+
+    #testimonials .eyebrow {
+      max-width: 16rem;
+      line-height: 1.55;
+      letter-spacing: 0.18em;
+    }
+
+    .testimonial-heading {
+      max-width: 18rem;
+      font-size: 2.2rem;
+      line-height: 1.02;
+    }
+
+    .testimonial-line-mask {
+      padding-top: 0.25rem;
+      padding-bottom: 0.75rem;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    }
+
     .testimonial-line-card {
-      width: 86vw;
-      height: 9.5rem;
+      width: min(84vw, 21rem);
+      max-width: none;
+      height: auto;
+      min-height: 12.25rem;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
       gap: 0.9rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      margin-left: 0.55rem;
+      margin-right: 0.55rem;
+      padding: 1.05rem;
     }
 
     .testimonial-line-card > div:first-child {
-      width: 2.35rem;
-      height: 2.35rem;
+      display: none;
+    }
+
+    .testimonial-line-card::before {
+      left: 1rem;
+      right: 1rem;
+    }
+
+    .testimonial-line-card::after {
+      width: 4.5rem;
+      opacity: 0.45;
+    }
+
+    .testimonial-line-card .min-w-0 {
+      width: 100%;
+    }
+
+    .testimonial-line-card .min-w-0 > div:first-child {
+      margin-bottom: 0.65rem;
+      gap: 0.5rem;
+    }
+
+    .testimonial-line-card .min-w-0 > div:first-child > span:first-child {
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-left: 0.72rem;
+      padding-right: 0.72rem;
+      letter-spacing: 0.12em;
+    }
+
+    .testimonial-line-card p {
+      display: -webkit-box;
+      overflow: hidden;
+      white-space: normal;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      line-height: 1.55;
     }
 
     .testimonial-line-card > div:last-child {
-      gap: 0.6rem;
-      padding-left: 0.85rem;
+      width: 100%;
+      gap: 0.7rem;
+      border-left: 0;
+      border-top: 1px solid rgb(23 34 52 / 0.1);
+      padding-top: 0.85rem;
+      padding-left: 0;
+    }
+
+    .testimonial-line-card > div:last-child > span:first-child {
+      width: 2.55rem;
+      height: 2.55rem;
+      font-size: 0.9rem;
+    }
+
+    .testimonial-line-card > div:last-child > span:last-child {
+      min-width: 0;
+    }
+
+    .testimonial-line-card > div:last-child > span:last-child span {
+      white-space: normal;
+      line-height: 1.35;
     }
 
     .quote-text {

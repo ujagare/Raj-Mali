@@ -51,7 +51,7 @@ export default function Testimonials() {
       <div className="site-shell">
         <div className="mb-9 flex flex-col items-center gap-4 text-center">
           <p className="eyebrow">Voices of Transformation</p>
-          <h2 className="font-serif text-3xl font-semibold leading-tight text-ink sm:text-4xl">
+          <h2 className="testimonial-heading font-serif text-3xl font-semibold leading-tight text-ink sm:text-4xl">
             A single line of leadership shifts.
           </h2>
         </div>

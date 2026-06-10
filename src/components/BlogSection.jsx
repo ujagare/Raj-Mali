@@ -1,5 +1,6 @@
 import { Clock } from 'lucide-react';
 import { images } from '../data/assets';
+import { Reveal, Stagger, StaggerItem } from './ScrollAnimations';
 
 const articles = [
   {
@@ -26,10 +27,11 @@ export default function BlogSection() {
   return (
     <section id="writing" className="bg-pearl pb-16">
       <div className="site-shell">
-        <p className="eyebrow mb-7">Writing & Reflections</p>
-        <div className="grid gap-7 md:grid-cols-3">
-          {articles.map((article, index) => (
-            <article
+        <Reveal as="p" className="eyebrow mb-7">Writing & Reflections</Reveal>
+        <Stagger className="grid gap-7 md:grid-cols-3">
+          {articles.map((article) => (
+            <StaggerItem
+              as="article"
               key={article.title}
               className="premium-card overflow-hidden"
             >
@@ -43,9 +45,9 @@ export default function BlogSection() {
                   <Clock size={14} /> {article.time}
                 </p>
               </div>
-            </article>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

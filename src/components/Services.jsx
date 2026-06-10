@@ -1,5 +1,6 @@
 import { ArrowRight, BarChart3, PanelsTopLeft, UsersRound } from 'lucide-react';
 import { images } from '../data/assets';
+import { Reveal, Stagger, StaggerItem } from './ScrollAnimations';
 
 const services = [
   {
@@ -29,23 +30,26 @@ export default function Services() {
       <div className="site-shell">
         <div className="mb-12 grid gap-6 lg:grid-cols-[0.65fr_1fr_0.35fr] lg:items-end">
           <div>
-            <p className="eyebrow mb-5">Signature Work</p>
-            <h2 className="section-title">Precise work for meaningful transformation.</h2>
+            <Reveal as="p" className="eyebrow mb-5">Signature Work</Reveal>
+            <Reveal as="h2" className="section-title" delay={0.06}>
+              Precise work for meaningful transformation.
+            </Reveal>
           </div>
-          <p className="body-copy max-w-xl lg:justify-self-center">
+          <Reveal as="p" className="body-copy max-w-xl lg:justify-self-center" delay={0.1}>
             Deep coaching and facilitation containers designed for leaders, teams and organisations ready to move
             from insight into embodied change.
-          </p>
-          <a href="#writing" className="nav-link inline-flex items-center gap-2 lg:justify-self-end">
+          </Reveal>
+          <Reveal as="a" href="#writing" className="nav-link inline-flex items-center gap-2 lg:justify-self-end" delay={0.14}>
             View All Writings <ArrowRight size={14} />
-          </a>
+          </Reveal>
         </div>
 
-        <div className="grid gap-7 lg:grid-cols-[1fr_1fr_1fr_0.72fr]">
+        <Stagger className="grid gap-7 lg:grid-cols-[1fr_1fr_1fr_0.72fr]">
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <article
+              <StaggerItem
+                as="article"
                 key={service.title}
                 className="service-card group relative overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:border-navy/25 hover:shadow-premium"
               >
@@ -71,18 +75,18 @@ export default function Services() {
                     Learn More <ArrowRight size={15} />
                   </a>
                 </div>
-              </article>
+              </StaggerItem>
             );
           })}
 
-          <aside className="hidden rounded-md border border-ink/10 bg-navy p-8 text-white shadow-premium lg:block">
+          <StaggerItem as="aside" className="hidden rounded-md border border-ink/10 bg-navy p-8 text-white shadow-premium lg:block">
             <p className="font-serif text-7xl leading-none text-white/35">“</p>
             <p className="mt-4 font-serif text-3xl leading-9 text-white">
               Thoughts to pause with, and grow from.
             </p>
             <div className="mt-10 h-px w-16 bg-white/40" />
-          </aside>
-        </div>
+          </StaggerItem>
+        </Stagger>
       </div>
     </section>
   );
