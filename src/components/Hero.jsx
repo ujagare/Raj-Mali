@@ -28,9 +28,14 @@ export default function Hero() {
             <p className="eyebrow mb-7">Coach. Facilitator. Mentor.</p>
             <h1 className="editorial-title">
               <span className="hero-title-line">Leadership</span>
-              <br />
-              <span className="hero-title-line">Begins Where</span>
-              <br />
+              {' '}
+              <br className="hero-break-desktop" />
+              <span className="hero-title-line">Begins</span>
+              {' '}
+              <br className="hero-break-mobile" />
+              <span className="hero-title-line">Where</span>
+              {' '}
+              <br className="hero-break-desktop" />
               <span className="hero-title-line">Noise Ends.</span>
             </h1>
             <div className="my-8 h-px w-16 bg-navy" />

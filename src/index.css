@@ -90,6 +90,10 @@
     @apply font-serif text-[2.65rem] font-semibold leading-[0.98] text-ink sm:text-6xl lg:text-[4.75rem];
   }
 
+  .hero-break-mobile {
+    display: none;
+  }
+
   .section-title {
     @apply font-serif text-4xl font-semibold leading-tight text-ink sm:text-5xl;
   }
@@ -1254,13 +1258,21 @@
     }
 
     #home .editorial-title {
-      font-size: 2.28rem;
+      font-size: clamp(2rem, 10.5vw, 2.28rem);
       line-height: 0.98;
     }
 
     #home .hero-title-line {
       display: inline-block;
       white-space: nowrap;
+    }
+
+    #home .hero-break-desktop {
+      display: none;
+    }
+
+    #home .hero-break-mobile {
+      display: block;
     }
 
     #home .eyebrow {
