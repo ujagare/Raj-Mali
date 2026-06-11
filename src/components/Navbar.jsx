@@ -1,24 +1,35 @@
-import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const links = [
-  'Home',
-  'About Raj',
-  'Coaching',
-  'Facilitation',
-  'Work With Me',
-  'Writing',
-  'Speaking & Workshops',
-  'Play Pics',
-  'RED M Consulting',
-  'Contact',
+  "Home",
+  "About Raj",
+  "Coaching",
+  "Facilitation",
+  "Writing",
+  "Workshops",
+  "Play Pics",
+  "RED M ",
+  "Contact",
 ];
 
 const linkTarget = {
-  Coaching: 'work-with-me',
-  'RED M Consulting': 'red-m-consulting',
+  Coaching: "work-with-me",
 };
+
+const redMLink = "RED M ";
+const redMUrl = "https://www.redmconsulting.com";
+
+function getLinkHref(link) {
+  return link === redMLink
+    ? redMUrl
+    : `#${linkTarget[link] || link.toLowerCase().replaceAll(" ", "-")}`;
+}
+
+function getLinkClassName(link, className = "") {
+  return `${className} nav-link ${link === redMLink ? "!text-red-600 hover:!text-red-700" : ""}`.trim();
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -26,26 +37,35 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-pearl/90 backdrop-blur-xl">
       <nav className="site-shell flex h-20 items-center justify-between gap-8 lg:h-[86px]">
-        <a href="#home" className="flex items-center gap-3" aria-label="Raj Mali home">
+        <a
+          href="#home"
+          className="flex items-center gap-3"
+          aria-label="Raj Mali home"
+        >
           <span className="grid size-12 place-items-center rounded-full border border-navy/70 font-serif text-lg font-semibold text-navy">
             RM
           </span>
-          <span className="font-serif text-2xl font-semibold uppercase tracking-[0.12em] text-ink">Raj Mali</span>
+          <span className="font-serif text-2xl font-semibold uppercase tracking-[0.12em] text-ink">
+            Raj Mali
+          </span>
         </a>
 
         <div className="hidden flex-1 items-center justify-center gap-4 xl:flex 2xl:gap-6">
           {links.map((link) => (
             <a
               key={link}
-              href={`#${linkTarget[link] || link.toLowerCase().replaceAll(' ', '-')}`}
-              className="nav-link"
+              href={getLinkHref(link)}
+              className={getLinkClassName(link)}
             >
               {link}
             </a>
           ))}
         </div>
 
-        <a href="#cta" className="primary-button hidden px-6 py-3.5 lg:inline-flex">
+        <a
+          href="#cta"
+          className="primary-button hidden px-6 py-3.5 lg:inline-flex"
+        >
           Work With Me
         </a>
 
@@ -63,7 +83,7 @@ export default function Navbar() {
         {open && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden border-t border-ink/10 bg-pearl xl:hidden"
           >
@@ -71,14 +91,18 @@ export default function Navbar() {
               {links.map((link) => (
                 <a
                   key={link}
-                  href={`#${linkTarget[link] || link.toLowerCase().replaceAll(' ', '-')}`}
-                  className="nav-link py-2"
+                  href={getLinkHref(link)}
+                  className={getLinkClassName(link, "py-2")}
                   onClick={() => setOpen(false)}
                 >
                   {link}
                 </a>
               ))}
-              <a href="#cta" className="primary-button mt-2 w-full" onClick={() => setOpen(false)}>
+              <a
+                href="#cta"
+                className="primary-button mt-2 w-full"
+                onClick={() => setOpen(false)}
+              >
                 Work With Me
               </a>
             </div>
