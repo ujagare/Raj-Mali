@@ -2,7 +2,23 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
-const links = ['Home', 'About Raj', 'Work With Me', 'Writing', 'Speaking & Workshops', 'The Dojo', 'Contact'];
+const links = [
+  'Home',
+  'About Raj',
+  'Coaching',
+  'Facilitation',
+  'Work With Me',
+  'Writing',
+  'Speaking & Workshops',
+  'Play Pics',
+  'RED M Consulting',
+  'Contact',
+];
+
+const linkTarget = {
+  Coaching: 'work-with-me',
+  'RED M Consulting': 'red-m-consulting',
+};
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,9 +33,13 @@ export default function Navbar() {
           <span className="font-serif text-2xl font-semibold uppercase tracking-[0.12em] text-ink">Raj Mali</span>
         </a>
 
-        <div className="hidden flex-1 items-center justify-center gap-8 xl:flex">
+        <div className="hidden flex-1 items-center justify-center gap-4 xl:flex 2xl:gap-6">
           {links.map((link) => (
-            <a key={link} href={`#${link.toLowerCase().replaceAll(' ', '-')}`} className="nav-link">
+            <a
+              key={link}
+              href={`#${linkTarget[link] || link.toLowerCase().replaceAll(' ', '-')}`}
+              className="nav-link"
+            >
               {link}
             </a>
           ))}
@@ -51,7 +71,7 @@ export default function Navbar() {
               {links.map((link) => (
                 <a
                   key={link}
-                  href={`#${link.toLowerCase().replaceAll(' ', '-')}`}
+                  href={`#${linkTarget[link] || link.toLowerCase().replaceAll(' ', '-')}`}
                   className="nav-link py-2"
                   onClick={() => setOpen(false)}
                 >

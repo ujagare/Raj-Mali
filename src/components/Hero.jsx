@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { images } from '../data/assets';
+import { motion } from "framer-motion";
+import { images } from "../data/assets";
 
 export default function Hero() {
   return (
@@ -27,23 +27,21 @@ export default function Hero() {
           <div className="hero-headline">
             <p className="eyebrow mb-7">Coach. Facilitator. Mentor.</p>
             <h1 className="editorial-title">
-              <span className="hero-title-line">Leadership</span>
-              {' '}
+              <span className="hero-title-line">Wake Up.</span>{" "}
               <br className="hero-break-desktop" />
-              <span className="hero-title-line">Begins</span>
-              {' '}
+              <span className="hero-title-line">Dream it.</span>{" "}
               <br className="hero-break-mobile" />
-              <span className="hero-title-line">Where</span>
-              {' '}
+              <span className="hero-title-line"></span>{" "}
               <br className="hero-break-desktop" />
-              <span className="hero-title-line">Noise Ends.</span>
+              <span className="hero-title-line">Play.</span>
             </h1>
             <div className="my-8 h-px w-16 bg-navy" />
           </div>
           <div className="hero-actions">
             <p className="body-copy max-w-[29rem]">
-              In a world obsessed with doing more, I help leaders, creators and dreamers access the deeper
-              intelligence that emerges through stillness, awareness and conscious action.
+              In a world obsessed with doing more, I help leaders, creators and
+              dreamers access the deeper intelligence that emerges through
+              stillness, awareness and conscious action.
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <a href="#cta" className="primary-button">
@@ -64,8 +62,8 @@ export default function Hero() {
           className="z-10 hidden max-w-[230px] justify-self-end xl:block"
         >
           <p className="text-sm font-bold leading-7 text-ink">
-            Leadership is not about being in charge. It is about taking care of those in your charge and
-            bringing out the best in them.
+            Leadership is not about being in charge. It is about taking care of
+            those in your charge and bringing out the best in them.
           </p>
           <div className="mt-8 h-px w-14 bg-navy" />
         </motion.aside>
