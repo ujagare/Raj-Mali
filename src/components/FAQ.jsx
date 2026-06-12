@@ -32,6 +32,7 @@ const faqs = [
 
 export default function FAQ() {
   const [active, setActive] = useState(0);
+  const discoveryHref = window.location.pathname === '/contact' ? '#contact-form' : '#cta';
 
   return (
     <section id="faq" className="relative overflow-hidden bg-gradient-to-b from-white via-pearl to-white py-24">
@@ -54,7 +55,7 @@ export default function FAQ() {
               A few practical answers for leaders, teams and organisations considering deeper work.
             </p>
             <a
-              href="#cta"
+              href={discoveryHref}
               className="mt-9 inline-flex items-center gap-3 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-white"
             >
               Book a discovery call <ArrowRight size={15} />
