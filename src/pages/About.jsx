@@ -1,0 +1,274 @@
+import {
+  ArrowRight,
+  BriefcaseBusiness,
+  Eye,
+  Flower2,
+  Gem,
+  Globe2,
+  Leaf,
+  Lightbulb,
+  Mountain,
+  PersonStanding,
+  Presentation,
+  Sparkles,
+  Sprout,
+  UsersRound,
+} from "lucide-react";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import { clientLogos } from "../data/assets.js";
+
+const aboutImage = (fileName) =>
+  new URL(`../assets/images/About/${fileName}`, import.meta.url).href;
+
+const images = {
+  hero: aboutImage("90e04fe1-0c3a-408c-b556-ae5e86828b31.png"),
+  heroMobile: aboutImage("929b36e9-9d35-4f57-a5e0-eacbea23a652.png"),
+  stage: aboutImage("ChatGPT Image Jun 12, 2026, 01_18_43 AM.png"),
+  stones: aboutImage("ChatGPT Image Jun 12, 2026, 11_13_58 AM.png"),
+  plant: aboutImage("ChatGPT Image Jun 12, 2026, 11_14_10 AM.png"),
+  books: aboutImage("ChatGPT Image Jun 12, 2026, 11_17_12 AM.png"),
+  galleryOne: aboutImage("ChatGPT Image Jun 13, 2026, 12_38_27 AM.png"),
+  galleryTwo: aboutImage("ChatGPT Image Jun 13, 2026, 12_40_03 AM.png"),
+  galleryThree: aboutImage("ChatGPT Image Jun 13, 2026, 12_50_38 AM.png"),
+};
+
+const storyPoints = [
+  {
+    text: "For more than twenty-three years, I have worked at the intersection of leadership, transformation and human potential.",
+    Icon: PersonStanding,
+  },
+  {
+    text: "Over time I discovered something simple yet transformative: awareness changes the way we lead.",
+    Icon: Flower2,
+  },
+  {
+    text: "My journey has moved through corporations, development programs, coaching conversations and creative exploration.",
+    Icon: Leaf,
+  },
+  {
+    text: "The quality of our lives is shaped by the paradigms through which we interpret reality.",
+    Icon: Eye,
+  },
+];
+
+const stats = [
+  ["23+", "Years of Experience", PersonStanding],
+  ["India & Europe", "Work & Presence", Globe2],
+  ["Leaders & Teams", "Transformed", UsersRound],
+  ["Impact That Lasts", "Beyond Sessions", Gem],
+];
+
+const timeline = [
+  ["2001 - 2007", "Corporate Leadership", "Learned the art of strategy, execution and leading high-performance teams.", BriefcaseBusiness],
+  ["2007 - 2011", "Leadership Development", "Facilitated programs and discovered my passion for developing human potential.", UsersRound],
+  ["2011 - 2016", "Executive Coaching", "Partnered with leaders to navigate change and unlock their potential.", Sparkles],
+  ["2016 - 2019", "Facilitation & Speaking", "Designed and delivered transformational experiences for teams and organisations.", Presentation],
+  ["2019 - Present", "Conscious Leadership", "Integrating stillness, awareness and purpose to create meaningful impact.", Sprout],
+];
+
+const values = [
+  ["Curiosity", "Questions create worlds.", Lightbulb],
+  ["Presence", "Transformation happens now.", PersonStanding],
+  ["Courage", "Growth requires discomfort.", Mountain],
+  ["Playfulness", "Wisdom need not be serious.", Leaf],
+];
+
+const clientStats = [
+  ["12+", "Trusted organisations"],
+  ["4", "Major sectors served"],
+  ["23+", "Years of leadership work"],
+];
+
+export default function About() {
+  return (
+    <div className="min-h-screen overflow-x-hidden bg-pearl">
+      <Navbar />
+      <main>
+        <section className="about-hero">
+          <picture>
+            <source media="(max-width: 767px)" srcSet={images.heroMobile} />
+            <img src={images.hero} alt="Raj Mali speaking on stage" />
+          </picture>
+          <div className="about-hero-wash" />
+          <div className="site-shell about-hero-shell">
+            <div className="about-hero-copy">
+              <p className="about-kicker">About Raj</p>
+              <h1>My Journey</h1>
+              <h2>From Corporate Boardrooms to Inner Landscapes</h2>
+              <p>
+                Twenty-three years of leadership, transformation and human
+                potential.
+              </p>
+              <div className="about-hero-actions">
+                <a href="#about-story">
+                  Explore My Work <ArrowRight size={17} />
+                </a>
+                <a href="/contact">
+                  Start A Conversation <ArrowRight size={17} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about-story" className="about-story-section">
+          <div className="site-shell">
+            <div className="about-story-grid">
+              <div className="about-story-copy">
+                <p className="about-kicker">The Story</p>
+                <h2>A Journey of Depth, Discovery & Impact.</h2>
+                <p className="about-story-lead">
+                  For more than twenty-three years, I have worked at the
+                  intersection of leadership, transformation and human
+                  potential.
+                </p>
+                <div className="about-story-points">
+                  {storyPoints.map(({ text, Icon }) => (
+                    <article key={text}>
+                      <span>
+                        <Icon aria-hidden="true" />
+                      </span>
+                      <p>{text}</p>
+                    </article>
+                  ))}
+                </div>
+                <div className="about-story-actions">
+                  <a href="#about-clients">
+                    Explore My Work <ArrowRight size={17} />
+                  </a>
+                  <a href="/contact">
+                    Start A Conversation <ArrowRight size={17} />
+                  </a>
+                </div>
+              </div>
+              <div className="about-story-image">
+                <img src={images.stage} alt="Raj Mali addressing an audience" />
+              </div>
+            </div>
+
+            <div className="about-stats-band">
+              {stats.map(([value, label, Icon]) => (
+                <article key={value}>
+                  <span>
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <strong>{value}</strong>
+                  <p>{label}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="about-timeline-section">
+          <div className="site-shell">
+            <div className="about-section-heading">
+              <p className="about-kicker">The Journey So Far</p>
+              <h2>Experience shaped by rooms, reflection and real change.</h2>
+            </div>
+            <div className="about-timeline">
+              {timeline.map(([years, title, text, Icon]) => (
+                <article key={years}>
+                  <span>
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <strong>{years}</strong>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="about-values-section">
+          <div className="site-shell about-values-shell">
+            <img className="about-values-decor about-values-stones" src={images.stones} alt="" />
+            <img className="about-values-decor about-values-plant" src={images.plant} alt="" />
+            <div className="about-section-heading">
+              <p className="about-kicker">The Values That Guide My Work</p>
+              <h2>Deep work, held with lightness.</h2>
+            </div>
+            <div className="about-values-grid">
+              {values.map(([title, text, Icon]) => (
+                <article key={title}>
+                  <span>
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="about-clients" className="about-clients-section">
+          <div className="site-shell about-clients-shell">
+            <div className="about-clients-header">
+              <div>
+                <p className="about-kicker">Our Clients</p>
+                <h2>Trusted by organisations building conscious leadership.</h2>
+              </div>
+              <p>
+                Premium leadership and facilitation work for teams, businesses
+                and institutions across sectors.
+              </p>
+            </div>
+            <div className="about-clients-proof" aria-label="Client impact highlights">
+              {clientStats.map(([value, label]) => (
+                <div key={label}>
+                  <strong>{value}</strong>
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+            <div className="about-logo-grid">
+              {clientLogos.map((logo) => (
+                <article key={logo.name}>
+                  <span>
+                    <img src={logo.src} alt={logo.name} />
+                  </span>
+                  <p>{logo.name}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="about-gallery-section">
+          <div className="site-shell">
+            <div className="about-gallery-grid">
+              <img src={images.galleryOne} alt="Raj Mali speaking" />
+              <img src={images.galleryTwo} alt="Audience session" />
+              <img src={images.galleryThree} alt="Awareness books" />
+            </div>
+            <blockquote>
+              "The deeper the awareness, the more conscious the choices, the
+              more meaningful the impact."
+            </blockquote>
+          </div>
+        </section>
+
+        <section className="about-cta">
+          <div className="site-shell about-cta-shell">
+            <img src={images.books} alt="" />
+            <div>
+              <p className="about-kicker">Ready To Begin?</p>
+              <h2>Let's create meaningful change together.</h2>
+              <p>
+                Whether you are leading a team, an organisation or your own
+                life, the journey begins with a conversation.
+              </p>
+              <a href="/contact">
+                Schedule A Discovery Call <ArrowRight size={17} />
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}

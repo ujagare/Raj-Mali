@@ -31,6 +31,10 @@ function getLinkHref(link) {
     return "/facilitation";
   }
 
+  if (link === "About Raj") {
+    return "/about";
+  }
+
   if (link === "Contact") {
     return "/contact";
   }
@@ -42,6 +46,7 @@ function getLinkHref(link) {
 function getLinkClassName(link, className = "") {
   const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
   const isActive =
+    (link === "About Raj" && currentPath === "/about") ||
     (link === "Facilitation" && currentPath === "/facilitation") ||
     (link === "Contact" && currentPath === "/contact");
 
