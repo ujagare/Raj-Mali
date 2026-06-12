@@ -55,6 +55,17 @@ function getLinkClassName(link, className = "") {
   } ${isActive ? "text-navy after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:bg-[#b8792a]" : ""}`.trim();
 }
 
+function handleInternalNavigation(event, href) {
+  if (!href.startsWith("/") || href.startsWith("/#")) {
+    return;
+  }
+
+  event.preventDefault();
+  window.history.pushState({}, "", href);
+  window.dispatchEvent(new Event("raj:navigate"));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -80,6 +91,7 @@ export default function Navbar() {
               key={link}
               href={getLinkHref(link)}
               className={getLinkClassName(link, "relative")}
+              onClick={(event) => handleInternalNavigation(event, getLinkHref(link))}
             >
               {link}
             </a>
@@ -117,7 +129,10 @@ export default function Navbar() {
                   key={link}
                   href={getLinkHref(link)}
                   className={getLinkClassName(link, "relative py-2")}
-                  onClick={() => setOpen(false)}
+                  onClick={(event) => {
+                    handleInternalNavigation(event, getLinkHref(link));
+                    setOpen(false);
+                  }}
                 >
                   {link}
                 </a>
