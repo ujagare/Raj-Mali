@@ -54,8 +54,18 @@ function handleInternalNavigation(event, href) {
     return;
   }
 
+  const currentUrl = new URL(window.location.href);
   const targetUrl = new URL(href, window.location.origin);
   if (targetUrl.origin !== window.location.origin) {
+    return;
+  }
+
+  const currentPath = currentUrl.pathname.replace(/\/$/, "") || "/";
+  const targetPath = targetUrl.pathname.replace(/\/$/, "") || "/";
+  const isSamePage = currentPath === targetPath;
+  const isHashNavigation = Boolean(targetUrl.hash);
+
+  if (!isSamePage && (isHashNavigation || targetPath !== currentPath)) {
     return;
   }
 
