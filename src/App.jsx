@@ -3,6 +3,7 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Facilitation from './pages/Facilitation.jsx';
 import Contact from './pages/Contact.jsx';
+import PlayPics from './pages/PlayPics.jsx';
 import ScrollProgress from './components/ScrollProgress.jsx';
 import SmoothScroll from './components/SmoothScroll.jsx';
 
@@ -27,9 +28,11 @@ export default function App() {
       ? About
       : path === '/facilitation'
         ? Facilitation
-        : path === '/contact'
-          ? Contact
-          : Home;
+        : path === '/play-pics' || path === '/playpics' || path === '/playpic'
+          ? PlayPics
+          : path === '/contact'
+            ? Contact
+            : Home;
 
   return (
     <>

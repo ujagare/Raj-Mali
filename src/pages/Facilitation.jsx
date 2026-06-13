@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
@@ -164,9 +164,6 @@ export default function Facilitation() {
             <div className="facilitation-video-overlay">
               Great conversations create great results.
             </div>
-            <button type="button" aria-label="Play facilitation preview">
-              <Play size={24} fill="currentColor" />
-            </button>
           </div>
 
           <div className="facilitation-intro-copy">
@@ -203,6 +200,10 @@ export default function Facilitation() {
             <div className="facilitation-section-heading">
               <AccentLabel>Facilitation Programs</AccentLabel>
               <h2>Programs Designed &amp; Delivered by Red Wisdom</h2>
+              <p>
+                Curated interventions for leadership teams that need sharper
+                thinking, stronger alignment and meaningful movement.
+              </p>
             </div>
             <div className="facilitation-program-grid">
               {programs.map((program, index) => (

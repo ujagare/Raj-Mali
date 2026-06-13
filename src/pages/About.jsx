@@ -90,6 +90,7 @@ export default function About() {
             <source media="(max-width: 767px)" srcSet={images.heroMobile} />
             <img src={images.hero} alt="Raj Mali speaking on stage" />
           </picture>
+          <div className="about-hero-aura" />
           <div className="about-hero-wash" />
           <div className="site-shell about-hero-shell">
             <div className="about-hero-copy">
@@ -108,7 +109,24 @@ export default function About() {
                   Start A Conversation <ArrowRight size={17} />
                 </a>
               </div>
+              <div className="about-hero-meta" aria-label="Raj Mali experience highlights">
+                <span>
+                  <strong>23+</strong>
+                  Years
+                </span>
+                <span>
+                  <strong>500+</strong>
+                  Sessions
+                </span>
+                <span>
+                  <strong>100k+</strong>
+                  Lives Touched
+                </span>
+              </div>
             </div>
+            <a className="about-hero-scroll" href="#about-story" aria-label="Scroll to Raj Mali's story">
+              <span />
+            </a>
           </div>
         </section>
 
@@ -123,6 +141,13 @@ export default function About() {
                   intersection of leadership, transformation and human
                   potential.
                 </p>
+                <div className="about-story-note">
+                  <span>Leadership, presence and purpose</span>
+                  <p>
+                    Creating spaces where people slow down, listen deeply and
+                    return to their work with clarity.
+                  </p>
+                </div>
                 <div className="about-story-points">
                   {storyPoints.map(({ text, Icon }) => (
                     <article key={text}>
@@ -144,6 +169,10 @@ export default function About() {
               </div>
               <div className="about-story-image">
                 <img src={images.stage} alt="Raj Mali addressing an audience" />
+                <div className="about-story-image-badge">
+                  <strong>23+</strong>
+                  <span>Years of transformational work</span>
+                </div>
               </div>
             </div>
 
@@ -189,6 +218,10 @@ export default function About() {
             <div className="about-section-heading">
               <p className="about-kicker">The Values That Guide My Work</p>
               <h2>Deep work, held with lightness.</h2>
+              <p className="about-values-intro">
+                A grounded blend of insight, creativity and care that shapes
+                every room I enter.
+              </p>
             </div>
             <div className="about-values-grid">
               {values.map(([title, text, Icon]) => (
