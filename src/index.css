@@ -616,7 +616,7 @@
   }
 
   .hero-portrait-group {
-    object-position: 24% center;
+    object-position: 24% 68%;
   }
 
   .cta-image-panel::after {
@@ -1335,7 +1335,7 @@
 
     #home .hero-headline {
       position: absolute;
-      top: 1.75rem;
+      top: 0.75rem;
       left: 50%;
       width: calc(100% - 2.5rem);
       max-width: 20rem;
