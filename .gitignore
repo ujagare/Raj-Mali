@@ -9,3 +9,5 @@ pnpm-debug.log*
 
 # Local visual QA screenshots
 /*.png
+
+.vercel
