@@ -55,18 +55,6 @@ export default function Hero() {
         </motion.div>
 
         <div className="hidden 2xl:block" />
-        <motion.aside
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="z-10 hidden max-w-[230px] justify-self-end 2xl:block"
-        >
-          <p className="text-sm font-bold leading-7 text-ink">
-            Leadership is not about being in charge. It is about taking care of
-            those in your charge and bringing out the best in them.
-          </p>
-          <div className="mt-8 h-px w-14 bg-navy" />
-        </motion.aside>
       </div>
     </section>
   );
