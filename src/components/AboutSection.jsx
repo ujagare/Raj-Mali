@@ -2,7 +2,7 @@ import { CheckCircle2, Sparkles } from 'lucide-react';
 import { images } from '../data/assets';
 import { ImageReveal, Reveal, Stagger, StaggerItem } from './ScrollAnimations';
 
-const points = ['They need clarity.', 'They need perspective.', 'They need the courage to question old paradigms.'];
+const points = ['Reflection', 'Awareness', 'Conscious aligned actions'];
 
 export default function AboutSection() {
   return (
@@ -16,7 +16,7 @@ export default function AboutSection() {
               <br />
               Enough Information.
             </Reveal>
-            <Reveal as="p" className="wisdom-subtitle" delay={0.1}>What it needs is deeper wisdom.</Reveal>
+            <Reveal as="p" className="wisdom-subtitle" delay={0.1}>What it needs is deeper wisdom. Born Out Of...</Reveal>
             <Stagger as="ul" className="wisdom-points">
               {points.map((point) => (
                 <StaggerItem as="li" key={point}>
