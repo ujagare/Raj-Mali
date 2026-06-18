@@ -33,7 +33,7 @@ export default function AboutSection() {
         </div>
 
         <ImageReveal className="wisdom-image-wrap">
-          <img src={images.workshopImage} alt="Raj leading a group coaching session" />
+          <img className="wisdom-portrait-image" src={images.heroPortrait} alt="Raj Mali smiling in a light blazer" />
           <div className="wisdom-image-shade" />
           <div className="wisdom-badge">
             <Sparkles size={18} />

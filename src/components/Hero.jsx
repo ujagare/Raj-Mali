@@ -10,14 +10,14 @@ export default function Hero() {
         transition={{ duration: 0.9, delay: 0.1 }}
         className="absolute inset-0 -z-20 h-full w-full"
       >
-        <source media="(max-width: 639px)" srcSet={images.heroMobilePortrait} />
         <img
-          src={images.heroPortrait}
-          alt="Raj Mali smiling in a light blazer"
-          className="hero-portrait h-full w-full object-cover object-[68%_center] sm:object-center"
+          src={images.workshopImage}
+          alt="Raj Mali leading a group coaching session"
+          className="hero-portrait hero-portrait-group h-full w-full object-cover"
         />
       </motion.picture>
-      <div className="site-shell grid min-h-[720px] items-center gap-10 py-14 lg:grid-cols-[0.72fr_1fr_0.34fr] lg:py-0">
+      <div className="hero-wash absolute inset-0 -z-10" />
+      <div className="site-shell grid min-h-[720px] items-center gap-10 py-14 lg:grid-cols-[0.72fr_1fr] lg:py-0 2xl:grid-cols-[0.72fr_1fr_0.34fr]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,12 +54,12 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <div className="hidden lg:block" />
+        <div className="hidden 2xl:block" />
         <motion.aside
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="z-10 hidden max-w-[230px] justify-self-end xl:block"
+          className="z-10 hidden max-w-[230px] justify-self-end 2xl:block"
         >
           <p className="text-sm font-bold leading-7 text-ink">
             Leadership is not about being in charge. It is about taking care of

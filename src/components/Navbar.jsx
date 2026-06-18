@@ -105,7 +105,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <div className="hidden flex-1 items-center justify-center gap-4 xl:flex 2xl:gap-6">
+        <div className="hidden flex-1 items-center justify-center gap-4 2xl:flex 2xl:gap-6">
           {links.map((link) => (
             <a
               key={link}
@@ -120,7 +120,7 @@ export default function Navbar() {
 
         <a
           href={window.location.pathname === "/" ? "#cta" : "/#cta"}
-          className="primary-button hidden px-6 py-3.5 lg:inline-flex"
+          className="primary-button hidden px-6 py-3.5 xl:inline-flex"
           onClick={(event) => handleInternalNavigation(event, "/#cta")}
         >
           Work With Me
@@ -128,7 +128,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="grid size-11 place-items-center rounded border border-ink/10 text-ink xl:hidden"
+          className="grid size-11 place-items-center rounded border border-ink/10 text-ink 2xl:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation"
         >
@@ -142,7 +142,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-ink/10 bg-pearl xl:hidden"
+            className="overflow-hidden border-t border-ink/10 bg-pearl 2xl:hidden"
           >
             <div className="site-shell grid gap-4 py-6">
               {links.map((link) => (

@@ -16,9 +16,9 @@ import actionIcon from '../assets/icons/ChatGPT Image Jun 10, 2026, 11_35_36 AM.
 import globeIcon from '../assets/icons/ChatGPT Image Jun 10, 2026, 11_37_47 AM.png';
 
 import amdocsLogo from '../assets/images/Icons/amdocs-logo.webp';
-import bnpLogo from '../assets/images/Icons/bnp-paribas-logo-roll-over.webp';
-import capgeminiLogo from '../assets/images/Icons/cap-gemini-logo.gif';
 import heroHondaLogo from '../assets/images/Icons/hero_honda_logo.webp';
+import imochaLogo from '../assets/images/Icons/imocha.webp';
+import ivaluaLogo from '../assets/images/Icons/ivalua-logo-vector.svg';
 import kpitLogo from '../assets/images/Icons/logo-kpit.webp';
 import marvellLogo from '../assets/images/Icons/marvell-pune-logo.webp';
 import mercedesLogo from '../assets/images/Icons/mercedes-benz_india_logo.webp';
@@ -55,8 +55,8 @@ export const clientLogos = [
   { name: 'Volkswagen', src: volkswagenLogo },
   { name: 'Amdocs', src: amdocsLogo },
   { name: 'KPIT', src: kpitLogo },
-  { name: 'BNP Paribas', src: bnpLogo },
-  { name: 'Capgemini', src: capgeminiLogo },
+  { name: 'Ivalua', src: ivaluaLogo },
+  { name: 'iMocha', src: imochaLogo },
   { name: 'Hero Honda', src: heroHondaLogo },
   { name: 'Marvell', src: marvellLogo },
   { name: 'SBI', src: sbiLogo },
