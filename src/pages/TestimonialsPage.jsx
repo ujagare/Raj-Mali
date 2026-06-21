@@ -77,7 +77,7 @@ export default function TestimonialsPage() {
                 <a href="#testimonial-stories" className="primary-button">
                   Read Stories <ArrowRight size={17} />
                 </a>
-                <a href="/contact" className="secondary-button">
+                <a href="/contact#contact-form" className="secondary-button">
                   Work With Raj <ArrowRight size={17} />
                 </a>
               </div>
@@ -189,7 +189,7 @@ export default function TestimonialsPage() {
         <section className="testimonials-cta">
           <div className="site-shell testimonials-cta-shell">
             <p>Ready to build leadership capability that lasts beyond the room?</p>
-            <a href="/contact" className="primary-button">
+            <a href="/contact#contact-form" className="primary-button">
               Start A Conversation <ArrowRight size={17} />
             </a>
           </div>

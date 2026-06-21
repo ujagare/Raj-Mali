@@ -122,9 +122,9 @@ export default function Navbar() {
         </div>
 
         <a
-          href={window.location.pathname === "/" ? "#cta" : "/#cta"}
+          href="/contact#contact-form"
           className="primary-button hidden px-6 py-3.5 xl:inline-flex"
-          onClick={(event) => handleInternalNavigation(event, "/#cta")}
+          onClick={(event) => handleInternalNavigation(event, "/contact#contact-form")}
         >
           Work With Me
         </a>
@@ -162,10 +162,10 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href={window.location.pathname === "/" ? "#cta" : "/#cta"}
+                href="/contact#contact-form"
                 className="primary-button mt-2 w-full"
                 onClick={(event) => {
-                  handleInternalNavigation(event, "/#cta");
+                  handleInternalNavigation(event, "/contact#contact-form");
                   setOpen(false);
                 }}
               >

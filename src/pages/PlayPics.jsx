@@ -251,7 +251,7 @@ export default function PlayPics() {
               </p>
             </div>
             <div className="playpics-actions">
-              <a href="/contact" className="primary-button">
+              <a href="/contact#contact-form" className="primary-button">
                 Book Discovery Call <ArrowRight size={15} />
               </a>
               <a href="/facilitation" className="secondary-button">

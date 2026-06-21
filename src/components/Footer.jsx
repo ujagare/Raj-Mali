@@ -50,6 +50,20 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const handleNewsletterSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get('email')?.toString().trim();
+    if (!email) {
+      return;
+    }
+
+    window.location.href = `mailto:hello@rajmali.com?subject=${encodeURIComponent(
+      'Newsletter subscription request',
+    )}&body=${encodeURIComponent(`Please add ${email} to the Raj Mali mailing list.`)}`;
+  };
+
   return (
     <footer className="footer-premium">
       <div className="footer-glow" />
@@ -109,8 +123,8 @@ export default function Footer() {
           <div className="footer-newsletter">
             <h3>Stay Connected</h3>
             <p>Insights on leadership, consciousness and creating a meaningful life.</p>
-            <form onSubmit={(event) => event.preventDefault()}>
-              <input type="email" aria-label="Email address" placeholder="Your email address" />
+            <form onSubmit={handleNewsletterSubmit}>
+              <input type="email" name="email" aria-label="Email address" placeholder="Your email address" required />
               <button type="submit" aria-label="Subscribe">
                 <ArrowRight size={18} />
               </button>

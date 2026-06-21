@@ -18,6 +18,11 @@ const workshopImage = (fileName) =>
 
 const heroImage = workshopImage("2.png");
 
+const heroRightImage = new URL(
+  `../assets/images/ChatGPT Image Jun 21, 2026, 04_45_01 PM.png`,
+  import.meta.url,
+).href;
+
 const workshops = [
   {
     title: "Leadership Labs",
@@ -97,7 +102,7 @@ export default function Workshops() {
             </span>
           </div>
           <div className="workshops-hero-media">
-            <img src={heroImage} alt="A premium leadership workshop setting" />
+            <img src={heroRightImage} alt="A premium leadership workshop setting" />
           </div>
         </section>
 

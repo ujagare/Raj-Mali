@@ -104,7 +104,7 @@ export default function About() {
                 <a href="#about-story">
                   Explore My Work <ArrowRight size={17} />
                 </a>
-                <a href="/contact">
+                <a href="/contact#contact-form">
                   Start A Conversation <ArrowRight size={17} />
                 </a>
               </div>
@@ -161,7 +161,7 @@ export default function About() {
                   <a href="#about-clients">
                     Explore My Work <ArrowRight size={17} />
                   </a>
-                  <a href="/contact">
+                  <a href="/contact#contact-form">
                     Start A Conversation <ArrowRight size={17} />
                   </a>
                 </div>
@@ -293,7 +293,7 @@ export default function About() {
                 Whether you are leading a team, an organisation or your own
                 life, the journey begins with a conversation.
               </p>
-              <a href="/contact">
+              <a href="/contact#contact-form">
                 Schedule A Discovery Call <ArrowRight size={17} />
               </a>
             </div>
