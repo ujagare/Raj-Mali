@@ -19,6 +19,23 @@ const routes = {
 
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
+function PageLoader() {
+  return (
+    <div className="page-loader" role="status" aria-live="polite" aria-label="Loading page">
+      <div className="page-loader-mark" aria-hidden="true">
+        RM
+      </div>
+      <div className="lds-ellipsis page-loader-dots" aria-hidden="true">
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+      <span className="sr-only">Loading page</span>
+    </div>
+  );
+}
+
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
@@ -64,7 +81,7 @@ export default function App() {
       <SEO config={seoConfig} />
       <SmoothScroll />
       <ScrollProgress />
-      <Suspense fallback={<div className="min-h-screen bg-pearl" aria-label="Loading page" />}>
+      <Suspense fallback={<PageLoader />}>
         <Page />
       </Suspense>
     </>
