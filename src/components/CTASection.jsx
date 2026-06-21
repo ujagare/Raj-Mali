@@ -26,7 +26,7 @@ export default function CTASection() {
               Meaningful change begins with a single conversation. Bring the question that will not leave you
               alone, and we will begin there.
             </Reveal>
-            <Reveal as="a" href="mailto:hello@rajmali.com" className="cta-button" delay={0.14}>
+            <Reveal as="a" href="/contact#contact-form" className="cta-button" delay={0.14}>
               Schedule a Discovery Call <ArrowRight size={16} />
             </Reveal>
           </div>

@@ -65,6 +65,29 @@ const contactAssurances = [
 ];
 
 export default function Contact() {
+  const handleContactSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name")?.toString().trim() || "Website Visitor";
+    const email = formData.get("email")?.toString().trim() || "";
+    const mobile = formData.get("mobile")?.toString().trim() || "";
+    const message = formData.get("message")?.toString().trim() || "";
+    const body = [
+      `Name: ${name}`,
+      email ? `Email: ${email}` : "",
+      mobile ? `Mobile: ${mobile}` : "",
+      "",
+      message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.location.href = `mailto:hello@rajmali.com?subject=${encodeURIComponent(
+      `Website enquiry from ${name}`,
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-pearl">
       <Navbar />
@@ -122,7 +145,7 @@ export default function Contact() {
                 <span className="contact-heading-rule" />
                 <form
                   className="contact-form contact-form-premium"
-                  onSubmit={(event) => event.preventDefault()}
+                  onSubmit={handleContactSubmit}
                 >
                   <label>
                     <span>Name</span>

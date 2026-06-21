@@ -147,7 +147,7 @@ export default function Facilitation() {
                 <a href="#programs" className="primary-button">
                   Explore Programs <ArrowRight size={15} />
                 </a>
-                <a href="#contact" className="secondary-button">
+                <a href="/contact#contact-form" className="secondary-button">
                   Book a Discovery Call
                 </a>
               </div>

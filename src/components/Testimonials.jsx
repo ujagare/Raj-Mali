@@ -3,43 +3,43 @@ import { Quote, Star } from 'lucide-react';
 const testimonials = [
   {
     quote:
-      'The sessions helped me lead with more calm, sharper decisions, and a much clearer sense of direction.',
-    name: 'Aarav Mehta',
-    role: 'Founder, SaaS Company',
+      'More than 10 years later, I still draw on the leadership principles and approaches Raj taught me.',
+    name: 'Seshadri Venkatachalapathi',
+    role: 'Amdocs',
+    initials: 'SV',
+    tag: 'Executive Coaching',
+  },
+  {
+    quote:
+      'Raj has been a trusted leadership coach, mentor, and catalyst for transformation.',
+    name: 'Santosh Naidu',
+    role: 'Siemens Digital Industries Software',
+    initials: 'SN',
+    tag: 'Leadership Labs',
+  },
+  {
+    quote:
+      'He has delivered the most complicated tasks in a very simple yet effective manner.',
+    name: 'Dr. Shambhavi Sharma',
+    role: 'Marvell India Pvt Ltd',
+    initials: 'SS',
+    tag: 'Leadership Sessions',
+  },
+  {
+    quote:
+      'His workshops and customised Leadership Labs are creatively planned and executed.',
+    name: 'Ameeta Menon',
+    role: 'KPIT',
     initials: 'AM',
-    tag: 'Founder Coaching',
+    tag: 'Leadership Development',
   },
   {
     quote:
-      'Our leadership team started communicating with less noise, more courage, and far greater trust.',
-    name: 'Vikram Shah',
-    role: 'Managing Director',
-    initials: 'VS',
-    tag: 'Team Transformation',
-  },
-  {
-    quote:
-      'Raj created a reflective space where the real issue became visible within the first conversation.',
-    name: 'Neha Patel',
-    role: 'Executive Leader',
-    initials: 'NP',
-    tag: 'Clarity Work',
-  },
-  {
-    quote:
-      'I moved from constant urgency to grounded action, and my work started feeling meaningful again.',
-    name: 'Rohan Kapoor',
-    role: 'Creative Entrepreneur',
-    initials: 'RK',
-    tag: 'Conscious Action',
-  },
-  {
-    quote:
-      'The workshop gave our senior team a shared language for awareness, ownership, and aligned execution.',
-    name: 'Isha Rao',
-    role: 'People Strategy Lead',
-    initials: 'IR',
-    tag: 'Workshop',
+      'His sessions inspire the kind of change that matters most, both personally and professionally.',
+    name: 'Santosh Naidu',
+    role: 'Siemens Digital Industries Software',
+    initials: 'SN',
+    tag: 'Transformation',
   },
 ];
 

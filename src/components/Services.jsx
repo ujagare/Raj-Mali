@@ -8,18 +8,21 @@ const services = [
     desc: 'For leaders, artists and entrepreneurs seeking.',
     img: images.notebookImage,
     icon: UsersRound,
+    href: '/contact#contact-form',
   },
   {
     title: 'Pattern Interrupt Coaching',
     desc: 'Break unconscious limitations and create new possibilities.',
     img: images.horizonImage,
     icon: PanelsTopLeft,
+    href: '/contact#contact-form',
   },
   {
     title: 'Leadership Labs',
     desc: 'Transform culture, communication and performance.',
     img: images.roadImage,
     icon: BarChart3,
+    href: '/workshops',
   },
 ];
 
@@ -39,7 +42,7 @@ export default function Services() {
             Deep coaching and facilitation containers designed for leaders, teams and organisations ready to move
             from insight into embodied change.
           </Reveal>
-          <Reveal as="a" href="#writing" className="nav-link inline-flex items-center gap-2 lg:justify-self-end" delay={0.14}>
+          <Reveal as="a" href="/writing" className="nav-link inline-flex items-center gap-2 lg:justify-self-end" delay={0.14}>
             View All Writings <ArrowRight size={14} />
           </Reveal>
         </div>
@@ -69,7 +72,7 @@ export default function Services() {
                   <h3 className="font-serif text-3xl font-semibold leading-tight text-ink">{service.title}</h3>
                   <p className="mt-5 text-sm font-semibold leading-7 text-ink/72">{service.desc}</p>
                   <a
-                    href="#cta"
+                    href={service.href}
                     className="mt-7 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.14em] text-navy transition group-hover:gap-4"
                   >
                     Learn More <ArrowRight size={15} />

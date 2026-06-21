@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 const links = [
   "Home",
   "About Raj",
-  "Coaching",
+  "Testimonials",
   "Facilitation",
   "Writing",
   "Workshops",
@@ -17,10 +17,10 @@ const links = [
 const linkTarget = {
   Home: "/",
   "About Raj": "/about",
-  Coaching: "/#work-with-me",
+  Testimonials: "/testimonials",
   Facilitation: "/facilitation",
-  Writing: "/#writing",
-  Workshops: "/#work-with-me",
+  Writing: "/writing",
+  Workshops: "/workshops",
   "Play Pics": "/play-pics",
   Contact: "/contact",
 };
@@ -40,7 +40,10 @@ function getLinkClassName(link, className = "") {
   const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
   const isActive =
     (link === "About Raj" && currentPath === "/about") ||
+    (link === "Testimonials" && currentPath === "/testimonials") ||
     (link === "Facilitation" && currentPath === "/facilitation") ||
+    (link === "Writing" && currentPath === "/writing") ||
+    (link === "Workshops" && currentPath === "/workshops") ||
     (link === "Play Pics" && currentPath === "/play-pics") ||
     (link === "Contact" && currentPath === "/contact");
 
@@ -105,7 +108,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <div className="hidden flex-1 items-center justify-center gap-4 2xl:flex 2xl:gap-6">
+        <div className="hidden flex-1 items-center justify-center gap-3 xl:flex 2xl:gap-6">
           {links.map((link) => (
             <a
               key={link}
@@ -128,7 +131,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="grid size-11 place-items-center rounded border border-ink/10 text-ink 2xl:hidden"
+          className="grid size-11 place-items-center rounded border border-ink/10 text-ink xl:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation"
         >
@@ -142,7 +145,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-ink/10 bg-pearl 2xl:hidden"
+            className="overflow-hidden border-t border-ink/10 bg-pearl xl:hidden"
           >
             <div className="site-shell grid gap-4 py-6">
               {links.map((link) => (

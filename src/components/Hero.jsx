@@ -44,10 +44,10 @@ export default function Hero() {
               stillness, awareness and conscious action.
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <a href="#cta" className="primary-button">
+              <a href="/contact#contact-form" className="primary-button">
                 Work With Me
               </a>
-              <a href="#writing" className="secondary-button">
+              <a href="/writing" className="secondary-button">
                 Explore My Writing
               </a>
             </div>

@@ -2,10 +2,44 @@ import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 const columns = [
-  { title: 'Explore', links: ['About Raj', 'Work With Me', 'Coaching & Mentoring', 'Speaking & Workshops', 'The Dojo', 'Contact'] },
-  { title: 'Writing', links: ['Essays', 'Poems', 'Dream Notes', 'Reflections', 'Podcast'] },
-  { title: 'Resources', links: ['Frameworks', 'Free Resources', 'Events'] },
-  { title: 'Company', links: ['About', 'Testimonials', 'Media & Press', 'Terms of Service'] },
+  {
+    title: 'Explore',
+    links: [
+      ['About Raj', '/about'],
+      ['Work With Me', '/contact#contact-form'],
+      ['Coaching & Mentoring', '/contact#contact-form'],
+      ['Speaking & Workshops', '/workshops'],
+      ['The Dojo', '/play-pics'],
+      ['Contact', '/contact'],
+    ],
+  },
+  {
+    title: 'Writing',
+    links: [
+      ['Essays', '/writing'],
+      ['Poems', '/writing'],
+      ['Dream Notes', '/writing'],
+      ['Reflections', '/writing'],
+      ['Podcast', '/#podcast'],
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      ['Frameworks', '/#work-with-me'],
+      ['Free Resources', '/#faq'],
+      ['Events', '/workshops'],
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      ['About', '/about'],
+      ['Testimonials', '/testimonials'],
+      ['Media & Press', '/contact'],
+      ['Privacy Policy', '/contact'],
+    ],
+  },
 ];
 
 const socialLinks = [
@@ -29,7 +63,7 @@ export default function Footer() {
 
         <div className="footer-main">
           <div className="footer-brand">
-            <a href="#home" className="footer-logo">
+            <a href="/" className="footer-logo">
               <span className="footer-monogram">RM</span>
               <span className="footer-name">Raj Mali</span>
             </a>
@@ -62,9 +96,9 @@ export default function Footer() {
               <div key={column.title} className="footer-link-group">
                 <h3>{column.title}</h3>
                 <ul>
-                  {column.links.map((link) => (
-                    <li key={link}>
-                      <a href="#home">{link}</a>
+                  {column.links.map(([label, href]) => (
+                    <li key={label}>
+                      <a href={href}>{label}</a>
                     </li>
                   ))}
                 </ul>
@@ -75,7 +109,7 @@ export default function Footer() {
           <div className="footer-newsletter">
             <h3>Stay Connected</h3>
             <p>Insights on leadership, consciousness and creating a meaningful life.</p>
-            <form>
+            <form onSubmit={(event) => event.preventDefault()}>
               <input type="email" aria-label="Email address" placeholder="Your email address" />
               <button type="submit" aria-label="Subscribe">
                 <ArrowRight size={18} />
@@ -87,7 +121,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>© 2026 Raj Mali. All Rights Reserved.</p>
-          <a href="#home">Privacy Policy</a>
+          <a href="/">Privacy Policy</a>
         </div>
       </div>
     </footer>

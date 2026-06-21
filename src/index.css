@@ -572,6 +572,1409 @@
     color: white;
   }
 
+  .writing-page {
+    color: #122137;
+  }
+
+  .workshops-page {
+    color: #172234;
+  }
+
+  .workshops-hero {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+    padding-top: clamp(3rem, 7vw, 6.2rem);
+    padding-bottom: clamp(2rem, 5vw, 4.2rem);
+    background:
+      radial-gradient(circle at 48% 6%, rgb(38 54 74 / 0.08), transparent 24rem),
+      linear-gradient(180deg, #f4f7f9, #fff);
+  }
+
+  .workshops-hero-copy {
+    max-width: 42rem;
+  }
+
+  .workshops-hero-copy p {
+    color: rgb(38 54 74 / 0.8);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .workshops-hero-copy h1 {
+    margin-top: 1.2rem;
+    color: #172234;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(2.8rem, 4.6vw, 4.75rem);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .workshops-hero-copy span {
+    display: block;
+    max-width: 38rem;
+    margin-top: 1.55rem;
+    color: rgb(23 34 52 / 0.72);
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.75;
+  }
+
+  .workshops-hero-media {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgb(23 34 52 / 0.1);
+    border-radius: 0.45rem;
+    background: #e7edf2;
+    box-shadow: 0 28px 70px rgb(31 45 61 / 0.12);
+  }
+
+  .workshops-hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgb(255 255 255 / 0.22), transparent 42%);
+    pointer-events: none;
+  }
+
+  .workshops-hero-media img {
+    height: clamp(18rem, 29vw, 29rem);
+    width: 100%;
+    object-fit: cover;
+    object-position: 68% center;
+  }
+
+  .workshops-card-section {
+    padding-top: 0.8rem;
+    padding-bottom: clamp(2rem, 4vw, 3.2rem);
+  }
+
+  .workshops-card-grid {
+    display: grid;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  .workshop-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 25rem;
+    border: 1px solid rgb(23 34 52 / 0.1);
+    border-radius: 0.45rem;
+    background:
+      radial-gradient(circle at 84% 8%, rgb(38 54 74 / 0.08), transparent 13rem),
+      linear-gradient(180deg, rgb(255 255 255 / 0.98), rgb(255 255 255 / 0.9));
+    padding: clamp(1.6rem, 3vw, 2.7rem);
+    box-shadow: 0 18px 55px rgb(31 45 61 / 0.06);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .workshop-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgb(255 255 255 / 0.5), transparent 55%);
+    pointer-events: none;
+  }
+
+  .workshop-card:hover {
+    border-color: rgb(38 54 74 / 0.28);
+    box-shadow: 0 28px 72px rgb(31 45 61 / 0.13);
+    transform: translateY(-4px);
+  }
+
+  .workshop-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .workshop-card-icon {
+    display: grid;
+    height: 4.3rem;
+    width: 4.3rem;
+    place-items: center;
+    border: 1px solid rgb(38 54 74 / 0.16);
+    border-radius: 9999px;
+    background:
+      linear-gradient(145deg, rgb(255 255 255 / 0.92), rgb(231 237 242 / 0.84)),
+      #e7edf2;
+    color: #26364a;
+    box-shadow: inset 0 1px 0 white, 0 14px 34px rgb(31 45 61 / 0.08);
+  }
+
+  .workshop-card-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1.45rem;
+  }
+
+  .workshop-card h2 {
+    color: #172234;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(1.8rem, 2.5vw, 2.45rem);
+    font-weight: 700;
+    line-height: 1.04;
+  }
+
+  .workshop-card-title-row strong {
+    border-radius: 0.2rem;
+    background: #26364a;
+    padding: 0.36rem 0.55rem;
+    color: white;
+    font-size: 0.55rem;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .workshop-card > p {
+    max-width: 36rem;
+    margin-top: 1.15rem;
+    color: rgb(23 34 52 / 0.7);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.72;
+  }
+
+  .workshop-card ul {
+    display: grid;
+    gap: 0.68rem;
+    margin-top: 1.4rem;
+  }
+
+  .workshop-card li {
+    display: flex;
+    align-items: center;
+    gap: 0.72rem;
+    color: rgb(23 34 52 / 0.78);
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+
+  .workshop-card li svg {
+    flex-shrink: 0;
+    color: #26364a;
+  }
+
+  .workshop-card > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.6rem;
+    color: #172234;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .workshop-card > a:hover {
+    color: #26364a;
+    transform: translateX(3px);
+  }
+
+  .workshops-approach-section {
+    padding-top: 0.4rem;
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .workshops-approach-heading {
+    text-align: center;
+  }
+
+  .workshops-approach-heading h2 {
+    color: #172234;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(1.85rem, 2.8vw, 2.55rem);
+    font-weight: 700;
+  }
+
+  .workshops-approach-row {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.75rem;
+  }
+
+  .workshops-approach-item-wrap {
+    position: relative;
+    display: grid;
+    align-items: center;
+  }
+
+  .workshops-approach-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 6.5rem;
+    border: 1px solid rgb(23 34 52 / 0.1);
+    border-radius: 0.45rem;
+    background: rgb(255 255 255 / 0.86);
+    padding: 1rem;
+    box-shadow: 0 14px 38px rgb(31 45 61 / 0.06);
+  }
+
+  .workshops-approach-item > span {
+    display: grid;
+    height: 3.45rem;
+    width: 3.45rem;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid rgb(38 54 74 / 0.16);
+    border-radius: 9999px;
+    background: #e7edf2;
+    color: #26364a;
+  }
+
+  .workshops-approach-item strong {
+    display: block;
+    color: rgb(23 34 52 / 0.48);
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .workshops-approach-item h3 {
+    margin-top: 0.18rem;
+    color: #172234;
+    font-size: 0.9rem;
+    font-weight: 900;
+  }
+
+  .workshops-approach-item p {
+    margin-top: 0.18rem;
+    color: rgb(23 34 52 / 0.64);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .workshops-approach-arrow {
+    display: none;
+    color: #26364a;
+  }
+
+  .workshops-cta-wrap {
+    padding-bottom: clamp(2.4rem, 5vw, 4.5rem);
+  }
+
+  .workshops-cta {
+    display: grid;
+    gap: 1.25rem;
+    align-items: center;
+    border: 1px solid rgb(23 34 52 / 0.08);
+    border-radius: 0.55rem;
+    background:
+      radial-gradient(circle at 88% 50%, rgb(38 54 74 / 0.1), transparent 18rem),
+      linear-gradient(135deg, #e7edf2, #f4f7f9 55%, #ffffff);
+    padding: clamp(1.2rem, 3vw, 2rem);
+    box-shadow: 0 18px 50px rgb(31 45 61 / 0.08);
+  }
+
+  .workshops-cta > div {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    justify-content: center;
+    color: #172234;
+  }
+
+  .workshops-cta svg {
+    flex-shrink: 0;
+    color: #26364a;
+  }
+
+  .workshops-cta p {
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(1.35rem, 2.6vw, 2rem);
+    font-weight: 700;
+    line-height: 1.16;
+    text-align: center;
+  }
+
+  .workshops-cta .primary-button {
+    justify-self: center;
+    padding: 0.95rem 1.55rem;
+  }
+
+  .testimonials-page {
+    color: #172234;
+  }
+
+  .testimonials-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 78% 12%, rgb(38 54 74 / 0.12), transparent 27rem),
+      radial-gradient(circle at 12% 82%, rgb(231 237 242 / 0.9), transparent 28rem),
+      linear-gradient(180deg, #f4f7f9 0%, #ffffff 100%);
+  }
+
+  .testimonials-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgb(23 34 52 / 0.045) 1px, transparent 1px),
+      linear-gradient(180deg, rgb(23 34 52 / 0.04) 1px, transparent 1px);
+    background-size: 4.5rem 4.5rem;
+    opacity: 0.42;
+    pointer-events: none;
+  }
+
+  .testimonials-hero-shell {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+    padding-top: clamp(4.5rem, 8vw, 7rem);
+    padding-bottom: clamp(4rem, 7vw, 6rem);
+  }
+
+  .testimonials-hero-copy {
+    max-width: 47rem;
+  }
+
+  .testimonials-hero-copy h1 {
+    margin-top: 1rem;
+    color: #172234;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(3.1rem, 6vw, 6rem);
+    font-weight: 700;
+    line-height: 0.96;
+  }
+
+  .testimonials-hero-copy > p:last-of-type {
+    max-width: 37rem;
+    margin-top: 1.45rem;
+    color: rgb(23 34 52 / 0.72);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.8;
+  }
+
+  .testimonials-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.8rem;
+  }
+
+  .testimonials-hero-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgb(23 34 52 / 0.1);
+    border-radius: 0.65rem;
+    background:
+      linear-gradient(145deg, rgb(255 255 255 / 0.94), rgb(231 237 242 / 0.72)),
+      #ffffff;
+    padding: clamp(1.45rem, 3vw, 2.3rem);
+    box-shadow: 0 28px 80px rgb(31 45 61 / 0.12);
+  }
+
+  .testimonials-hero-card::before {
+    content: "";
+    position: absolute;
+    inset: 0.75rem;
+    border: 1px solid rgb(38 54 74 / 0.08);
+    border-radius: 0.45rem;
+    pointer-events: none;
+  }
+
+  .testimonials-hero-card > svg {
+    color: #26364a;
+    fill: rgb(38 54 74 / 0.08);
+  }
+
+  .testimonials-hero-card > p {
+    margin-top: 1.4rem;
+    color: #172234;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(2rem, 3.2vw, 3.05rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  .testimonials-hero-card > div {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 1.7rem;
+  }
+
+  .testimonials-hero-card span,
+  .testimonials-feature-aside > span,
+  .testimonial-story-top > span {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border: 1px solid rgb(38 54 74 / 0.18);
+    border-radius: 9999px;
+    background: #26364a;
+    color: white;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-weight: 700;
+  }
+
+  .testimonials-hero-card span {
+    height: 3.25rem;
+    width: 3.25rem;
+    font-size: 1.05rem;
+  }
+
+  .testimonials-hero-card strong {
+    display: block;
+    color: #172234;
+    font-size: 0.9rem;
+    font-weight: 900;
+  }
+
+  .testimonials-hero-card small {
+    display: block;
+    margin-top: 0.15rem;
+    color: rgb(23 34 52 / 0.6);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .testimonials-proof {
+    background: #172234;
+    color: white;
+  }
+
+  .testimonials-proof-grid {
+    display: grid;
+    overflow: hidden;
+    border-inline: 1px solid rgb(255 255 255 / 0.1);
+  }
+
+  .testimonials-proof article {
+    padding: clamp(1.4rem, 3vw, 2.2rem);
+    text-align: center;
+  }
+
+  .testimonials-proof article + article {
+    border-top: 1px solid rgb(255 255 255 / 0.12);
+  }
+
+  .testimonials-proof strong {
+    display: block;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(2.2rem, 4vw, 3.45rem);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .testimonials-proof p {
+    margin-top: 0.4rem;
+    color: rgb(255 255 255 / 0.68);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .testimonials-feature-section,
+  .testimonials-grid-section {
+    padding-top: clamp(3.5rem, 7vw, 6rem);
+    padding-bottom: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .testimonials-feature-card {
+    display: grid;
+    overflow: hidden;
+    border: 1px solid rgb(23 34 52 / 0.09);
+    border-radius: 0.7rem;
+    background: white;
+    box-shadow: 0 28px 78px rgb(31 45 61 / 0.1);
+  }
+
+  .testimonials-feature-aside {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(rgb(255 255 255 / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.08) 1px, transparent 1px),
+      #26364a;
+    background-size: 4rem 4rem;
+    color: white;
+    padding: clamp(1.7rem, 4vw, 3rem);
+  }
+
+  .testimonials-feature-aside > span {
+    height: 5rem;
+    width: 5rem;
+    border-color: rgb(255 255 255 / 0.26);
+    background: rgb(255 255 255 / 0.1);
+    font-size: 1.65rem;
+  }
+
+  .testimonials-stars {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 2rem;
+    color: rgb(255 255 255 / 0.7);
+  }
+
+  .testimonials-feature-aside h2 {
+    margin-top: 1.15rem;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    font-weight: 700;
+    line-height: 1.02;
+  }
+
+  .testimonials-feature-aside p {
+    margin-top: 0.8rem;
+    color: rgb(255 255 255 / 0.72);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .testimonials-feature-aside strong {
+    display: block;
+    margin-top: 1rem;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .testimonials-feature-copy {
+    padding: clamp(1.7rem, 4vw, 3.4rem);
+  }
+
+  .testimonials-feature-copy h3 {
+    max-width: 43rem;
+    margin-top: 0.9rem;
+    color: #172234;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(2rem, 3.5vw, 3.35rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  .testimonials-feature-copy h3 + p {
+    margin-top: 1.45rem;
+  }
+
+  .testimonials-feature-copy > p:not(.eyebrow) {
+    color: rgb(23 34 52 / 0.74);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.82;
+  }
+
+  .testimonials-feature-copy > p:not(.eyebrow) + p {
+    margin-top: 1rem;
+  }
+
+  .testimonials-grid-section {
+    background:
+      radial-gradient(circle at 15% 0%, rgb(38 54 74 / 0.08), transparent 24rem),
+      linear-gradient(180deg, #f4f7f9, #ffffff);
+  }
+
+  .testimonials-section-heading {
+    display: grid;
+    gap: 1rem;
+    align-items: end;
+  }
+
+  .testimonials-section-heading h2,
+  .testimonials-impact-shell h2 {
+    max-width: 45rem;
+    color: #172234;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(2.35rem, 4vw, 4rem);
+    font-weight: 700;
+    line-height: 1.02;
+  }
+
+  .testimonials-story-grid {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .testimonial-story-card {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    border: 1px solid rgb(23 34 52 / 0.09);
+    border-radius: 0.65rem;
+    background: rgb(255 255 255 / 0.9);
+    padding: clamp(1.25rem, 2.4vw, 2rem);
+    box-shadow: 0 18px 48px rgb(31 45 61 / 0.07);
+  }
+
+  .testimonial-story-top {
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+  }
+
+  .testimonial-story-top > span {
+    height: 3.8rem;
+    width: 3.8rem;
+    font-size: 1.25rem;
+  }
+
+  .testimonial-story-top strong {
+    display: block;
+    color: #172234;
+    font-size: 0.95rem;
+    font-weight: 900;
+  }
+
+  .testimonial-story-top small {
+    display: block;
+    margin-top: 0.12rem;
+    color: rgb(23 34 52 / 0.6);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .testimonial-story-highlight {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-top: 1.3rem;
+    border-top: 1px solid rgb(23 34 52 / 0.08);
+    border-bottom: 1px solid rgb(23 34 52 / 0.08);
+    padding-block: 1rem;
+  }
+
+  .testimonial-story-highlight svg {
+    flex-shrink: 0;
+    color: #26364a;
+  }
+
+  .testimonial-story-highlight p {
+    color: #172234;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.12;
+  }
+
+  .testimonial-story-quote {
+    margin-top: 1.15rem;
+  }
+
+  .testimonial-story-quote p {
+    color: rgb(23 34 52 / 0.72);
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.76;
+  }
+
+  .testimonial-story-quote p + p {
+    margin-top: 0.9rem;
+  }
+
+  .testimonials-impact-section {
+    background: white;
+    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .testimonials-impact-shell {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .testimonials-impact-grid {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .testimonials-impact-grid article {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    border: 1px solid rgb(23 34 52 / 0.08);
+    border-radius: 0.5rem;
+    background: #f4f7f9;
+    padding: 1rem;
+  }
+
+  .testimonials-impact-grid svg {
+    flex-shrink: 0;
+    color: #26364a;
+  }
+
+  .testimonials-impact-grid p {
+    color: #172234;
+    font-size: 0.86rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .testimonials-cta {
+    background: #172234;
+    color: white;
+  }
+
+  .testimonials-cta-shell {
+    display: grid;
+    gap: 1.25rem;
+    align-items: center;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+
+  .testimonials-cta p {
+    max-width: 46rem;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(2rem, 3.6vw, 3.35rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  @media (min-width: 900px) {
+    .workshops-hero {
+      grid-template-columns: 0.78fr 1fr;
+    }
+
+    .testimonials-hero-shell {
+      grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.58fr);
+    }
+
+    .testimonials-proof-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .testimonials-proof article + article {
+      border-top: 0;
+      border-left: 1px solid rgb(255 255 255 / 0.12);
+    }
+
+    .testimonials-feature-card {
+      grid-template-columns: minmax(18rem, 0.34fr) minmax(0, 1fr);
+    }
+
+    .testimonials-section-heading {
+      grid-template-columns: 0.36fr 1fr;
+    }
+
+    .testimonials-story-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .testimonials-impact-shell {
+      grid-template-columns: minmax(0, 0.95fr) minmax(22rem, 0.65fr);
+    }
+
+    .testimonials-cta-shell {
+      grid-template-columns: 1fr auto;
+    }
+
+    .workshops-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .workshops-approach-row {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 4rem;
+    }
+
+    .workshops-approach-arrow {
+      position: absolute;
+      left: calc(100% + 1.65rem);
+      top: 50%;
+      display: block;
+      transform: translateY(-50%);
+    }
+
+    .workshops-cta {
+      grid-template-columns: 1fr auto;
+    }
+
+    .workshops-cta > div {
+      justify-content: flex-start;
+    }
+
+    .workshops-cta p {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .workshops-hero {
+      padding-top: 2.4rem;
+    }
+
+    .testimonials-hero-shell {
+      padding-top: 3.5rem;
+    }
+
+    .testimonials-hero-copy h1 {
+      font-size: clamp(3rem, 14vw, 4.4rem);
+    }
+
+    .testimonials-hero-actions a,
+    .testimonials-cta .primary-button {
+      width: 100%;
+    }
+
+    .testimonials-hero-card > p {
+      font-size: 2rem;
+    }
+
+    .testimonials-feature-copy,
+    .testimonials-feature-aside,
+    .testimonial-story-card {
+      padding: 1.25rem;
+    }
+
+    .testimonials-feature-copy h3 {
+      font-size: 2rem;
+    }
+
+    .testimonial-story-highlight p {
+      font-size: 1.18rem;
+    }
+
+    .testimonials-impact-grid p {
+      font-size: 0.78rem;
+    }
+
+    .workshops-hero-media {
+      border-radius: 0.35rem;
+    }
+
+    .workshops-hero-media img {
+      height: 17rem;
+      object-position: 72% center;
+    }
+
+    .workshop-card {
+      min-height: 0;
+    }
+
+    .workshops-approach-row {
+      gap: 0.8rem;
+    }
+
+    .workshops-cta > div {
+      align-items: flex-start;
+    }
+
+    .workshops-cta .primary-button {
+      width: 100%;
+    }
+  }
+
+  .writing-hero {
+    position: relative;
+    min-height: clamp(31rem, 52vw, 44rem);
+    overflow: hidden;
+    background: #f8f7f4;
+  }
+
+  .writing-hero > img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .writing-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(248 247 244 / 0.98) 0%,
+      rgb(248 247 244 / 0.9) 29%,
+      rgb(248 247 244 / 0.42) 47%,
+      rgb(248 247 244 / 0) 66%
+    );
+  }
+
+  .writing-hero-copy {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: clamp(31rem, 52vw, 44rem);
+    width: min(36rem, calc(100% - 2.5rem));
+    flex-direction: column;
+    justify-content: center;
+    margin-left: clamp(1.25rem, 8vw, 8.6rem);
+    padding-top: 1rem;
+  }
+
+  .writing-hero-copy p,
+  .writing-feature-copy > p,
+  .writing-card p {
+    color: #b8792a;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .writing-hero-copy h1 {
+    margin-top: 1.4rem;
+    color: #122137;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(3.25rem, 5.7vw, 5.65rem);
+    font-weight: 700;
+    line-height: 0.96;
+  }
+
+  .writing-hero-copy > span {
+    max-width: 27rem;
+    margin-top: 1.7rem;
+    color: rgb(18 33 55 / 0.72);
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.8;
+  }
+
+  .writing-hero-copy .primary-button {
+    width: fit-content;
+    margin-top: 1.65rem;
+    padding: 0.95rem 1.55rem;
+  }
+
+  .writing-feature-wrap {
+    margin-top: clamp(1.6rem, 4vw, 3rem);
+  }
+
+  .writing-feature-card {
+    display: grid;
+    overflow: hidden;
+    border: 1px solid rgb(18 33 55 / 0.08);
+    border-radius: 0.55rem;
+    background: #fbfaf8;
+    box-shadow: 0 22px 65px rgb(31 45 61 / 0.08);
+  }
+
+  .writing-feature-image {
+    min-height: 16rem;
+    background: #f1ede7;
+  }
+
+  .writing-feature-image img {
+    height: 100%;
+    min-height: 16rem;
+    width: 100%;
+    object-fit: cover;
+    object-position: left center;
+  }
+
+  .writing-feature-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(1.5rem, 4vw, 3.4rem);
+  }
+
+  .writing-feature-copy h2,
+  .writing-list-heading h2 {
+    margin-top: 0.8rem;
+    color: #122137;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  .writing-feature-copy h3 {
+    margin-top: 0.35rem;
+    color: rgb(18 33 55 / 0.72);
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+  }
+
+  .writing-feature-copy > span {
+    max-width: 27rem;
+    margin-top: 1.45rem;
+    color: rgb(18 33 55 / 0.7);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.7;
+  }
+
+  .writing-feature-copy > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.4rem;
+    margin-top: 1.65rem;
+  }
+
+  .writing-feature-copy .primary-button {
+    padding: 0.9rem 1.35rem;
+  }
+
+  .writing-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #122137;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .writing-text-link:hover {
+    color: #b8792a;
+    transform: translateX(3px);
+  }
+
+  .writing-list-section {
+    padding-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  .writing-list-heading {
+    display: grid;
+    gap: 1.5rem;
+    align-items: end;
+  }
+
+  .writing-list-heading h2 {
+    margin-top: 0;
+    font-size: clamp(2rem, 3vw, 2.7rem);
+  }
+
+  .writing-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.05rem 2.7rem;
+  }
+
+  .writing-tabs button {
+    position: relative;
+    padding-bottom: 0.55rem;
+    color: rgb(18 33 55 / 0.52);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+  }
+
+  .writing-tabs button::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    transform: scaleX(0);
+    background: #b8792a;
+    transition: transform 0.25s ease;
+  }
+
+  .writing-tabs button:hover,
+  .writing-tabs button.is-active {
+    color: #122137;
+  }
+
+  .writing-tabs button.is-active::after {
+    transform: scaleX(1);
+  }
+
+  .writing-card-grid {
+    display: grid;
+    gap: 1.45rem;
+    margin-top: 1.8rem;
+  }
+
+  .writing-card {
+    overflow: hidden;
+    border: 1px solid rgb(18 33 55 / 0.12);
+    border-radius: 0.35rem;
+    background: white;
+    box-shadow: 0 15px 35px rgb(31 45 61 / 0.06);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .writing-card:hover {
+    border-color: rgb(184 121 42 / 0.35);
+    box-shadow: 0 20px 48px rgb(31 45 61 / 0.12);
+    transform: translateY(-4px);
+  }
+
+  .writing-card > img {
+    height: 9.8rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .writing-card > div {
+    padding: 1rem 1.15rem 1.1rem;
+  }
+
+  .writing-card p {
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+  }
+
+  .writing-card h3 {
+    min-height: 3.1rem;
+    margin-top: 0.38rem;
+    color: #122137;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.08;
+  }
+
+  .writing-card span {
+    display: block;
+    min-height: 2.65rem;
+    margin-top: 0.42rem;
+    color: rgb(18 33 55 / 0.66);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .writing-card footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.9rem;
+  }
+
+  .writing-card strong {
+    color: #122137;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .writing-card a {
+    display: grid;
+    height: 2rem;
+    width: 2rem;
+    place-items: center;
+    color: #122137;
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .writing-card a:hover {
+    color: #b8792a;
+    transform: translateX(3px);
+  }
+
+  .writing-quote-wrap {
+    padding-top: 2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .writing-quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    border-radius: 0.45rem;
+    background: linear-gradient(135deg, #122137, #26364a);
+    padding: clamp(1.7rem, 3vw, 2.35rem);
+    color: white;
+    text-align: center;
+    box-shadow: 0 22px 56px rgb(18 33 55 / 0.18);
+  }
+
+  .writing-quote svg {
+    flex-shrink: 0;
+    color: rgb(255 255 255 / 0.32);
+    fill: currentColor;
+  }
+
+  .writing-quote p {
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .writing-quote span {
+    color: #d69b45;
+  }
+
+  @media (min-width: 900px) {
+    .writing-feature-card {
+      grid-template-columns: 0.44fr 0.56fr;
+    }
+
+    .writing-list-heading {
+      grid-template-columns: auto 1fr;
+    }
+
+    .writing-tabs {
+      justify-content: flex-end;
+    }
+
+    .writing-card-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 767px) {
+    .writing-hero {
+      min-height: 43rem;
+    }
+
+    .writing-hero > img {
+      height: 51%;
+      inset: auto 0 0;
+      object-position: 68% center;
+    }
+
+    .writing-hero::after {
+      background:
+        linear-gradient(180deg, #f8f7f4 0%, rgb(248 247 244 / 0.96) 48%, rgb(248 247 244 / 0.52) 78%, rgb(248 247 244 / 0.18) 100%),
+        linear-gradient(90deg, rgb(248 247 244 / 0.96), transparent);
+    }
+
+    .writing-hero-copy {
+      min-height: 43rem;
+      justify-content: flex-start;
+      margin-left: 0;
+      padding: 4.25rem 1.25rem 0;
+      width: 100%;
+    }
+
+    .writing-hero-copy h1 {
+      font-size: clamp(3rem, 14vw, 4.5rem);
+    }
+
+    .writing-hero-copy > span {
+      max-width: 21rem;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .writing-hero-copy .primary-button,
+    .writing-feature-copy .primary-button,
+    .writing-text-link {
+      width: 100%;
+    }
+
+    .writing-feature-wrap {
+      padding-inline: 1rem;
+    }
+
+    .writing-feature-copy > div {
+      align-items: stretch;
+      gap: 1rem;
+    }
+
+    .writing-text-link {
+      justify-content: center;
+      border: 1px solid rgb(18 33 55 / 0.18);
+      border-radius: 0.25rem;
+      padding: 0.95rem 1.1rem;
+    }
+
+    .writing-tabs {
+      gap: 0.85rem 1.35rem;
+    }
+
+    .writing-card h3 {
+      min-height: 0;
+    }
+
+    .writing-card span {
+      min-height: 0;
+    }
+
+    .writing-quote {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
   .cta-premium {
     position: relative;
     overflow: hidden;
@@ -3490,6 +4893,11 @@
     display: block;
     margin-bottom: 0.35rem;
     color: #d59a48;
+  }
+
+  .highlight-experience {
+    color: #e63946;
+    text-shadow: 0 0 20px rgba(230, 57, 70, 0.5), 0 0 40px rgba(230, 57, 70, 0.3);
   }
 
   .playpics-tools-grid {

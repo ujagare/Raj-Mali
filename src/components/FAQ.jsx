@@ -32,7 +32,7 @@ const faqs = [
 
 export default function FAQ() {
   const [active, setActive] = useState(0);
-  const discoveryHref = window.location.pathname === '/contact' ? '#contact-form' : '#cta';
+  const discoveryHref = window.location.pathname === '/contact' ? '#contact-form' : '/contact#contact-form';
 
   return (
     <section id="faq" className="relative overflow-hidden bg-gradient-to-b from-white via-pearl to-white py-24">

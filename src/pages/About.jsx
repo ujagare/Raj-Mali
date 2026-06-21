@@ -35,15 +35,15 @@ const images = {
 
 const storyPoints = [
   {
-    text: "For more than twenty-three years, I have worked at the intersection of leadership, transformation and human potential.",
+    text: "24 years of deep inquiry into transformation, direct experience, and the art of challenging old paradigms.",
     Icon: PersonStanding,
   },
   {
-    text: "Over time I discovered something simple yet transformative: awareness changes the way we lead.",
+    text: "Awareness is not a concept — it is a practice. And practice changes everything about how we lead and live.",
     Icon: Flower2,
   },
   {
-    text: "My journey has moved through corporations, development programs, coaching conversations and creative exploration.",
+    text: "My work integrates conscious leadership, lifestyle design, and the power of direct experience to create real breakthroughs.",
     Icon: Leaf,
   },
   {
@@ -53,7 +53,7 @@ const storyPoints = [
 ];
 
 const stats = [
-  ["23+", "Years of Experience", PersonStanding],
+  ["24+", "Years of Experience", PersonStanding],
   ["India & Europe", "Work & Presence", Globe2],
   ["Leaders & Teams", "Transformed", UsersRound],
   ["Impact That Lasts", "Beyond Sessions", Gem],
@@ -61,10 +61,10 @@ const stats = [
 
 const timeline = [
   ["2001 - 2007", "Corporate Leadership", "Learned the art of strategy, execution and leading high-performance teams.", BriefcaseBusiness],
-  ["2007 - 2011", "Leadership Development", "Facilitated programs and discovered my passion for developing human potential.", UsersRound],
+  ["2007 - 2011", "Leadership Development", "Facilitated programs and discovered my passion for expanding awareness and conscious leadership.", UsersRound],
   ["2011 - 2016", "Executive Coaching", "Partnered with leaders to navigate change and unlock their potential.", Sparkles],
   ["2016 - 2019", "Facilitation & Speaking", "Designed and delivered transformational experiences for teams and organisations.", Presentation],
-  ["2019 - Present", "Conscious Leadership", "Integrating stillness, awareness and purpose to create meaningful impact.", Sprout],
+  ["2019 - Present", "Conscious Leadership", "Integrating stillness, awareness and conscious purpose to create meaningful, lasting impact.", Sprout],
 ];
 
 const values = [
@@ -77,7 +77,7 @@ const values = [
 const clientStats = [
   ["12+", "Trusted organisations"],
   ["4", "Major sectors served"],
-  ["23+", "Years of leadership work"],
+  ["24+", "Years of leadership work"],
 ];
 
 export default function About() {
@@ -98,8 +98,7 @@ export default function About() {
               <h1>My Journey</h1>
               <h2>From Corporate Boardrooms to Inner Landscapes</h2>
               <p>
-                Twenty-three years of leadership, transformation and human
-                potential.
+                24 Years of Inquiry, Transformation &amp; Breakthrough Results
               </p>
               <div className="about-hero-actions">
                 <a href="#about-story">
@@ -111,7 +110,7 @@ export default function About() {
               </div>
               <div className="about-hero-meta" aria-label="Raj Mali experience highlights">
                 <span>
-                  <strong>23+</strong>
+                  <strong>24+</strong>
                   Years
                 </span>
                 <span>
@@ -137,15 +136,15 @@ export default function About() {
                 <p className="about-kicker">The Story</p>
                 <h2>A Journey of Depth, Discovery & Impact.</h2>
                 <p className="about-story-lead">
-                  For more than twenty-three years, I have worked at the
-                  intersection of leadership, transformation and human
-                  potential.
+                  Over the last 24 years, I have designed and lived a unique
+                  life trajectory focused on transformation and challenging old
+                  paradigms of leadership and lifestyle design.
                 </p>
                 <div className="about-story-note">
-                  <span>Leadership, presence and purpose</span>
+                  <span>Awareness, Direct Experience &amp; Transformation</span>
                   <p>
                     Creating spaces where people slow down, listen deeply and
-                    return to their work with clarity.
+                    return to their work with renewed clarity and purpose.
                   </p>
                 </div>
                 <div className="about-story-points">
@@ -170,7 +169,7 @@ export default function About() {
               <div className="about-story-image">
                 <img src={images.stage} alt="Raj Mali addressing an audience" />
                 <div className="about-story-image-badge">
-                  <strong>23+</strong>
+                  <strong>24+</strong>
                   <span>Years of transformational work</span>
                 </div>
               </div>

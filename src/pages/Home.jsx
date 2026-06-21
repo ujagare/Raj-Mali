@@ -5,6 +5,7 @@ import TrustedBy from '../components/TrustedBy.jsx';
 import AboutSection from '../components/AboutSection.jsx';
 import Pillars from '../components/Pillars.jsx';
 import Services from '../components/Services.jsx';
+import BlogSection from '../components/BlogSection.jsx';
 import PodcastSection from '../components/PodcastSection.jsx';
 import Testimonials from '../components/Testimonials.jsx';
 import QuoteSection from '../components/QuoteSection.jsx';
@@ -51,6 +52,9 @@ export default function Home() {
         </RevealSection>
         <RevealSection>
           <Services />
+        </RevealSection>
+        <RevealSection>
+          <BlogSection />
         </RevealSection>
         <RevealSection>
           <PodcastSection />

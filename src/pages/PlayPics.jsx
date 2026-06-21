@@ -209,7 +209,7 @@ export default function PlayPics() {
             <blockquote>
               Transformation rarely happens through information alone.
               <br />
-              It happens through experience.
+              It happens through <span className="highlight-experience">Direct Experience</span>.
             </blockquote>
             <p>
               <strong>Raj Mali</strong>
