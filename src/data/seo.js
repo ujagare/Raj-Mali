@@ -1,4 +1,7 @@
-const SITE_URL = 'https://www.rajmali.com';
+const envSiteUrl = import.meta.env.VITE_SITE_URL?.replace(/\/$/, '');
+const runtimeSiteUrl =
+  typeof window === 'undefined' ? 'https://www.rajmali.com' : window.location.origin;
+const SITE_URL = envSiteUrl || runtimeSiteUrl;
 const SITE_NAME = 'Raj Mali';
 const DEFAULT_IMAGE = '/og-image.svg';
 

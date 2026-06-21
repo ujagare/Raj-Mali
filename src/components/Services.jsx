@@ -7,6 +7,7 @@ const services = [
     title: 'Leadership & Life Mastery',
     desc: 'For leaders, artists and entrepreneurs seeking.',
     img: images.notebookImage,
+    alt: 'Leadership coaching notebook for life mastery work',
     icon: UsersRound,
     href: '/contact#contact-form',
   },
@@ -14,6 +15,7 @@ const services = [
     title: 'Pattern Interrupt Coaching',
     desc: 'Break unconscious limitations and create new possibilities.',
     img: images.horizonImage,
+    alt: 'Open road symbolising pattern interrupt coaching and new possibilities',
     icon: PanelsTopLeft,
     href: '/contact#contact-form',
   },
@@ -21,6 +23,7 @@ const services = [
     title: 'Leadership Labs',
     desc: 'Transform culture, communication and performance.',
     img: images.roadImage,
+    alt: 'Pathway for leadership labs and team transformation',
     icon: BarChart3,
     href: '/workshops',
   },
@@ -59,7 +62,7 @@ export default function Services() {
                 <div className="service-image relative h-52 overflow-hidden">
                   <img decoding="async" loading="lazy"
                     src={service.img}
-                    alt="Service Img image"
+                    alt={service.alt}
                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />

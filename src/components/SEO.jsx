@@ -1,27 +1,42 @@
 import { useEffect } from 'react';
 
-const managedSelector = 'meta[data-seo="true"], link[data-seo="true"], script[data-seo="true"]';
+const managedSelector = 'link[data-seo="true"], script[data-seo="true"]';
 
 function upsertMeta(attribute, key, content) {
   if (!content) {
     return;
   }
 
-  const meta = document.createElement('meta');
+  const meta =
+    Array.from(document.head.querySelectorAll('meta')).find(
+      (node) => node.getAttribute(attribute) === key,
+    ) || document.createElement('meta');
+
   meta.setAttribute(attribute, key);
   meta.setAttribute('content', content);
   meta.setAttribute('data-seo', 'true');
-  document.head.appendChild(meta);
+
+  if (!meta.parentNode) {
+    document.head.appendChild(meta);
+  }
 }
 
 export default function SEO({ config }) {
   useEffect(() => {
+    const stagingHost =
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.hostname.endsWith('.vercel.app');
+    const shouldNoindex =
+      config.noindex ||
+      (stagingHost && import.meta.env.VITE_INDEX_STAGING !== 'true');
+
     document.querySelectorAll(managedSelector).forEach((node) => node.remove());
     document.title = config.title;
 
     upsertMeta('name', 'description', config.description);
     upsertMeta('name', 'keywords', config.keywords);
-    upsertMeta('name', 'robots', config.noindex ? 'noindex, nofollow' : 'index, follow');
+    upsertMeta('name', 'robots', shouldNoindex ? 'noindex, nofollow' : 'index, follow');
 
     upsertMeta('property', 'og:type', 'website');
     upsertMeta('property', 'og:title', config.title);

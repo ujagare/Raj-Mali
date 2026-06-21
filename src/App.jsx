@@ -1,14 +1,4 @@
-import { useEffect, useState } from 'react';
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Facilitation from './pages/Facilitation.jsx';
-import Contact from './pages/Contact.jsx';
-import PlayPics from './pages/PlayPics.jsx';
-import Writing from './pages/Writing.jsx';
-import Workshops from './pages/Workshops.jsx';
-import TestimonialsPage from './pages/TestimonialsPage.jsx';
-import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
-import NotFound from './pages/NotFound.jsx';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import SEO from './components/SEO.jsx';
 import ScrollProgress from './components/ScrollProgress.jsx';
 import SmoothScroll from './components/SmoothScroll.jsx';
@@ -16,16 +6,18 @@ import { handleInternalLinkClick } from './utils/navigation.js';
 import { notFoundSeo, routeAliases, seoByPath } from './data/seo.js';
 
 const routes = {
-  '/': Home,
-  '/about': About,
-  '/testimonials': TestimonialsPage,
-  '/facilitation': Facilitation,
-  '/writing': Writing,
-  '/workshops': Workshops,
-  '/play-pics': PlayPics,
-  '/contact': Contact,
-  '/privacy-policy': PrivacyPolicy,
+  '/': lazy(() => import('./pages/Home.jsx')),
+  '/about': lazy(() => import('./pages/About.jsx')),
+  '/testimonials': lazy(() => import('./pages/TestimonialsPage.jsx')),
+  '/facilitation': lazy(() => import('./pages/Facilitation.jsx')),
+  '/writing': lazy(() => import('./pages/Writing.jsx')),
+  '/workshops': lazy(() => import('./pages/Workshops.jsx')),
+  '/play-pics': lazy(() => import('./pages/PlayPics.jsx')),
+  '/contact': lazy(() => import('./pages/Contact.jsx')),
+  '/privacy-policy': lazy(() => import('./pages/PrivacyPolicy.jsx')),
 };
+
+const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -72,7 +64,9 @@ export default function App() {
       <SEO config={seoConfig} />
       <SmoothScroll />
       <ScrollProgress />
-      <Page />
+      <Suspense fallback={<div className="min-h-screen bg-pearl" aria-label="Loading page" />}>
+        <Page />
+      </Suspense>
     </>
   );
 }

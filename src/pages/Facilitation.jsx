@@ -190,7 +190,7 @@ export default function Facilitation() {
               {outcomes.map((outcome, index) => (
                 <div key={outcome}>
                   <span>
-                    <img decoding="async" loading="lazy" src={icons[index]} alt="[ ] image" />
+                    <img decoding="async" loading="lazy" src={icons[index]} alt={`${outcome} facilitation outcome icon`} />
                   </span>
                   <strong>{outcome}</strong>
                 </div>
@@ -213,7 +213,7 @@ export default function Facilitation() {
               {programs.map((program, index) => (
                 <article key={program} className="facilitation-program-card">
                   <span>
-                    <img decoding="async" loading="lazy" src={icons[index + 4]} alt="[ + 4] image" />
+                    <img decoding="async" loading="lazy" src={icons[index + 4]} alt={`${program} leadership program icon`} />
                   </span>
                   <h3>{program}</h3>
                 </article>
@@ -241,7 +241,7 @@ export default function Facilitation() {
                   className={step.title === "Facilitate" ? "is-compact-icon" : ""}
                 >
                   <span>
-                    <img decoding="async" loading="lazy" src={processIcons[index]} alt="Processicons[ ] image" />
+                    <img decoding="async" loading="lazy" src={processIcons[index]} alt={`${step.title} facilitation process icon`} />
                   </span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>

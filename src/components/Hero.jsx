@@ -10,7 +10,7 @@ export default function Hero() {
         transition={{ duration: 0.9, delay: 0.1 }}
         className="absolute inset-0 -z-20 h-full w-full"
       >
-        <img decoding="async" loading="lazy"
+        <img decoding="async" fetchPriority="high" loading="eager"
           src={images.workshopImage}
           alt="Raj Mali leading a group coaching session"
           className="hero-portrait hero-portrait-group h-full w-full object-cover"
@@ -28,7 +28,7 @@ export default function Hero() {
             <p className="eyebrow mb-7">Coach. Facilitator. Mentor.</p>
             <h1 className="editorial-title">
               <span className="sr-only">
-                What do you really, really want for yourself, your leaders, and your organization?
+                Raj Mali - Executive Coach, Leadership Facilitator and Mentor in India
               </span>
               <span className="hero-title-line">What Do You</span>{" "}
               <br className="hero-break-desktop" />

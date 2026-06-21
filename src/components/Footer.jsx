@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowRight, Mail, MapPin } from 'lucide-react';
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 const columns = [
   {
@@ -44,9 +44,7 @@ const columns = [
 ];
 
 const socialLinks = [
-  { label: 'Facebook', href: 'https://Facebook.com/rajmali-facebook', Icon: FaFacebookF },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rajmali', Icon: FaLinkedinIn },
-  { label: 'Twitter', href: 'https://Twitter.com/rajmali', Icon: FaTwitter },
   { label: 'Email', href: 'mailto:hello@rajmali.com', Icon: Mail },
 ];
 

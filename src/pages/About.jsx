@@ -212,8 +212,8 @@ export default function About() {
 
         <section className="about-values-section">
           <div className="site-shell about-values-shell">
-            <img decoding="async" loading="lazy" className="about-values-decor about-values-stones" src={images.stones} alt="Stones image" />
-            <img decoding="async" loading="lazy" className="about-values-decor about-values-plant" src={images.plant} alt="Plant image" />
+            <img decoding="async" loading="lazy" className="about-values-decor about-values-stones" src={images.stones} alt="Stacked stones representing grounded leadership practice" />
+            <img decoding="async" loading="lazy" className="about-values-decor about-values-plant" src={images.plant} alt="Plant representing conscious growth and renewal" />
             <div className="about-section-heading">
               <p className="about-kicker">The Values That Guide My Work</p>
               <h2>Deep work, held with lightness.</h2>
