@@ -24,7 +24,11 @@ function PageLoader() {
     <div className="page-loader" role="status" aria-live="polite" aria-label="Loading page">
       <div className="page-loader-orbit" aria-hidden="true">
         <div className="page-loader-ring" />
-        <div className="page-loader-mark">RM</div>
+        <div className="page-loader-mark">
+          <span className="page-loader-letter page-loader-letter-r">R</span>
+          <span className="page-loader-divider" />
+          <span className="page-loader-letter page-loader-letter-m">M</span>
+        </div>
       </div>
       <p className="page-loader-kicker" aria-hidden="true">Preparing the space</p>
       <span className="sr-only">Loading page</span>

@@ -136,9 +136,12 @@
   .page-loader-mark {
     position: relative;
     z-index: 1;
-    display: grid;
+    display: inline-flex;
     height: 4.7rem;
     width: 4.7rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.18rem;
     place-items: center;
     border: 1px solid rgb(38 54 74 / 0.28);
     border-radius: 9999px;
@@ -152,10 +155,34 @@
       serif;
     font-size: 1.42rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.85),
       0 18px 50px rgb(31 45 61 / 0.13);
+  }
+
+  .page-loader-letter {
+    display: inline-block;
+    min-width: 0.92rem;
+    text-align: center;
+    will-change: opacity, transform, filter;
+  }
+
+  .page-loader-letter-r {
+    animation: page-loader-letter-r 1.65s cubic-bezier(0.2, 0.82, 0.22, 1) infinite;
+  }
+
+  .page-loader-letter-m {
+    animation: page-loader-letter-m 1.65s cubic-bezier(0.2, 0.82, 0.22, 1) infinite;
+  }
+
+  .page-loader-divider {
+    display: inline-block;
+    height: 1.35rem;
+    width: 1px;
+    margin-inline: 0.1rem;
+    background: linear-gradient(180deg, transparent, #b8792a, transparent);
+    transform-origin: center;
+    animation: page-loader-divider 1.65s ease-in-out infinite;
   }
 
   .page-loader-kicker {
@@ -8487,9 +8514,59 @@
   }
 }
 
+@keyframes page-loader-letter-r {
+  0%,
+  100% {
+    opacity: 0.58;
+    filter: blur(0.5px);
+    transform: translateX(-0.28rem) translateY(0.18rem) scale(0.88);
+  }
+
+  22%,
+  64% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0) translateY(0) scale(1);
+  }
+}
+
+@keyframes page-loader-letter-m {
+  0%,
+  18%,
+  100% {
+    opacity: 0.48;
+    filter: blur(0.5px);
+    transform: translateX(0.28rem) translateY(0.18rem) scale(0.88);
+  }
+
+  40%,
+  74% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0) translateY(0) scale(1);
+  }
+}
+
+@keyframes page-loader-divider {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scaleY(0.45);
+  }
+
+  38%,
+  72% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page-loader-ring,
-  .page-loader-kicker::after {
+  .page-loader-kicker::after,
+  .page-loader-letter-r,
+  .page-loader-letter-m,
+  .page-loader-divider {
     animation: none !important;
   }
 }
