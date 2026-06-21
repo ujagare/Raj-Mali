@@ -1,0 +1,647 @@
+{
+  "webp_quality": 82,
+  "webp_method": 4,
+  "backup_dir": "_image_backup_20260621_174114",
+  "converted_count": 0,
+  "optimized_count": 103,
+  "optimized_saved_bytes": 887468,
+  "reference_files_changed": [],
+  "jsx_files_changed": [
+    "src\\components\\AboutSection.jsx",
+    "src\\components\\BlogSection.jsx",
+    "src\\components\\CTASection.jsx",
+    "src\\components\\Hero.jsx",
+    "src\\components\\Pillars.jsx",
+    "src\\components\\PodcastSection.jsx",
+    "src\\components\\QuoteSection.jsx",
+    "src\\components\\Services.jsx",
+    "src\\components\\TrustedBy.jsx",
+    "src\\pages\\About.jsx",
+    "src\\pages\\Contact.jsx",
+    "src\\pages\\Facilitation.jsx",
+    "src\\pages\\PlayPics.jsx",
+    "src\\pages\\Workshops.jsx",
+    "src\\pages\\Writing.jsx"
+  ],
+  "converted": [],
+  "optimized": [
+    {
+      "path": "src\\assets\\icons\\chatgpt-image-jun-10-2026-11-11-19-am.webp",
+      "before_bytes": 68638,
+      "after_bytes": 68452,
+      "saved_bytes": 186
+    },
+    {
+      "path": "src\\assets\\icons\\chatgpt-image-jun-10-2026-11-17-08-am.webp",
+      "before_bytes": 46912,
+      "after_bytes": 46638,
+      "saved_bytes": 274
+    },
+    {
+      "path": "src\\assets\\icons\\chatgpt-image-jun-10-2026-11-20-06-am.webp",
+      "before_bytes": 51712,
+      "after_bytes": 51638,
+      "saved_bytes": 74
+    },
+    {
+      "path": "src\\assets\\icons\\chatgpt-image-jun-10-2026-11-35-36-am.webp",
+      "before_bytes": 53610,
+      "after_bytes": 53526,
+      "saved_bytes": 84
+    },
+    {
+      "path": "src\\assets\\images\\About\\90e04fe1-0c3a-408c-b556-ae5e86828b31.webp",
+      "before_bytes": 30936,
+      "after_bytes": 30294,
+      "saved_bytes": 642
+    },
+    {
+      "path": "src\\assets\\images\\About\\929b36e9-9d35-4f57-a5e0-eacbea23a652.webp",
+      "before_bytes": 66990,
+      "after_bytes": 66338,
+      "saved_bytes": 652
+    },
+    {
+      "path": "src\\assets\\images\\About\\chatgpt-image-jun-12-2026-01-18-43-am.webp",
+      "before_bytes": 92480,
+      "after_bytes": 90184,
+      "saved_bytes": 2296
+    },
+    {
+      "path": "src\\assets\\images\\About\\chatgpt-image-jun-13-2026-12-38-27-am.webp",
+      "before_bytes": 172236,
+      "after_bytes": 169604,
+      "saved_bytes": 2632
+    },
+    {
+      "path": "src\\assets\\images\\About\\chatgpt-image-jun-13-2026-12-40-03-am.webp",
+      "before_bytes": 248000,
+      "after_bytes": 245034,
+      "saved_bytes": 2966
+    },
+    {
+      "path": "src\\assets\\images\\About\\chatgpt-image-jun-13-2026-12-50-38-am.webp",
+      "before_bytes": 118584,
+      "after_bytes": 116642,
+      "saved_bytes": 1942
+    },
+    {
+      "path": "src\\assets\\images\\About\\icons\\chatgpt-image-jun-12-2026-11-23-25-am.webp",
+      "before_bytes": 93760,
+      "after_bytes": 92680,
+      "saved_bytes": 1080
+    },
+    {
+      "path": "src\\assets\\images\\About\\icons\\chatgpt-image-jun-12-2026-11-24-54-am.webp",
+      "before_bytes": 9322,
+      "after_bytes": 8644,
+      "saved_bytes": 678
+    },
+    {
+      "path": "src\\assets\\images\\About\\icons\\chatgpt-image-jun-12-2026-11-26-22-am.webp",
+      "before_bytes": 58336,
+      "after_bytes": 56218,
+      "saved_bytes": 2118
+    },
+    {
+      "path": "src\\assets\\images\\About\\icons\\chatgpt-image-jun-12-2026-11-28-06-am.webp",
+      "before_bytes": 66974,
+      "after_bytes": 65254,
+      "saved_bytes": 1720
+    },
+    {
+      "path": "src\\assets\\images\\About\\icons\\chatgpt-image-jun-12-2026-11-29-32-am.webp",
+      "before_bytes": 54156,
+      "after_bytes": 52428,
+      "saved_bytes": 1728
+    },
+    {
+      "path": "src\\assets\\images\\chatgpt-image-jun-10-2026-10-40-55-am.webp",
+      "before_bytes": 36316,
+      "after_bytes": 30720,
+      "saved_bytes": 5596
+    },
+    {
+      "path": "src\\assets\\images\\chatgpt-image-jun-10-2026-10-49-13-am.webp",
+      "before_bytes": 191264,
+      "after_bytes": 166986,
+      "saved_bytes": 24278
+    },
+    {
+      "path": "src\\assets\\images\\chatgpt-image-jun-10-2026-10-54-30-am.webp",
+      "before_bytes": 57388,
+      "after_bytes": 48766,
+      "saved_bytes": 8622
+    },
+    {
+      "path": "src\\assets\\images\\chatgpt-image-jun-10-2026-10-56-32-am.webp",
+      "before_bytes": 112028,
+      "after_bytes": 89850,
+      "saved_bytes": 22178
+    },
+    {
+      "path": "src\\assets\\images\\chatgpt-image-jun-10-2026-10-57-01-am.webp",
+      "before_bytes": 200314,
+      "after_bytes": 166010,
+      "saved_bytes": 34304
+    },
+    {
+      "path": "src\\assets\\images\\chatgpt-image-jun-10-2026-11-00-04-am.webp",
+      "before_bytes": 191070,
+      "after_bytes": 164040,
+      "saved_bytes": 27030
+    },
+    {
+      "path": "src\\assets\\images\\chatgpt-image-jun-21-2026-04-45-01-pm.webp",
+      "before_bytes": 67048,
+      "after_bytes": 57176,
+      "saved_bytes": 9872
+    },
+    {
+      "path": "src\\assets\\images\\Contact\\chatgpt-image-jun-11-2026-08-54-42-pm.webp",
+      "before_bytes": 45998,
+      "after_bytes": 40426,
+      "saved_bytes": 5572
+    },
+    {
+      "path": "src\\assets\\images\\Contact\\chatgpt-image-jun-11-2026-08-57-03-pm.webp",
+      "before_bytes": 108152,
+      "after_bytes": 89304,
+      "saved_bytes": 18848
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\1.webp",
+      "before_bytes": 200510,
+      "after_bytes": 172046,
+      "saved_bytes": 28464
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\2.webp",
+      "before_bytes": 79858,
+      "after_bytes": 68612,
+      "saved_bytes": 11246
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\chatgpt-image-jun-11-2026-06-37-10-pm.webp",
+      "before_bytes": 92340,
+      "after_bytes": 81060,
+      "saved_bytes": 11280
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\chatgpt-image-jun-11-2026-06-38-32-pm.webp",
+      "before_bytes": 111388,
+      "after_bytes": 92402,
+      "saved_bytes": 18986
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\chatgpt-image-jun-11-2026-06-41-08-pm.webp",
+      "before_bytes": 179856,
+      "after_bytes": 152784,
+      "saved_bytes": 27072
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-21-32-pm.webp",
+      "before_bytes": 94044,
+      "after_bytes": 80058,
+      "saved_bytes": 13986
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-22-08-pm.webp",
+      "before_bytes": 221480,
+      "after_bytes": 194832,
+      "saved_bytes": 26648
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-23-19-pm.webp",
+      "before_bytes": 171714,
+      "after_bytes": 148308,
+      "saved_bytes": 23406
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-23-57-pm.webp",
+      "before_bytes": 124340,
+      "after_bytes": 105124,
+      "saved_bytes": 19216
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-24-25-pm.webp",
+      "before_bytes": 138448,
+      "after_bytes": 112386,
+      "saved_bytes": 26062
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-25-00-pm.webp",
+      "before_bytes": 100420,
+      "after_bytes": 82930,
+      "saved_bytes": 17490
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-25-38-pm.webp",
+      "before_bytes": 74104,
+      "after_bytes": 58482,
+      "saved_bytes": 15622
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-26-22-pm.webp",
+      "before_bytes": 149558,
+      "after_bytes": 127650,
+      "saved_bytes": 21908
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-29-00-pm.webp",
+      "before_bytes": 76220,
+      "after_bytes": 63926,
+      "saved_bytes": 12294
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-29-43-pm.webp",
+      "before_bytes": 67248,
+      "after_bytes": 56548,
+      "saved_bytes": 10700
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-30-21-pm.webp",
+      "before_bytes": 99258,
+      "after_bytes": 82556,
+      "saved_bytes": 16702
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\gallary\\chatgpt-image-jun-11-2026-08-31-17-pm.webp",
+      "before_bytes": 82482,
+      "after_bytes": 70584,
+      "saved_bytes": 11898
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-05-03-pm.webp",
+      "before_bytes": 67972,
+      "after_bytes": 67420,
+      "saved_bytes": 552
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-07-37-pm.webp",
+      "before_bytes": 77680,
+      "after_bytes": 76040,
+      "saved_bytes": 1640
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-09-50-pm.webp",
+      "before_bytes": 56818,
+      "after_bytes": 55958,
+      "saved_bytes": 860
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-13-06-pm.webp",
+      "before_bytes": 66382,
+      "after_bytes": 64360,
+      "saved_bytes": 2022
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-14-07-pm.webp",
+      "before_bytes": 67726,
+      "after_bytes": 67548,
+      "saved_bytes": 178
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-15-14-pm.webp",
+      "before_bytes": 80316,
+      "after_bytes": 76990,
+      "saved_bytes": 3326
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-16-35-pm.webp",
+      "before_bytes": 56142,
+      "after_bytes": 54022,
+      "saved_bytes": 2120
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-18-11-pm.webp",
+      "before_bytes": 64542,
+      "after_bytes": 62198,
+      "saved_bytes": 2344
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-19-34-pm.webp",
+      "before_bytes": 12340,
+      "after_bytes": 12186,
+      "saved_bytes": 154
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-20-26-pm.webp",
+      "before_bytes": 16746,
+      "after_bytes": 16312,
+      "saved_bytes": 434
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-27-37-pm.webp",
+      "before_bytes": 70724,
+      "after_bytes": 69732,
+      "saved_bytes": 992
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-27-49-pm.webp",
+      "before_bytes": 16152,
+      "after_bytes": 15854,
+      "saved_bytes": 298
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-30-30-pm.webp",
+      "before_bytes": 63948,
+      "after_bytes": 63314,
+      "saved_bytes": 634
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-07-43-19-pm.webp",
+      "before_bytes": 18410,
+      "after_bytes": 18372,
+      "saved_bytes": 38
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-08-11-33-pm.webp",
+      "before_bytes": 74156,
+      "after_bytes": 72816,
+      "saved_bytes": 1340
+    },
+    {
+      "path": "src\\assets\\images\\Facilitator\\icons\\chatgpt-image-jun-11-2026-08-16-14-pm.webp",
+      "before_bytes": 46472,
+      "after_bytes": 45418,
+      "saved_bytes": 1054
+    },
+    {
+      "path": "src\\assets\\images\\Icons\\cap-gemini-logo.webp",
+      "before_bytes": 3176,
+      "after_bytes": 2830,
+      "saved_bytes": 346
+    },
+    {
+      "path": "src\\assets\\images\\Icons\\imocha.webp",
+      "before_bytes": 3364,
+      "after_bytes": 3154,
+      "saved_bytes": 210
+    },
+    {
+      "path": "src\\assets\\images\\Icons\\sbi-logo-main.webp",
+      "before_bytes": 2688,
+      "after_bytes": 2456,
+      "saved_bytes": 232
+    },
+    {
+      "path": "src\\assets\\images\\Mobile\\chatgpt-image-jun-11-2026-12-00-28-am.webp",
+      "before_bytes": 66672,
+      "after_bytes": 57642,
+      "saved_bytes": 9030
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-11-2026-07-16-35-pm.webp",
+      "before_bytes": 56142,
+      "after_bytes": 54022,
+      "saved_bytes": 2120
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-24-58-pm.webp",
+      "before_bytes": 63458,
+      "after_bytes": 60508,
+      "saved_bytes": 2950
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-27-08-pm.webp",
+      "before_bytes": 76610,
+      "after_bytes": 73212,
+      "saved_bytes": 3398
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-28-17-pm.webp",
+      "before_bytes": 42738,
+      "after_bytes": 40674,
+      "saved_bytes": 2064
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-28-37-pm.webp",
+      "before_bytes": 101764,
+      "after_bytes": 98210,
+      "saved_bytes": 3554
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-29-36-pm.webp",
+      "before_bytes": 60794,
+      "after_bytes": 57954,
+      "saved_bytes": 2840
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-30-19-pm.webp",
+      "before_bytes": 77052,
+      "after_bytes": 73942,
+      "saved_bytes": 3110
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-33-14-pm.webp",
+      "before_bytes": 64298,
+      "after_bytes": 61898,
+      "saved_bytes": 2400
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-34-22-pm.webp",
+      "before_bytes": 76816,
+      "after_bytes": 73860,
+      "saved_bytes": 2956
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-35-34-pm.webp",
+      "before_bytes": 57944,
+      "after_bytes": 55714,
+      "saved_bytes": 2230
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\Icons\\chatgpt-image-jun-13-2026-03-58-55-pm.webp",
+      "before_bytes": 115730,
+      "after_bytes": 111644,
+      "saved_bytes": 4086
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\image0-1.webp",
+      "before_bytes": 37594,
+      "after_bytes": 37228,
+      "saved_bytes": 366
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\image0.webp",
+      "before_bytes": 54950,
+      "after_bytes": 54696,
+      "saved_bytes": 254
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\image1-1.webp",
+      "before_bytes": 38130,
+      "after_bytes": 37858,
+      "saved_bytes": 272
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\image1.webp",
+      "before_bytes": 21592,
+      "after_bytes": 20782,
+      "saved_bytes": 810
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\image2-1.webp",
+      "before_bytes": 44432,
+      "after_bytes": 44020,
+      "saved_bytes": 412
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\image2.webp",
+      "before_bytes": 231072,
+      "after_bytes": 199596,
+      "saved_bytes": 31476
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\image3.webp",
+      "before_bytes": 32792,
+      "after_bytes": 32134,
+      "saved_bytes": 658
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\img-1831.webp",
+      "before_bytes": 23502,
+      "after_bytes": 22554,
+      "saved_bytes": 948
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\photo11.webp",
+      "before_bytes": 141636,
+      "after_bytes": 119246,
+      "saved_bytes": 22390
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\photo12.webp",
+      "before_bytes": 98700,
+      "after_bytes": 82316,
+      "saved_bytes": 16384
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\photo14.webp",
+      "before_bytes": 142082,
+      "after_bytes": 117366,
+      "saved_bytes": 24716
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\photo8.webp",
+      "before_bytes": 225726,
+      "after_bytes": 210520,
+      "saved_bytes": 15206
+    },
+    {
+      "path": "src\\assets\\images\\playpics\\photo9.webp",
+      "before_bytes": 261012,
+      "after_bytes": 228340,
+      "saved_bytes": 32672
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\d3101eef-7bf2-443c-b050-a729f215223d.webp",
+      "before_bytes": 187478,
+      "after_bytes": 155286,
+      "saved_bytes": 32192
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\image0-1.webp",
+      "before_bytes": 37594,
+      "after_bytes": 37228,
+      "saved_bytes": 366
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\image0.webp",
+      "before_bytes": 54950,
+      "after_bytes": 54696,
+      "saved_bytes": 254
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\image1-1.webp",
+      "before_bytes": 38130,
+      "after_bytes": 37858,
+      "saved_bytes": 272
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\image1.webp",
+      "before_bytes": 21592,
+      "after_bytes": 20782,
+      "saved_bytes": 810
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\image2-1.webp",
+      "before_bytes": 44432,
+      "after_bytes": 44020,
+      "saved_bytes": 412
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\image2.webp",
+      "before_bytes": 54628,
+      "after_bytes": 53478,
+      "saved_bytes": 1150
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\image3.webp",
+      "before_bytes": 32792,
+      "after_bytes": 32134,
+      "saved_bytes": 658
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\img-1831.webp",
+      "before_bytes": 23502,
+      "after_bytes": 22554,
+      "saved_bytes": 948
+    },
+    {
+      "path": "src\\assets\\images\\podcast\\podcast-thumbnail.webp",
+      "before_bytes": 30646,
+      "after_bytes": 28354,
+      "saved_bytes": 2292
+    },
+    {
+      "path": "src\\assets\\images\\Writing\\chatgpt-image-jun-21-2026-02-07-11-pm.webp",
+      "before_bytes": 48210,
+      "after_bytes": 41050,
+      "saved_bytes": 7160
+    },
+    {
+      "path": "src\\assets\\images\\Writing\\chatgpt-image-jun-21-2026-02-41-11-pm.webp",
+      "before_bytes": 37294,
+      "after_bytes": 31960,
+      "saved_bytes": 5334
+    },
+    {
+      "path": "src\\assets\\images\\Writing\\chatgpt-image-jun-21-2026-02-44-49-pm.webp",
+      "before_bytes": 428552,
+      "after_bytes": 388346,
+      "saved_bytes": 40206
+    },
+    {
+      "path": "src\\assets\\images\\Writing\\chatgpt-image-jun-21-2026-02-45-02-pm.webp",
+      "before_bytes": 147342,
+      "after_bytes": 132878,
+      "saved_bytes": 14464
+    },
+    {
+      "path": "src\\assets\\images\\Writing\\chatgpt-image-jun-21-2026-02-45-50-pm.webp",
+      "before_bytes": 254764,
+      "after_bytes": 222396,
+      "saved_bytes": 32368
+    },
+    {
+      "path": "src\\assets\\images\\Writing\\chatgpt-image-jun-21-2026-02-46-26-pm.webp",
+      "before_bytes": 229198,
+      "after_bytes": 197582,
+      "saved_bytes": 31616
+    },
+    {
+      "path": "src\\assets\\images\\Writing\\chatgpt-image-jun-21-2026-02-46-39-pm.webp",
+      "before_bytes": 80888,
+      "after_bytes": 69792,
+      "saved_bytes": 11096
+    },
+    {
+      "path": "src\\assets\\images\\Writing\\chatgpt-image-jun-21-2026-02-49-47-pm.webp",
+      "before_bytes": 118956,
+      "after_bytes": 107514,
+      "saved_bytes": 11442
+    }
+  ]
+}

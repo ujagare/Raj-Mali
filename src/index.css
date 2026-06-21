@@ -106,6 +106,252 @@
     @apply text-[0.66rem] font-extrabold uppercase tracking-[0.12em] text-ink transition hover:text-navy/65;
   }
 
+  .mobile-menu-trigger {
+    display: grid;
+    height: 2.9rem;
+    width: 2.9rem;
+    place-items: center;
+    border: 1px solid rgb(23 34 52 / 0.12);
+    border-radius: 0.35rem;
+    background: rgb(255 255 255 / 0.62);
+    color: #172234;
+    box-shadow: 0 10px 28px rgb(31 45 61 / 0.08);
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .mobile-menu-trigger:hover {
+    border-color: rgb(38 54 74 / 0.28);
+    background: white;
+    transform: translateY(-1px);
+  }
+
+  .mobile-menu-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+  }
+
+  .mobile-menu-backdrop {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgb(23 34 52 / 0.42), rgb(23 34 52 / 0.18)),
+      rgb(244 247 249 / 0.62);
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
+  }
+
+  .mobile-menu-panel {
+    position: relative;
+    display: flex;
+    width: min(86vw, 23rem);
+    height: 100%;
+    flex-direction: column;
+    overflow-y: auto;
+    border-right: 1px solid rgb(23 34 52 / 0.12);
+    background:
+      radial-gradient(circle at 12% 8%, rgb(255 255 255 / 0.95), transparent 11rem),
+      linear-gradient(180deg, #f4f7f9 0%, #ffffff 54%, #e7edf2 100%);
+    box-shadow: 28px 0 80px rgb(23 34 52 / 0.22);
+    pointer-events: auto;
+  }
+
+  .mobile-menu-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgb(23 34 52 / 0.045) 1px, transparent 1px),
+      linear-gradient(180deg, rgb(23 34 52 / 0.04) 1px, transparent 1px);
+    background-size: 3.8rem 3.8rem;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .mobile-menu-panel > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .mobile-menu-panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid rgb(23 34 52 / 0.08);
+    padding: 0.85rem 1rem 0.75rem;
+  }
+
+  .mobile-menu-brand {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.75rem;
+    color: #172234;
+  }
+
+  .mobile-menu-brand span {
+    display: grid;
+    height: 2.45rem;
+    width: 2.45rem;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid rgb(38 54 74 / 0.58);
+    border-radius: 9999px;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #26364a;
+  }
+
+  .mobile-menu-brand strong {
+    overflow: hidden;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: 1.12rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-close {
+    display: grid;
+    height: 2.25rem;
+    width: 2.25rem;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid rgb(23 34 52 / 0.1);
+    border-radius: 0.35rem;
+    background: white;
+    color: #172234;
+    box-shadow: 0 10px 24px rgb(31 45 61 / 0.08);
+  }
+
+  .mobile-menu-intro {
+    padding: 0.95rem 1rem 0.8rem;
+  }
+
+  .mobile-menu-intro p {
+    color: rgb(38 54 74 / 0.75);
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .mobile-menu-intro h2 {
+    margin-top: 0.35rem;
+    color: #172234;
+    font-family:
+      Cormorant Garamond,
+      Georgia,
+      serif;
+    font-size: 1.78rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .mobile-menu-nav {
+    display: grid;
+    gap: 0.28rem;
+    padding: 0 0.75rem 0.8rem;
+  }
+
+  .mobile-menu-link {
+    display: flex;
+    min-height: 2.65rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.9rem;
+    border: 1px solid transparent;
+    border-radius: 0.45rem;
+    padding: 0.62rem 0.85rem;
+    color: rgb(23 34 52 / 0.76);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .mobile-menu-link svg {
+    flex-shrink: 0;
+    color: rgb(38 54 74 / 0.48);
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .mobile-menu-link:hover,
+  .mobile-menu-link.is-active {
+    border-color: rgb(38 54 74 / 0.14);
+    background: rgb(255 255 255 / 0.82);
+    color: #172234;
+    box-shadow: 0 12px 28px rgb(31 45 61 / 0.07);
+    transform: translateX(2px);
+  }
+
+  .mobile-menu-link:hover svg,
+  .mobile-menu-link.is-active svg {
+    color: #26364a;
+    transform: translateX(2px);
+  }
+
+  .mobile-menu-link.is-active {
+    box-shadow:
+      inset 3px 0 0 #26364a,
+      0 12px 28px rgb(31 45 61 / 0.07);
+  }
+
+  .mobile-menu-link.is-redm {
+    color: #dc2626;
+  }
+
+  .mobile-menu-link.is-redm svg {
+    color: rgb(220 38 38 / 0.62);
+  }
+
+  .mobile-menu-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: auto 1rem 0.9rem;
+    border-radius: 0.35rem;
+    background: #26364a;
+    padding: 0.85rem 1rem;
+    color: white;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 18px 42px rgb(31 45 61 / 0.18);
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .mobile-menu-cta:hover {
+    background: #172234;
+    transform: translateY(-2px);
+  }
+
   .primary-button {
     @apply inline-flex items-center justify-center gap-3 rounded bg-navy px-7 py-4 text-[0.68rem] font-extrabold uppercase tracking-[0.13em] text-white shadow-soft transition duration-300 hover:-translate-y-0.5 hover:bg-ink hover:shadow-premium;
   }

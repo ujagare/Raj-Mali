@@ -14,51 +14,51 @@ const facilitatorGalleryImage = (fileName) =>
     .href;
 
 const images = {
-  hero: facilitatorImage("2.png"),
-  meeting: facilitatorImage("1.png"),
-  growth: facilitatorImage("ChatGPT Image Jun 11, 2026, 06_37_10 PM.png"),
-  dialogue: facilitatorImage("ChatGPT Image Jun 11, 2026, 06_38_32 PM.png"),
-  compass: facilitatorImage("ChatGPT Image Jun 11, 2026, 06_41_08 PM.png"),
+  hero: facilitatorImage("2.webp"),
+  meeting: facilitatorImage("1.webp"),
+  growth: facilitatorImage("chatgpt-image-jun-11-2026-06-37-10-pm.webp"),
+  dialogue: facilitatorImage("chatgpt-image-jun-11-2026-06-38-32-pm.webp"),
+  compass: facilitatorImage("chatgpt-image-jun-11-2026-06-41-08-pm.webp"),
 };
 
 const icons = [
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_05_03 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_07_37 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_09_50 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_13_06 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_14_07 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_15_14 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_16_35 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_17_26 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_18_11 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_19_34 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_20_26 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_27_37 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_27_49 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_30_30 PM.png"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-05-03-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-07-37-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-09-50-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-13-06-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-14-07-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-15-14-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-16-35-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-17-26-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-18-11-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-19-34-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-20-26-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-27-37-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-27-49-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-30-30-pm.webp"),
 ];
 
 const processIcons = [
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 08_11_33 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 08_16_14 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_43_19 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_27_37 PM.png"),
-  facilitatorIcon("ChatGPT Image Jun 11, 2026, 07_30_30 PM.png"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-08-11-33-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-08-16-14-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-43-19-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-27-37-pm.webp"),
+  facilitatorIcon("chatgpt-image-jun-11-2026-07-30-30-pm.webp"),
 ];
 
 const actionGallery = [
-  "ChatGPT Image Jun 11, 2026, 08_21_32 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_22_08 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_23_19 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_23_57 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_24_25 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_25_00 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_25_38 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_26_22 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_29_00 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_29_43 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_30_21 PM.png",
-  "ChatGPT Image Jun 11, 2026, 08_31_17 PM.png",
+  "chatgpt-image-jun-11-2026-08-21-32-pm.webp",
+  "chatgpt-image-jun-11-2026-08-22-08-pm.webp",
+  "chatgpt-image-jun-11-2026-08-23-19-pm.webp",
+  "chatgpt-image-jun-11-2026-08-23-57-pm.webp",
+  "chatgpt-image-jun-11-2026-08-24-25-pm.webp",
+  "chatgpt-image-jun-11-2026-08-25-00-pm.webp",
+  "chatgpt-image-jun-11-2026-08-25-38-pm.webp",
+  "chatgpt-image-jun-11-2026-08-26-22-pm.webp",
+  "chatgpt-image-jun-11-2026-08-29-00-pm.webp",
+  "chatgpt-image-jun-11-2026-08-29-43-pm.webp",
+  "chatgpt-image-jun-11-2026-08-30-21-pm.webp",
+  "chatgpt-image-jun-11-2026-08-31-17-pm.webp",
 ].map((fileName) => facilitatorGalleryImage(fileName));
 
 const outcomes = ["Leadership", "Strategy", "Alignment", "Growth"];
@@ -130,7 +130,11 @@ export default function Facilitation() {
       <Navbar />
       <main>
         <section id="facilitation" className="facilitation-hero">
-          <img src={images.hero} alt="" className="facilitation-hero-image" />
+          <img decoding="async" loading="lazy"
+            src={images.hero}
+            alt="Leadership team facilitation room prepared for a Raj Mali workshop"
+            className="facilitation-hero-image"
+          />
           <div className="facilitation-hero-wash" />
           <div className="site-shell facilitation-hero-shell">
             <div className="facilitation-hero-copy">
@@ -157,7 +161,7 @@ export default function Facilitation() {
 
         <section className="facilitation-intro site-shell">
           <div className="facilitation-video-card">
-            <img
+            <img decoding="async" loading="lazy"
               src={images.meeting}
               alt="A prepared leadership facilitation room"
             />
@@ -186,7 +190,7 @@ export default function Facilitation() {
               {outcomes.map((outcome, index) => (
                 <div key={outcome}>
                   <span>
-                    <img src={icons[index]} alt="" />
+                    <img decoding="async" loading="lazy" src={icons[index]} alt="[ ] image" />
                   </span>
                   <strong>{outcome}</strong>
                 </div>
@@ -209,7 +213,7 @@ export default function Facilitation() {
               {programs.map((program, index) => (
                 <article key={program} className="facilitation-program-card">
                   <span>
-                    <img src={icons[index + 4]} alt="" />
+                    <img decoding="async" loading="lazy" src={icons[index + 4]} alt="[ + 4] image" />
                   </span>
                   <h3>{program}</h3>
                 </article>
@@ -237,7 +241,7 @@ export default function Facilitation() {
                   className={step.title === "Facilitate" ? "is-compact-icon" : ""}
                 >
                   <span>
-                    <img src={processIcons[index]} alt="" />
+                    <img decoding="async" loading="lazy" src={processIcons[index]} alt="Processicons[ ] image" />
                   </span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
@@ -256,7 +260,7 @@ export default function Facilitation() {
             <div className="facilitation-gallery-grid">
               {actionGallery.map((image, index) => (
                 <article key={image} className="facilitation-gallery-card">
-                  <img
+                  <img decoding="async" loading="lazy"
                     src={image}
                     alt={`Facilitation in action ${index + 1}`}
                   />
@@ -269,7 +273,7 @@ export default function Facilitation() {
         <section className="facilitation-insights site-shell">
           {insightCards.map((card) => (
             <article key={card.title} className="facilitation-insight-card">
-              <img src={card.image} alt="" />
+              <img decoding="async" loading="lazy" src={card.image} alt={`${card.title} facilitation insight`} />
               <div>
                 <h3>{card.title}</h3>
                 <span />

@@ -7,9 +7,25 @@ import PlayPics from './pages/PlayPics.jsx';
 import Writing from './pages/Writing.jsx';
 import Workshops from './pages/Workshops.jsx';
 import TestimonialsPage from './pages/TestimonialsPage.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
+import NotFound from './pages/NotFound.jsx';
+import SEO from './components/SEO.jsx';
 import ScrollProgress from './components/ScrollProgress.jsx';
 import SmoothScroll from './components/SmoothScroll.jsx';
 import { handleInternalLinkClick } from './utils/navigation.js';
+import { notFoundSeo, routeAliases, seoByPath } from './data/seo.js';
+
+const routes = {
+  '/': Home,
+  '/about': About,
+  '/testimonials': TestimonialsPage,
+  '/facilitation': Facilitation,
+  '/writing': Writing,
+  '/workshops': Workshops,
+  '/play-pics': PlayPics,
+  '/contact': Contact,
+  '/privacy-policy': PrivacyPolicy,
+};
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -46,26 +62,14 @@ export default function App() {
     return () => window.clearTimeout(timer);
   }, [currentPath]);
 
-  const path = currentPath.replace(/\/$/, '');
-  const Page =
-    path === '/about'
-      ? About
-      : path === '/testimonials'
-        ? TestimonialsPage
-        : path === '/facilitation'
-          ? Facilitation
-          : path === '/writing'
-            ? Writing
-            : path === '/workshops'
-              ? Workshops
-              : path === '/play-pics' || path === '/playpics' || path === '/playpic'
-                ? PlayPics
-                : path === '/contact'
-                  ? Contact
-                  : Home;
+  const normalizedPath = currentPath === '/' ? '/' : currentPath.replace(/\/$/, '');
+  const canonicalPath = routeAliases[normalizedPath] || normalizedPath;
+  const Page = routes[canonicalPath] || NotFound;
+  const seoConfig = seoByPath[canonicalPath] || notFoundSeo;
 
   return (
     <>
+      <SEO config={seoConfig} />
       <SmoothScroll />
       <ScrollProgress />
       <Page />

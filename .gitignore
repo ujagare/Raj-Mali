@@ -10,4 +10,7 @@ pnpm-debug.log*
 # Local visual QA screenshots
 /*.png
 
+# Generated local image backups
+_image_backup_*/
+
 .vercel

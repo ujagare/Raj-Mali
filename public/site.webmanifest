@@ -1,0 +1,17 @@
+{
+  "name": "Raj Mali",
+  "short_name": "Raj Mali",
+  "description": "Executive coaching, leadership facilitation and mentoring by Raj Mali.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f7f4",
+  "theme_color": "#10233f",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

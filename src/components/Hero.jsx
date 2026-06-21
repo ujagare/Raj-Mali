@@ -10,7 +10,7 @@ export default function Hero() {
         transition={{ duration: 0.9, delay: 0.1 }}
         className="absolute inset-0 -z-20 h-full w-full"
       >
-        <img
+        <img decoding="async" loading="lazy"
           src={images.workshopImage}
           alt="Raj Mali leading a group coaching session"
           className="hero-portrait hero-portrait-group h-full w-full object-cover"
@@ -27,6 +27,9 @@ export default function Hero() {
           <div className="hero-headline">
             <p className="eyebrow mb-7">Coach. Facilitator. Mentor.</p>
             <h1 className="editorial-title">
+              <span className="sr-only">
+                Raj Mali executive coach, leadership facilitator and mentor in Pune, India.
+              </span>
               <span className="hero-title-line">Wake Up.</span>{" "}
               <br className="hero-break-desktop" />
               <span className="hero-title-line">Dream it.</span>{" "}

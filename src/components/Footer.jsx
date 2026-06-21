@@ -37,7 +37,7 @@ const columns = [
       ['About', '/about'],
       ['Testimonials', '/testimonials'],
       ['Media & Press', '/contact'],
-      ['Privacy Policy', '/contact'],
+      ['Privacy Policy', '/privacy-policy'],
     ],
   },
 ];
@@ -135,7 +135,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>© 2026 Raj Mali. All Rights Reserved.</p>
-          <a href="/">Privacy Policy</a>
+          <a href="/privacy-policy">Privacy Policy</a>
         </div>
       </div>
     </footer>

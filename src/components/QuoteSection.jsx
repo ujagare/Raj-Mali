@@ -18,7 +18,7 @@ export default function QuoteSection() {
         </div>
 
         <ImageReveal className="quote-art" intensity={18}>
-          <img
+          <img decoding="async" loading="lazy"
             src={images.bookStackImage}
             alt="Books and a plant"
             className="quote-image"

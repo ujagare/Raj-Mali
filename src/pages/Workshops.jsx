@@ -16,10 +16,10 @@ import Footer from "../components/Footer.jsx";
 const workshopImage = (fileName) =>
   new URL(`../assets/images/Facilitator/${fileName}`, import.meta.url).href;
 
-const heroImage = workshopImage("2.png");
+const heroImage = workshopImage("2.webp");
 
 const heroRightImage = new URL(
-  `../assets/images/ChatGPT Image Jun 21, 2026, 04_45_01 PM.png`,
+  `../assets/images/chatgpt-image-jun-21-2026-04-45-01-pm.webp`,
   import.meta.url,
 ).href;
 
@@ -102,7 +102,7 @@ export default function Workshops() {
             </span>
           </div>
           <div className="workshops-hero-media">
-            <img src={heroRightImage} alt="A premium leadership workshop setting" />
+            <img decoding="async" loading="lazy" src={heroRightImage} alt="A premium leadership workshop setting" />
           </div>
         </section>
 

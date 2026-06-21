@@ -11,29 +11,29 @@ const playIcon = (fileName) =>
   new URL(`../assets/images/playpics/Icons/${fileName}`, import.meta.url).href;
 
 const images = {
-  hero: playImage("image2.png"),
-  galleryOne: playImage("photo12.jpg"),
+  hero: playImage("image2.webp"),
+  galleryOne: playImage("photo12.webp"),
   galleryTwo: playImage("image1-1.webp"),
   galleryThree: playImage("image0.webp"),
-  galleryFour: playImage("photo8.jpg"),
+  galleryFour: playImage("photo8.webp"),
   galleryFive: playImage("image0-1.webp"),
-  gallerySix: playImage("photo14.jpg"),
-  toolMovement: playImage("image2.png"),
-  toolDialogue: playImage("photo11.jpg"),
+  gallerySix: playImage("photo14.webp"),
+  toolMovement: playImage("image2.webp"),
+  toolDialogue: playImage("photo11.webp"),
   toolLearning: playImage("image2-1.webp"),
-  toolRhythm: playImage("photo12.jpg"),
+  toolRhythm: playImage("photo12.webp"),
   cta: playImage("image3.webp"),
 };
 
 const icons = {
-  connection: playIcon("ChatGPT Image Jun 11, 2026, 07_16_35 PM.png"),
-  dialogue: playIcon("ChatGPT Image Jun 13, 2026, 03_24_58 PM.png"),
-  awareness: playIcon("ChatGPT Image Jun 13, 2026, 03_27_08 PM.png"),
-  movement: playIcon("ChatGPT Image Jun 13, 2026, 03_28_17 PM.png"),
-  rhythm: playIcon("ChatGPT Image Jun 13, 2026, 03_28_37 PM.png"),
-  creativity: playIcon("ChatGPT Image Jun 13, 2026, 03_29_36 PM.png"),
-  reflection: playIcon("ChatGPT Image Jun 13, 2026, 03_30_19 PM.png"),
-  arrival: playIcon("ChatGPT Image Jun 13, 2026, 03_31_40 PM.png"),
+  connection: playIcon("chatgpt-image-jun-11-2026-07-16-35-pm.webp"),
+  dialogue: playIcon("chatgpt-image-jun-13-2026-03-24-58-pm.webp"),
+  awareness: playIcon("chatgpt-image-jun-13-2026-03-27-08-pm.webp"),
+  movement: playIcon("chatgpt-image-jun-13-2026-03-28-17-pm.webp"),
+  rhythm: playIcon("chatgpt-image-jun-13-2026-03-28-37-pm.webp"),
+  creativity: playIcon("chatgpt-image-jun-13-2026-03-29-36-pm.webp"),
+  reflection: playIcon("chatgpt-image-jun-13-2026-03-30-19-pm.webp"),
+  arrival: playIcon("chatgpt-image-jun-13-2026-03-31-40-pm.webp"),
 };
 
 const principles = [
@@ -112,7 +112,7 @@ export default function PlayPics() {
       <Navbar />
       <main>
         <section className="playpics-hero">
-          <img src={images.hero} alt="Leaders participating in organic play" />
+          <img decoding="async" loading="lazy" src={images.hero} alt="Leaders participating in organic play" />
           <div className="playpics-hero-wash" />
           <div className="site-shell playpics-hero-shell">
             <div className="playpics-hero-copy">
@@ -153,7 +153,7 @@ export default function PlayPics() {
               {principles.map(([title, text, icon]) => (
                 <article key={title}>
                   <span>
-                    <img src={icon} alt="" />
+                    <img decoding="async" loading="lazy" src={icon} alt={`${title} organic play practice icon`} />
                   </span>
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -177,7 +177,7 @@ export default function PlayPics() {
                   onClick={() => setActiveImageIndex(index)}
                   aria-label={`Open organic play image ${index + 1}`}
                 >
-                  <img src={image} alt={`Organic play session moment ${index + 1}`} />
+                  <img decoding="async" loading="lazy" src={image} alt={`Organic play session moment ${index + 1}`} />
                 </button>
               ))}
             </div>
@@ -194,7 +194,7 @@ export default function PlayPics() {
               {journey.map(([title, text, icon]) => (
                 <article key={title}>
                   <span>
-                    <img src={icon} alt="" />
+                    <img decoding="async" loading="lazy" src={icon} alt={`${title} organic play journey icon`} />
                   </span>
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -226,7 +226,7 @@ export default function PlayPics() {
             <div className="playpics-tools-grid">
               {tools.map(([title, text, image]) => (
                 <article key={title}>
-                  <img src={image} alt="" />
+                  <img decoding="async" loading="lazy" src={image} alt={`${title} experiential leadership activity`} />
                   <div>
                     <h3>{title}</h3>
                     <p>{text}</p>
@@ -240,7 +240,7 @@ export default function PlayPics() {
         <Testimonials />
 
         <section className="playpics-cta">
-          <img src={images.cta} alt="" />
+          <img decoding="async" loading="lazy" src={images.cta} alt="Organic play leadership session" />
           <div className="playpics-cta-wash" />
           <div className="site-shell playpics-cta-shell">
             <div>
@@ -279,7 +279,7 @@ export default function PlayPics() {
           >
             <ChevronLeft size={30} />
           </button>
-          <img
+          <img decoding="async" loading="lazy"
             src={galleryImages[activeImageIndex]}
             alt={`Organic play session moment ${activeImageIndex + 1}`}
           />

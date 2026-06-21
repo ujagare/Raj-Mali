@@ -42,7 +42,7 @@ export default function PodcastSection() {
                 onClick={() => setIsPlaying(true)}
                 aria-label="Play Raj Mali podcast"
               >
-                <img src={images.podcastThumbnail} alt="" />
+                <img decoding="async" loading="lazy" src={images.podcastThumbnail} alt="Raj Mali podcast episode thumbnail" />
                 <span className="podcast-center-play">
                   <Play size={34} className="fill-current" />
                 </span>

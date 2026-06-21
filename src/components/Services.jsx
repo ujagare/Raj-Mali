@@ -57,9 +57,9 @@ export default function Services() {
                 className="service-card group relative overflow-hidden rounded-md border border-ink/10 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:border-navy/25 hover:shadow-premium"
               >
                 <div className="service-image relative h-52 overflow-hidden">
-                  <img
+                  <img decoding="async" loading="lazy"
                     src={service.img}
-                    alt=""
+                    alt="Service Img image"
                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />

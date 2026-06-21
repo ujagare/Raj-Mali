@@ -22,15 +22,15 @@ const aboutImage = (fileName) =>
   new URL(`../assets/images/About/${fileName}`, import.meta.url).href;
 
 const images = {
-  hero: aboutImage("90e04fe1-0c3a-408c-b556-ae5e86828b31.png"),
-  heroMobile: aboutImage("929b36e9-9d35-4f57-a5e0-eacbea23a652.png"),
-  stage: aboutImage("ChatGPT Image Jun 12, 2026, 01_18_43 AM.png"),
-  stones: aboutImage("ChatGPT Image Jun 12, 2026, 11_13_58 AM.png"),
-  plant: aboutImage("ChatGPT Image Jun 12, 2026, 11_14_10 AM.png"),
-  books: aboutImage("ChatGPT Image Jun 12, 2026, 11_17_12 AM.png"),
-  galleryOne: aboutImage("ChatGPT Image Jun 13, 2026, 12_38_27 AM.png"),
-  galleryTwo: aboutImage("ChatGPT Image Jun 13, 2026, 12_40_03 AM.png"),
-  galleryThree: aboutImage("ChatGPT Image Jun 13, 2026, 12_50_38 AM.png"),
+  hero: aboutImage("90e04fe1-0c3a-408c-b556-ae5e86828b31.webp"),
+  heroMobile: aboutImage("929b36e9-9d35-4f57-a5e0-eacbea23a652.webp"),
+  stage: aboutImage("chatgpt-image-jun-12-2026-01-18-43-am.webp"),
+  stones: aboutImage("chatgpt-image-jun-12-2026-11-13-58-am.webp"),
+  plant: aboutImage("chatgpt-image-jun-12-2026-11-14-10-am.webp"),
+  books: aboutImage("chatgpt-image-jun-12-2026-11-17-12-am.webp"),
+  galleryOne: aboutImage("chatgpt-image-jun-13-2026-12-38-27-am.webp"),
+  galleryTwo: aboutImage("chatgpt-image-jun-13-2026-12-40-03-am.webp"),
+  galleryThree: aboutImage("chatgpt-image-jun-13-2026-12-50-38-am.webp"),
 };
 
 const storyPoints = [
@@ -88,7 +88,7 @@ export default function About() {
         <section className="about-hero">
           <picture>
             <source media="(max-width: 767px)" srcSet={images.heroMobile} />
-            <img src={images.hero} alt="Raj Mali speaking on stage" />
+            <img decoding="async" loading="lazy" src={images.hero} alt="Raj Mali speaking on stage" />
           </picture>
           <div className="about-hero-aura" />
           <div className="about-hero-wash" />
@@ -167,7 +167,7 @@ export default function About() {
                 </div>
               </div>
               <div className="about-story-image">
-                <img src={images.stage} alt="Raj Mali addressing an audience" />
+                <img decoding="async" loading="lazy" src={images.stage} alt="Raj Mali addressing an audience" />
                 <div className="about-story-image-badge">
                   <strong>24+</strong>
                   <span>Years of transformational work</span>
@@ -212,8 +212,8 @@ export default function About() {
 
         <section className="about-values-section">
           <div className="site-shell about-values-shell">
-            <img className="about-values-decor about-values-stones" src={images.stones} alt="" />
-            <img className="about-values-decor about-values-plant" src={images.plant} alt="" />
+            <img decoding="async" loading="lazy" className="about-values-decor about-values-stones" src={images.stones} alt="Stones image" />
+            <img decoding="async" loading="lazy" className="about-values-decor about-values-plant" src={images.plant} alt="Plant image" />
             <div className="about-section-heading">
               <p className="about-kicker">The Values That Guide My Work</p>
               <h2>Deep work, held with lightness.</h2>
@@ -260,7 +260,7 @@ export default function About() {
               {clientLogos.map((logo) => (
                 <article key={logo.name}>
                   <span>
-                    <img src={logo.src} alt={logo.name} />
+                    <img decoding="async" loading="lazy" src={logo.src} alt={logo.name} />
                   </span>
                   <p>{logo.name}</p>
                 </article>
@@ -272,9 +272,9 @@ export default function About() {
         <section className="about-gallery-section">
           <div className="site-shell">
             <div className="about-gallery-grid">
-              <img src={images.galleryOne} alt="Raj Mali speaking" />
-              <img src={images.galleryTwo} alt="Audience session" />
-              <img src={images.galleryThree} alt="Awareness books" />
+              <img decoding="async" loading="lazy" src={images.galleryOne} alt="Raj Mali speaking" />
+              <img decoding="async" loading="lazy" src={images.galleryTwo} alt="Audience session" />
+              <img decoding="async" loading="lazy" src={images.galleryThree} alt="Awareness books" />
             </div>
             <blockquote>
               "The deeper the awareness, the more conscious the choices, the
@@ -285,7 +285,7 @@ export default function About() {
 
         <section className="about-cta">
           <div className="site-shell about-cta-shell">
-            <img src={images.books} alt="" />
+            <img decoding="async" loading="lazy" src={images.books} alt="Books and notes for Raj Mali leadership work" />
             <div>
               <p className="about-kicker">Ready To Begin?</p>
               <h2>Let's create meaningful change together.</h2>

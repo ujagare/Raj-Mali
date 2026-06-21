@@ -36,7 +36,11 @@ export default function BlogSection() {
               className="premium-card overflow-hidden"
             >
               <div className="h-32 overflow-hidden">
-                <img src={article.img} alt="" className="h-full w-full object-cover transition duration-500 hover:scale-105" />
+                <img decoding="async" loading="lazy"
+                  src={article.img}
+                  alt={`${article.title} leadership reflection`}
+                  className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                />
               </div>
               <div className="p-6">
                 <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-navy/75">{article.category}</p>

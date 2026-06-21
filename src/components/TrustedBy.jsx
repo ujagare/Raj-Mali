@@ -33,7 +33,7 @@ export default function TrustedBy() {
                 className="marquee-item group"
                 aria-hidden={index >= clientLogos.length}
               >
-                <img
+                <img decoding="async" loading="lazy"
                   src={logo.src}
                   alt={logo.name}
                   className="max-h-16 max-w-[190px] object-contain opacity-100 transition duration-500 group-hover:scale-105"

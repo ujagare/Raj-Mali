@@ -47,7 +47,7 @@ export default function Pillars() {
               <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-navy/30 to-transparent opacity-0 transition group-hover:opacity-100" />
               <div className="relative">
                 <div className="pillar-icon mb-8 grid size-28 place-items-center rounded-full border border-navy/10 bg-gradient-to-br from-white to-mist/80 shadow-soft">
-                  <img src={pillar.icon} alt="" className="size-24 rounded-full object-cover opacity-90 grayscale" />
+                  <img decoding="async" loading="lazy" src={pillar.icon} alt={`${pillar.title} coaching pillar icon`} className="size-24 rounded-full object-cover opacity-90 grayscale" />
                 </div>
                 <h3 className="font-serif text-3xl font-semibold leading-tight text-ink">{pillar.title}</h3>
                 <p className="mt-5 text-sm font-semibold leading-7 text-ink/72">{pillar.text}</p>

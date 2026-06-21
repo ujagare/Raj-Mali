@@ -6,14 +6,14 @@ const writingImage = (fileName) =>
   new URL(`../assets/images/Writing/${fileName}`, import.meta.url).href;
 
 const images = {
-  hero: writingImage("ChatGPT Image Jun 21, 2026, 02_07_11 PM.png"),
-  book: writingImage("ChatGPT Image Jun 21, 2026, 02_41_11 PM.png"),
-  play: writingImage("ChatGPT Image Jun 21, 2026, 02_44_49 PM.png"),
-  awareness: writingImage("ChatGPT Image Jun 21, 2026, 02_45_02 PM.png"),
-  mountain: writingImage("ChatGPT Image Jun 21, 2026, 02_46_26 PM.png"),
-  sessions: writingImage("ChatGPT Image Jun 21, 2026, 02_45_50 PM.png"),
-  coaching: writingImage("ChatGPT Image Jun 21, 2026, 02_49_47 PM.png"),
-  dialogue: writingImage("ChatGPT Image Jun 21, 2026, 02_46_39 PM.png"),
+  hero: writingImage("chatgpt-image-jun-21-2026-02-07-11-pm.webp"),
+  book: writingImage("chatgpt-image-jun-21-2026-02-41-11-pm.webp"),
+  play: writingImage("chatgpt-image-jun-21-2026-02-44-49-pm.webp"),
+  awareness: writingImage("chatgpt-image-jun-21-2026-02-45-02-pm.webp"),
+  mountain: writingImage("chatgpt-image-jun-21-2026-02-46-26-pm.webp"),
+  sessions: writingImage("chatgpt-image-jun-21-2026-02-45-50-pm.webp"),
+  coaching: writingImage("chatgpt-image-jun-21-2026-02-49-47-pm.webp"),
+  dialogue: writingImage("chatgpt-image-jun-21-2026-02-46-39-pm.webp"),
 };
 
 const categories = ["All", "Leadership", "Awareness", "Transformation", "Coaching", "Life"];
@@ -69,7 +69,7 @@ export default function Writing() {
       <Navbar />
       <main>
         <section className="writing-hero">
-          <img src={images.hero} alt="The Tao of Leadership book by Raj Mali" />
+          <img decoding="async" loading="lazy" src={images.hero} alt="The Tao of Leadership book by Raj Mali" />
           <div className="writing-hero-copy">
             <p>Writing</p>
             <h1>
@@ -91,7 +91,7 @@ export default function Writing() {
         <section className="site-shell writing-feature-wrap">
           <article className="writing-feature-card">
             <div className="writing-feature-image">
-              <img src={images.book} alt="The Tao of Leadership featured book" />
+              <img decoding="async" loading="lazy" src={images.book} alt="The Tao of Leadership featured book" />
             </div>
             <div className="writing-feature-copy">
               <p>Featured Book</p>
@@ -132,7 +132,7 @@ export default function Writing() {
           <div className="writing-card-grid">
             {writings.map((item) => (
               <article key={item.title} className="writing-card">
-                <img src={item.image} alt="" />
+                <img decoding="async" loading="lazy" src={item.image} alt={`${item.title} writing by Raj Mali`} />
                 <div>
                   <p>{item.category}</p>
                   <h3>{item.title}</h3>

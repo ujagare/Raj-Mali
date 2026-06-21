@@ -19,8 +19,8 @@ const contactImage = (fileName) =>
   new URL(`../assets/images/Contact/${fileName}`, import.meta.url).href;
 
 const images = {
-  hero: contactImage("ChatGPT Image Jun 11, 2026, 08_54_42 PM.png"),
-  message: contactImage("ChatGPT Image Jun 11, 2026, 08_57_03 PM.png"),
+  hero: contactImage("chatgpt-image-jun-11-2026-08-54-42-pm.webp"),
+  message: contactImage("chatgpt-image-jun-11-2026-08-57-03-pm.webp"),
 };
 
 const workWithMeOptions = [
@@ -93,7 +93,11 @@ export default function Contact() {
       <Navbar />
       <main>
         <section id="contact" className="contact-hero contact-hero-premium">
-          <img src={images.hero} alt="" className="contact-hero-image" />
+          <img decoding="async" loading="lazy"
+            src={images.hero}
+            alt="A warm coaching conversation setting for Raj Mali enquiries"
+            className="contact-hero-image"
+          />
           <div className="contact-hero-shade contact-hero-shade-premium" />
           <div className="site-shell contact-hero-shell">
             <div className="contact-hero-copy contact-hero-copy-premium">
@@ -132,7 +136,7 @@ export default function Contact() {
 
             <section id="contact-form" className="contact-conversation-panel">
               <div className="contact-conversation-image">
-                <img src={images.message} alt="A calm conversation setting" />
+                <img decoding="async" loading="lazy" src={images.message} alt="A calm conversation setting" />
                 <div>
                   <Mail size={20} />
                   <span>Contact Form</span>

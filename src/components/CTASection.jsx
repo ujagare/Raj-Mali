@@ -9,7 +9,7 @@ export default function CTASection() {
     <section id="cta" className="cta-premium">
       <div className="cta-grid">
         <ImageReveal className="cta-image-panel" intensity={18}>
-          <img src={images.beginJourneyImage} alt="Mountain path at sunrise with a beginning quote" />
+          <img decoding="async" loading="lazy" src={images.beginJourneyImage} alt="Mountain path at sunrise with a beginning quote" />
           <div className="cta-image-badge">
             <CalendarDays size={18} />
             Private Discovery Session
