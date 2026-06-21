@@ -28,23 +28,20 @@ export default function Hero() {
             <p className="eyebrow mb-7">Coach. Facilitator. Mentor.</p>
             <h1 className="editorial-title">
               <span className="sr-only">
-                Raj Mali executive coach, leadership facilitator and mentor in Pune, India.
+                What do you really, really want for yourself, your leaders, and your organization?
               </span>
-              <span className="hero-title-line">Wake Up.</span>{" "}
+              <span className="hero-title-line">What Do You</span>{" "}
               <br className="hero-break-desktop" />
-              <span className="hero-title-line">Dream it.</span>{" "}
+              <span className="hero-title-line">Really, Really</span>{" "}
               <br className="hero-break-mobile" />
-              <span className="hero-title-line"></span>{" "}
-              <br className="hero-break-desktop" />
-              <span className="hero-title-line">Play.</span>
+              <span className="hero-title-line">Want?</span>
             </h1>
             <div className="my-8 h-px w-16 bg-navy" />
           </div>
           <div className="hero-actions">
-            <p className="body-copy max-w-[29rem]">
-              In a world obsessed with doing more, I help leaders, creators and
-              dreamers access the deeper intelligence that emerges through
-              stillness, awareness and conscious action.
+            <p className="body-copy max-w-[29rem] font-bold">
+              For yourself, your leaders, and your organization. It all begins
+              with asking better questions.
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <a href="/contact#contact-form" className="primary-button">

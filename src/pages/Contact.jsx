@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -65,27 +66,34 @@ const contactAssurances = [
 ];
 
 export default function Contact() {
-  const handleContactSubmit = (event) => {
+  const [formStatus, setFormStatus] = useState("idle");
+
+  const handleContactSubmit = async (event) => {
     event.preventDefault();
 
+    setFormStatus("sending");
     const formData = new FormData(event.currentTarget);
     const name = formData.get("name")?.toString().trim() || "Website Visitor";
     const email = formData.get("email")?.toString().trim() || "";
     const mobile = formData.get("mobile")?.toString().trim() || "";
     const message = formData.get("message")?.toString().trim() || "";
-    const body = [
-      `Name: ${name}`,
-      email ? `Email: ${email}` : "",
-      mobile ? `Mobile: ${mobile}` : "",
-      "",
-      message,
-    ]
-      .filter(Boolean)
-      .join("\n");
 
-    window.location.href = `mailto:hello@rajmali.com?subject=${encodeURIComponent(
-      `Website enquiry from ${name}`,
-    )}&body=${encodeURIComponent(body)}`;
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, mobile, message }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Message failed");
+      }
+
+      event.currentTarget.reset();
+      setFormStatus("sent");
+    } catch {
+      setFormStatus("error");
+    }
   };
 
   return (
@@ -161,6 +169,7 @@ export default function Contact() {
                       type="email"
                       name="email"
                       placeholder="you@example.com"
+                      required
                     />
                   </label>
                   <label>
@@ -177,11 +186,22 @@ export default function Contact() {
                       name="message"
                       placeholder="Tell me what you would like to explore."
                       rows={7}
+                      required
                     />
                   </label>
-                  <button type="submit">
-                    Send Message <Send size={17} />
+                  <button type="submit" disabled={formStatus === "sending"}>
+                    {formStatus === "sending" ? "Sending..." : "Send Message"} <Send size={17} />
                   </button>
+                  {formStatus === "sent" && (
+                    <p className="form-status form-status-success" role="status">
+                      Thank you. Your message has been sent.
+                    </p>
+                  )}
+                  {formStatus === "error" && (
+                    <p className="form-status form-status-error" role="alert">
+                      Sorry, the message could not be sent. Please email hello@rajmali.com.
+                    </p>
+                  )}
                 </form>
 
                 <div className="contact-form-insights">

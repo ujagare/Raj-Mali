@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
@@ -50,18 +51,35 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const handleNewsletterSubmit = (event) => {
+  const [newsletterStatus, setNewsletterStatus] = useState('idle');
+
+  const handleNewsletterSubmit = async (event) => {
     event.preventDefault();
 
+    setNewsletterStatus('sending');
     const formData = new FormData(event.currentTarget);
     const email = formData.get('email')?.toString().trim();
     if (!email) {
+      setNewsletterStatus('idle');
       return;
     }
 
-    window.location.href = `mailto:hello@rajmali.com?subject=${encodeURIComponent(
-      'Newsletter subscription request',
-    )}&body=${encodeURIComponent(`Please add ${email} to the Raj Mali mailing list.`)}`;
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Subscription failed');
+      }
+
+      event.currentTarget.reset();
+      setNewsletterStatus('sent');
+    } catch {
+      setNewsletterStatus('error');
+    }
   };
 
   return (
@@ -125,11 +143,17 @@ export default function Footer() {
             <p>Insights on leadership, consciousness and creating a meaningful life.</p>
             <form onSubmit={handleNewsletterSubmit}>
               <input type="email" name="email" aria-label="Email address" placeholder="Your email address" required />
-              <button type="submit" aria-label="Subscribe">
+              <button type="submit" aria-label="Subscribe" disabled={newsletterStatus === 'sending'}>
                 <ArrowRight size={18} />
               </button>
             </form>
-            <span>No noise. Just thoughtful notes.</span>
+            <span aria-live="polite">
+              {newsletterStatus === 'sent'
+                ? 'Thank you. You are on the list.'
+                : newsletterStatus === 'error'
+                  ? 'Could not subscribe. Please email hello@rajmali.com.'
+                  : 'No noise. Just thoughtful notes.'}
+            </span>
           </div>
         </div>
 
