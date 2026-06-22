@@ -45,7 +45,7 @@ const columns = [
 
 const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rajmali', Icon: FaLinkedinIn },
-  { label: 'Email', href: 'mailto:hello@rajmali.com', Icon: Mail },
+  { label: 'Email', href: 'mailto:Raj@redmconsulting.com', Icon: Mail },
 ];
 
 export default function Footer() {
@@ -86,8 +86,8 @@ export default function Footer() {
       <div className="site-shell footer-shell">
         <div className="footer-topline">
           <p>Leadership coaching for deeper clarity and meaningful action.</p>
-          <a href="mailto:hello@rajmali.com">
-            hello@rajmali.com <ArrowRight size={15} />
+          <a href="mailto:Raj@redmconsulting.com">
+            Raj@redmconsulting.com <ArrowRight size={15} />
           </a>
         </div>
 
@@ -149,7 +149,7 @@ export default function Footer() {
               {newsletterStatus === 'sent'
                 ? 'Thank you. You are on the list.'
                 : newsletterStatus === 'error'
-                  ? 'Could not subscribe. Please email hello@rajmali.com.'
+                  ? 'Could not subscribe. Please email Raj@redmconsulting.com.'
                   : 'No noise. Just thoughtful notes.'}
             </span>
           </div>

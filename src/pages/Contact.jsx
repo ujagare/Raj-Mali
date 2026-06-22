@@ -199,7 +199,7 @@ export default function Contact() {
                   )}
                   {formStatus === "error" && (
                     <p className="form-status form-status-error" role="alert">
-                      Sorry, the message could not be sent. Please email hello@rajmali.com.
+                      Sorry, the message could not be sent. Please email Raj@redmconsulting.com.
                     </p>
                   )}
                 </form>

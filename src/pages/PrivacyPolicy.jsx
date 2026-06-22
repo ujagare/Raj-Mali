@@ -28,8 +28,8 @@ export default function PrivacyPolicy() {
             <p>
               To request correction or deletion of information you have shared, email
               {' '}
-              <a className="font-bold text-navy" href="mailto:hello@rajmali.com">
-                hello@rajmali.com
+              <a className="font-bold text-navy" href="mailto:Raj@redmconsulting.com">
+                Raj@redmconsulting.com
               </a>
               .
             </p>

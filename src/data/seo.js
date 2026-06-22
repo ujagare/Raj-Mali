@@ -8,7 +8,7 @@ export const siteConfig = {
   name: SITE_NAME,
   url: SITE_URL,
   defaultImage: `${SITE_URL}${DEFAULT_IMAGE}`,
-  email: 'hello@rajmali.com',
+  email: 'Raj@redmconsulting.com',
   location: 'Pune, India',
   linkedin: 'https://www.linkedin.com/in/rajmali',
 };
