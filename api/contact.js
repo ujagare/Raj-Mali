@@ -59,6 +59,26 @@ export default async function handler(req, res) {
         .join("\n"),
     });
 
+    await resend.emails.send({
+      from: FROM_EMAIL,
+      to: email,
+      replyTo: TO_EMAIL,
+      subject: "Thank you for reaching out to Raj Mali",
+      text: [
+        `Hello ${name},`,
+        "",
+        "Thank you for getting in touch with Raj Mali.",
+        "Your message has been received, and we will get back to you soon.",
+        "",
+        "For reference, here is a copy of your message:",
+        "",
+        message,
+        "",
+        "Warm regards,",
+        "Raj Mali Website",
+      ].join("\n"),
+    });
+
     return res.status(200).json({ ok: true });
   } catch (error) {
     console.error("Resend contact error:", error);
