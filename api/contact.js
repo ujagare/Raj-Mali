@@ -2,6 +2,10 @@ import { Resend } from "resend";
 import { insertSupabaseRow, isSupabaseAdminConfigured } from "./_supabase.js";
 
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "Raj@redmconsulting.com";
+const BCC_EMAILS = (process.env.CONTACT_BCC_EMAILS || "")
+  .split(",")
+  .map((email) => String(email || "").trim())
+  .filter(Boolean);
 const CONFIGURED_FROM_EMAIL =
   process.env.RESEND_FROM_EMAIL || "Raj Mali Website <onboarding@resend.dev>";
 const FALLBACK_FROM_EMAIL =
@@ -155,6 +159,7 @@ export default async function handler(req, res) {
     const notificationEmail = await sendEmailWithFallback({
       from: FROM_EMAIL,
       to: TO_EMAIL,
+      ...(BCC_EMAILS.length ? { bcc: BCC_EMAILS } : {}),
       replyTo: email,
       subject: `Website enquiry from ${name}`,
       text: [
