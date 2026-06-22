@@ -1,11 +1,23 @@
 import { Resend } from "resend";
-import { getSupabaseAdmin, isSupabaseAdminConfigured } from "./_supabase.js";
+import { isSupabaseAdminConfigured, upsertSupabaseRow } from "./_supabase.js";
 
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "Raj@redmconsulting.com";
-const FROM_EMAIL =
+const CONFIGURED_FROM_EMAIL =
   process.env.RESEND_FROM_EMAIL || "Raj Mali Website <onboarding@resend.dev>";
+const FALLBACK_FROM_EMAIL =
+  process.env.RESEND_FALLBACK_FROM_EMAIL || "Raj Mali Website <onboarding@resend.dev>";
+const FROM_EMAIL =
+  process.env.RESEND_FROM_EMAIL_VERIFIED === "true"
+    ? CONFIGURED_FROM_EMAIL
+    : FALLBACK_FROM_EMAIL;
+const TEST_TO_EMAIL =
+  process.env.RESEND_TEST_TO_EMAIL || process.env.RESEND_ACCOUNT_EMAIL || "";
 
 const clean = (value) => String(value || "").trim();
+const sleep = (milliseconds) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, milliseconds);
+  });
 
 async function sendEmail(payload) {
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -17,6 +29,81 @@ async function sendEmail(payload) {
   }
 
   return data;
+}
+
+async function sendEmailWithFallback(payload) {
+  let retryPayload = payload;
+  let testModeRecipient = null;
+
+  try {
+    return await sendEmail(retryPayload);
+  } catch (error) {
+    const message = error.message || "";
+
+    if (
+      retryPayload.from !== FALLBACK_FROM_EMAIL &&
+      message.toLowerCase().includes("domain is not verified")
+    ) {
+      console.warn("Primary sender domain is not verified. Retrying with fallback sender.");
+      retryPayload = { ...retryPayload, from: FALLBACK_FROM_EMAIL };
+    } else {
+      const testingRecipient =
+        TEST_TO_EMAIL || message.match(/own email address \(([^)]+)\)/i)?.[1];
+
+      if (
+        testingRecipient &&
+        retryPayload.to !== testingRecipient &&
+        message.toLowerCase().includes("only send testing emails")
+      ) {
+        console.warn("Resend account is in testing mode. Retrying with verified test recipient.");
+        await sleep(700);
+        testModeRecipient = testingRecipient;
+        retryPayload = {
+          ...retryPayload,
+          to: testingRecipient,
+          subject: `[Forward to ${retryPayload.to}] ${retryPayload.subject}`,
+        };
+      } else {
+        throw error;
+      }
+    }
+  }
+
+  try {
+    const data = await sendEmail(retryPayload);
+    return testModeRecipient ? { ...data, testModeRecipient } : data;
+  } catch (error) {
+    const message = error.message || "";
+    if (
+      retryPayload.from !== FALLBACK_FROM_EMAIL &&
+      message.toLowerCase().includes("domain is not verified")
+    ) {
+      console.warn("Primary sender domain is not verified. Retrying with fallback sender.");
+      await sleep(700);
+      return sendEmail({ ...retryPayload, from: FALLBACK_FROM_EMAIL });
+    }
+
+    const testingRecipient =
+      TEST_TO_EMAIL || message.match(/own email address \(([^)]+)\)/i)?.[1];
+
+    if (
+      testingRecipient &&
+      retryPayload.to !== testingRecipient &&
+      message.toLowerCase().includes("only send testing emails")
+    ) {
+      console.warn("Resend account is in testing mode. Retrying with verified test recipient.");
+      await sleep(700);
+      const data = await sendEmail({
+        ...retryPayload,
+        to: testingRecipient,
+        subject: `[Forward to ${retryPayload.to}] ${retryPayload.subject}`,
+      });
+
+      return { ...data, testModeRecipient: testingRecipient };
+    }
+
+    throw error;
+  }
 }
 
 export default async function handler(req, res) {
@@ -37,17 +124,18 @@ export default async function handler(req, res) {
 
   try {
     if (isSupabaseAdminConfigured) {
-      const supabaseAdmin = await getSupabaseAdmin();
-      const { error } = await supabaseAdmin
-        .from("newsletter_subscribers")
-        .upsert({ email }, { onConflict: "email" });
+      const { error } = await upsertSupabaseRow(
+        "newsletter_subscribers",
+        { email },
+        "email",
+      );
 
       if (error) {
         console.error("Supabase newsletter upsert error:", error);
       }
     }
 
-    await sendEmail({
+    await sendEmailWithFallback({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: email,
