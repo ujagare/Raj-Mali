@@ -1,4 +1,4 @@
-import { ArrowRight, Quote } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
@@ -7,7 +7,8 @@ const writingImage = (fileName) =>
 
 const images = {
   hero: writingImage("Raj Mali.png"),
-  featuredBook: writingImage("ChatGPT Image Jun 22, 2026, 12_01_51 PM.png"),
+  heroMobile: writingImage("mobile.png"),
+  featuredBook: writingImage("raj2.png"),
   play: writingImage("chatgpt-image-jun-21-2026-02-44-49-pm.webp"),
   awareness: writingImage("chatgpt-image-jun-21-2026-02-45-02-pm.webp"),
   mountain: writingImage("chatgpt-image-jun-21-2026-02-46-26-pm.webp"),
@@ -69,7 +70,10 @@ export default function Writing() {
       <Navbar />
       <main>
         <section className="writing-hero">
-          <img decoding="async" fetchPriority="high" loading="eager" src={images.hero} alt="Writing and reflections by Raj Mali" />
+          <picture>
+            <source media="(max-width: 767px)" srcSet={images.heroMobile} />
+            <img decoding="async" fetchPriority="high" loading="eager" src={images.hero} alt="Writing and reflections by Raj Mali" />
+          </picture>
           <div className="writing-hero-copy">
             <p>Writing</p>
             <h1>
@@ -149,7 +153,6 @@ export default function Writing() {
 
         <section className="site-shell writing-quote-wrap">
           <blockquote className="writing-quote">
-            <Quote size={34} />
             <p>
               Information informs. Experience transforms.
               <br />
