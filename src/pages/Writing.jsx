@@ -99,8 +99,8 @@ export default function Writing() {
             </div>
             <div className="writing-feature-copy">
               <p>Featured Book</p>
-              <h2>The Tao of Leadership</h2>
               <h3>An Ancient Path to Effective Leadership</h3>
+              <h2>Things</h2>
               <span>
                 A timeless exploration of leadership through the wisdom of Tao -
                 simple, profound and deeply relevant to today&apos;s world.
