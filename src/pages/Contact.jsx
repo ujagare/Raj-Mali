@@ -67,12 +67,14 @@ const contactAssurances = [
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState("idle");
+  const [formError, setFormError] = useState("");
 
   const handleContactSubmit = async (event) => {
     event.preventDefault();
 
     const form = event.currentTarget;
     setFormStatus("sending");
+    setFormError("");
     const formData = new FormData(form);
     const name = formData.get("name")?.toString().trim() || "Website Visitor";
     const email = formData.get("email")?.toString().trim() || "";
@@ -87,12 +89,15 @@ export default function Contact() {
       });
 
       if (!response.ok) {
-        throw new Error("Message failed");
+        const result = await response.json().catch(() => ({}));
+        throw new Error(result.error || "Message failed");
       }
 
       form.reset();
       setFormStatus("sent");
-    } catch {
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setFormError(error.message);
       setFormStatus("error");
     }
   };
@@ -200,7 +205,7 @@ export default function Contact() {
                   )}
                   {formStatus === "error" && (
                     <p className="form-status form-status-error" role="alert">
-                      Sorry, the message could not be sent. Please email Raj@redmconsulting.com.
+                      Sorry, the message could not be sent. {formError ? `${formError}. ` : ""}Please email Raj@redmconsulting.com.
                     </p>
                   )}
                 </form>

@@ -1,7 +1,5 @@
 import { Resend } from "resend";
-import { isSupabaseAdminConfigured, supabaseAdmin } from "./_supabase.js";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { getSupabaseAdmin, isSupabaseAdminConfigured } from "./_supabase.js";
 
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "Raj@redmconsulting.com";
 const FROM_EMAIL =
@@ -9,7 +7,20 @@ const FROM_EMAIL =
 
 const clean = (value) => String(value || "").trim();
 
+function getBody(req) {
+  if (!req.body || typeof req.body !== "string") {
+    return req.body || {};
+  }
+
+  try {
+    return JSON.parse(req.body);
+  } catch {
+    return {};
+  }
+}
+
 async function sendEmail(payload) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { data, error } = await resend.emails.send(payload);
 
   if (error) {
@@ -27,13 +38,14 @@ export default async function handler(req, res) {
   }
 
   if (!process.env.RESEND_API_KEY) {
-    return res.status(500).json({ error: "Resend is not configured" });
+    return res.status(503).json({ error: "Email service is not configured" });
   }
 
-  const name = clean(req.body?.name) || "Website Visitor";
-  const email = clean(req.body?.email);
-  const mobile = clean(req.body?.mobile);
-  const message = clean(req.body?.message);
+  const body = getBody(req);
+  const name = clean(body?.name) || "Website Visitor";
+  const email = clean(body?.email);
+  const mobile = clean(body?.mobile);
+  const message = clean(body?.message);
 
   if (!email || !message) {
     return res.status(400).json({ error: "Email and message are required" });
@@ -41,6 +53,7 @@ export default async function handler(req, res) {
 
   try {
     if (isSupabaseAdminConfigured) {
+      const supabaseAdmin = await getSupabaseAdmin();
       const { error } = await supabaseAdmin.from("contact_messages").insert({
         name,
         email,
@@ -53,7 +66,7 @@ export default async function handler(req, res) {
       }
     }
 
-    await sendEmail({
+    const notificationEmail = await sendEmail({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: email,
@@ -70,29 +83,35 @@ export default async function handler(req, res) {
         .join("\n"),
     });
 
-    await sendEmail({
-      from: FROM_EMAIL,
-      to: email,
-      replyTo: TO_EMAIL,
-      subject: "Thank you for reaching out to Raj Mali",
-      text: [
-        `Hello ${name},`,
-        "",
-        "Thank you for getting in touch with Raj Mali.",
-        "Your message has been received, and we will get back to you soon.",
-        "",
-        "For reference, here is a copy of your message:",
-        "",
-        message,
-        "",
-        "Warm regards,",
-        "Raj Mali Website",
-      ].join("\n"),
-    });
+    try {
+      await sendEmail({
+        from: FROM_EMAIL,
+        to: email,
+        replyTo: TO_EMAIL,
+        subject: "Thank you for reaching out to Raj Mali",
+        text: [
+          `Hello ${name},`,
+          "",
+          "Thank you for getting in touch with Raj Mali.",
+          "Your message has been received, and we will get back to you soon.",
+          "",
+          "For reference, here is a copy of your message:",
+          "",
+          message,
+          "",
+          "Warm regards,",
+          "Raj Mali Website",
+        ].join("\n"),
+      });
+    } catch (error) {
+      console.error("Resend contact auto-reply error:", error);
+    }
 
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, id: notificationEmail?.id });
   } catch (error) {
     console.error("Resend contact error:", error);
-    return res.status(500).json({ error: "Unable to send message" });
+    return res.status(500).json({
+      error: error.message || "Unable to send message",
+    });
   }
 }

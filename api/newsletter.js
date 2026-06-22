@@ -1,7 +1,5 @@
 import { Resend } from "resend";
-import { isSupabaseAdminConfigured, supabaseAdmin } from "./_supabase.js";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { getSupabaseAdmin, isSupabaseAdminConfigured } from "./_supabase.js";
 
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "Raj@redmconsulting.com";
 const FROM_EMAIL =
@@ -10,6 +8,7 @@ const FROM_EMAIL =
 const clean = (value) => String(value || "").trim();
 
 async function sendEmail(payload) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { data, error } = await resend.emails.send(payload);
 
   if (error) {
@@ -38,6 +37,7 @@ export default async function handler(req, res) {
 
   try {
     if (isSupabaseAdminConfigured) {
+      const supabaseAdmin = await getSupabaseAdmin();
       const { error } = await supabaseAdmin
         .from("newsletter_subscribers")
         .upsert({ email }, { onConflict: "email" });
