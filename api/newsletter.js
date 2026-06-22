@@ -88,6 +88,52 @@ function buildNewsletterNotificationHtml(email) {
 </html>`;
 }
 
+function buildSubscriberConfirmationHtml(email) {
+  return `<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>You are subscribed</title>
+  </head>
+  <body style="margin:0;background:#f5f1ea;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1d2433;">
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">Thank you for subscribing to Raj Mali updates.</div>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f5f1ea;padding:32px 14px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#fffaf3;border:1px solid #e6d8c6;border-radius:28px;overflow:hidden;box-shadow:0 24px 70px rgba(29,36,51,0.12);">
+            <tr>
+              <td style="background:#17213a;padding:34px 34px 28px;">
+                <div style="font-size:12px;line-height:18px;letter-spacing:2px;text-transform:uppercase;color:#d9b36f;font-weight:800;">Raj Mali</div>
+                <h1 style="margin:12px 0 0;font-family:Georgia,Times New Roman,serif;font-size:34px;line-height:40px;color:#fff8ec;font-weight:700;">You are on the list</h1>
+                <p style="margin:14px 0 0;font-size:15px;line-height:24px;color:#dbe2f0;">Thank you for subscribing. You will receive thoughtful notes on leadership, consciousness and meaningful action.</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:30px 34px 34px;">
+                <p style="margin:0 0 18px;font-size:17px;line-height:28px;color:#1d2433;">Hello,</p>
+                <p style="margin:0 0 22px;font-size:16px;line-height:27px;color:#40506b;">Your subscription has been confirmed for <strong style="color:#17213a;">${escapeHtml(email)}</strong>.</p>
+                <div style="background:#fff;border:1px solid #efe4d5;border-radius:20px;padding:22px;">
+                  <div style="font-size:12px;line-height:18px;letter-spacing:1.6px;text-transform:uppercase;color:#9b7a45;font-weight:800;">What to expect</div>
+                  <p style="margin:12px 0 0;font-size:15px;line-height:26px;color:#1d2433;">Quiet, useful reflections from Raj Mali. No noise, no clutter, just thoughtful notes when there is something meaningful to share.</p>
+                </div>
+                <p style="margin:24px 0 0;font-size:16px;line-height:27px;color:#40506b;">Warm regards,<br /><strong style="color:#17213a;">Raj Mali Website</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td style="background:#fbf4e8;border-top:1px solid #eadcca;padding:22px 34px;">
+                <p style="margin:0;font-size:12px;line-height:20px;color:#7a6d5d;">This confirmation was sent because this email subscribed at rajmali.com.</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>`;
+}
+
 async function sendEmail(payload) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   const { data, error } = await resend.emails.send(payload);
@@ -218,6 +264,23 @@ export default async function handler(req, res) {
           subject: "Newsletter subscription request",
           html: buildNewsletterNotificationHtml(email),
           text: `Please add ${email} to the Raj Mali mailing list.`,
+        });
+
+        await sendEmailWithFallback({
+          from: FROM_EMAIL,
+          to: email,
+          replyTo: TO_EMAIL,
+          subject: "You are subscribed to Raj Mali updates",
+          html: buildSubscriberConfirmationHtml(email),
+          text: [
+            "Hello,",
+            "",
+            "Thank you for subscribing to Raj Mali updates.",
+            `Your subscription has been confirmed for ${email}.`,
+            "",
+            "Warm regards,",
+            "Raj Mali Website",
+          ].join("\n"),
         });
       } catch (error) {
         if (!subscriptionSaved) {
