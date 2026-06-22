@@ -26,6 +26,18 @@ const sleep = (milliseconds) =>
     setTimeout(resolve, milliseconds);
   });
 
+function getBody(req) {
+  if (!req.body || typeof req.body !== "string") {
+    return req.body || {};
+  }
+
+  try {
+    return JSON.parse(req.body);
+  } catch {
+    return {};
+  }
+}
+
 function buildNewsletterNotificationHtml(email) {
   return `<!doctype html>
 <html>
@@ -169,17 +181,20 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  if (!process.env.RESEND_API_KEY) {
-    return res.status(500).json({ error: "Resend is not configured" });
+  if (!process.env.RESEND_API_KEY && !isSupabaseAdminConfigured) {
+    return res.status(500).json({ error: "Newsletter service is not configured" });
   }
 
-  const email = clean(req.body?.email);
+  const body = getBody(req);
+  const email = clean(body?.email);
 
   if (!email) {
     return res.status(400).json({ error: "Email is required" });
   }
 
   try {
+    let subscriptionSaved = false;
+
     if (isSupabaseAdminConfigured) {
       const { error } = await upsertSupabaseRow(
         "newsletter_subscribers",
@@ -189,17 +204,29 @@ export default async function handler(req, res) {
 
       if (error) {
         console.error("Supabase newsletter upsert error:", error);
+      } else {
+        subscriptionSaved = true;
       }
     }
 
-    await sendEmailWithFallback({
-      from: FROM_EMAIL,
-      to: TO_EMAIL,
-      replyTo: email,
-      subject: "Newsletter subscription request",
-      html: buildNewsletterNotificationHtml(email),
-      text: `Please add ${email} to the Raj Mali mailing list.`,
-    });
+    if (process.env.RESEND_API_KEY) {
+      try {
+        await sendEmailWithFallback({
+          from: FROM_EMAIL,
+          to: TO_EMAIL,
+          replyTo: email,
+          subject: "Newsletter subscription request",
+          html: buildNewsletterNotificationHtml(email),
+          text: `Please add ${email} to the Raj Mali mailing list.`,
+        });
+      } catch (error) {
+        if (!subscriptionSaved) {
+          throw error;
+        }
+
+        console.error("Resend newsletter notification error:", error);
+      }
+    }
 
     return res.status(200).json({ ok: true });
   } catch (error) {
