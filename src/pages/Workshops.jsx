@@ -102,7 +102,7 @@ export default function Workshops() {
             </span>
           </div>
           <div className="workshops-hero-media">
-            <img decoding="async" loading="lazy" src={heroRightImage} alt="A premium leadership workshop setting" />
+            <img decoding="async" fetchPriority="high" loading="eager" src={heroRightImage} alt="A premium leadership workshop setting" />
           </div>
         </section>
 

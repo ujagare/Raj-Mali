@@ -67,7 +67,7 @@ const programs = [
   "Leadership Development Labs",
   "New Leader Induction Programs",
   "Live Conflict Management",
-  "Red Wisdom Synch Model of Leading and working with teams",
+  "Red M Consulting Synch Model of Leading and working with teams",
   "Strategy Meets",
   "Teaming Labs",
   "Deep Dialogue Forum Retreats",
@@ -130,7 +130,7 @@ export default function Facilitation() {
       <Navbar />
       <main>
         <section id="facilitation" className="facilitation-hero">
-          <img decoding="async" loading="lazy"
+          <img decoding="async" fetchPriority="high" loading="eager"
             src={images.hero}
             alt="Leadership team facilitation room prepared for a Raj Mali workshop"
             className="facilitation-hero-image"
@@ -203,7 +203,7 @@ export default function Facilitation() {
           <div className="site-shell">
             <div className="facilitation-section-heading">
               <AccentLabel>Facilitation Programs</AccentLabel>
-              <h2>Programs Designed &amp; Delivered by Red Wisdom</h2>
+              <h2>Programs Designed &amp; Delivered by Red M Consulting</h2>
               <p>
                 Curated interventions for leadership teams that need sharper
                 thinking, stronger alignment and meaningful movement.

@@ -27,9 +27,10 @@ export default function SEO({ config }) {
       window.location.hostname === 'localhost' ||
       window.location.hostname === '127.0.0.1' ||
       window.location.hostname.endsWith('.vercel.app');
+    const isSeoPrerender = window.__RAJ_SEO_PRERENDER__ === true;
     const shouldNoindex =
       config.noindex ||
-      (stagingHost && import.meta.env.VITE_INDEX_STAGING !== 'true');
+      (!isSeoPrerender && stagingHost && import.meta.env.VITE_INDEX_STAGING !== 'true');
 
     document.querySelectorAll(managedSelector).forEach((node) => node.remove());
     document.title = config.title;
@@ -37,6 +38,10 @@ export default function SEO({ config }) {
     upsertMeta('name', 'description', config.description);
     upsertMeta('name', 'keywords', config.keywords);
     upsertMeta('name', 'robots', shouldNoindex ? 'noindex, nofollow' : 'index, follow');
+    upsertMeta('name', 'geo.region', 'IN-MH');
+    upsertMeta('name', 'geo.placename', 'Pune, Maharashtra, India');
+    upsertMeta('name', 'geo.position', '18.5204;73.8567');
+    upsertMeta('name', 'ICBM', '18.5204, 73.8567');
 
     upsertMeta('property', 'og:type', 'website');
     upsertMeta('property', 'og:title', config.title);

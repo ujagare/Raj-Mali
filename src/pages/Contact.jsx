@@ -101,7 +101,7 @@ export default function Contact() {
       <Navbar />
       <main>
         <section id="contact" className="contact-hero contact-hero-premium">
-          <img decoding="async" loading="lazy"
+          <img decoding="async" fetchPriority="high" loading="eager"
             src={images.hero}
             alt="A warm coaching conversation setting for Raj Mali enquiries"
             className="contact-hero-image"

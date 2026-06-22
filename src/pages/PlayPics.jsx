@@ -112,7 +112,7 @@ export default function PlayPics() {
       <Navbar />
       <main>
         <section className="playpics-hero">
-          <img decoding="async" loading="lazy" src={images.hero} alt="Leaders participating in organic play" />
+          <img decoding="async" fetchPriority="high" loading="eager" src={images.hero} alt="Leaders participating in organic play" />
           <div className="playpics-hero-wash" />
           <div className="site-shell playpics-hero-shell">
             <div className="playpics-hero-copy">

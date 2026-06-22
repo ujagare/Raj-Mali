@@ -1,15 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/about", "destination": "/index.html" },
-    { "source": "/testimonials", "destination": "/index.html" },
-    { "source": "/facilitation", "destination": "/index.html" },
-    { "source": "/writing", "destination": "/index.html" },
-    { "source": "/workshops", "destination": "/index.html" },
-    { "source": "/play-pics", "destination": "/index.html" },
-    { "source": "/playpics", "destination": "/index.html" },
-    { "source": "/playpic", "destination": "/index.html" },
-    { "source": "/contact", "destination": "/index.html" },
-    { "source": "/privacy-policy", "destination": "/index.html" }
-  ]
+  "cleanUrls": true
 }

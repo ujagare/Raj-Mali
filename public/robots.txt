@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.rajmali.com/sitemap.xml
+LLMs: https://www.rajmali.com/llms.txt

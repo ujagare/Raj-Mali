@@ -1901,7 +1901,7 @@
 
   .writing-hero {
     position: relative;
-    min-height: clamp(31rem, 52vw, 44rem);
+    min-height: clamp(38rem, 62vw, 52rem);
     overflow: hidden;
     background: #f8f7f4;
   }
@@ -1932,7 +1932,7 @@
     position: relative;
     z-index: 1;
     display: flex;
-    min-height: clamp(31rem, 52vw, 44rem);
+    min-height: clamp(38rem, 62vw, 52rem);
     width: min(36rem, calc(100% - 2.5rem));
     flex-direction: column;
     justify-content: center;
@@ -2278,7 +2278,7 @@
 
   @media (max-width: 767px) {
     .writing-hero {
-      min-height: 43rem;
+      min-height: 50rem;
     }
 
     .writing-hero > img {
@@ -2294,7 +2294,7 @@
     }
 
     .writing-hero-copy {
-      min-height: 43rem;
+      min-height: 50rem;
       justify-content: flex-start;
       margin-left: 0;
       padding: 4.25rem 1.25rem 0;

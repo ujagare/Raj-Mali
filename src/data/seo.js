@@ -1,9 +1,8 @@
 const envSiteUrl = import.meta.env.VITE_SITE_URL?.replace(/\/$/, '');
-const runtimeSiteUrl =
-  typeof window === 'undefined' ? 'https://www.rajmali.com' : window.location.origin;
+const runtimeSiteUrl = 'https://www.rajmali.com';
 const SITE_URL = envSiteUrl || runtimeSiteUrl;
 const SITE_NAME = 'Raj Mali';
-const DEFAULT_IMAGE = '/og-image.svg';
+const DEFAULT_IMAGE = '/og-image.png';
 
 export const siteConfig = {
   name: SITE_NAME,
@@ -11,13 +10,14 @@ export const siteConfig = {
   defaultImage: `${SITE_URL}${DEFAULT_IMAGE}`,
   email: 'hello@rajmali.com',
   location: 'Pune, India',
+  linkedin: 'https://www.linkedin.com/in/rajmali',
 };
 
 const faqItems = [
   {
     question: 'Who do you work with?',
     answer:
-      'Raj Mali works with founders, senior leaders, creators and teams who want sharper clarity, calmer decision-making and more conscious impact.',
+      'Raj Mali works with founders, senior leaders, creators and leadership teams in India and globally who want sharper clarity, calmer decision-making and more conscious impact.',
   },
   {
     question: 'What is leadership coaching?',
@@ -28,6 +28,16 @@ const faqItems = [
     question: 'How do workshops work?',
     answer:
       'Workshops are designed around team context, combining facilitation, reflection, dialogue and practical experiments that continue after the room.',
+  },
+  {
+    question: 'Where is Raj Mali based?',
+    answer:
+      'Raj Mali is based in Pune, Maharashtra, India, and works with leaders and teams across India, Europe and global remote settings.',
+  },
+  {
+    question: 'What services does Raj Mali offer?',
+    answer:
+      'Raj Mali offers executive coaching, leadership facilitation, leadership workshops, mentoring, speaking engagements and conscious leadership programs.',
   },
   {
     question: 'Can sessions be conducted remotely?',
@@ -47,10 +57,26 @@ const personSchema = {
   name: 'Raj Mali',
   url: SITE_URL,
   email: siteConfig.email,
+  image: siteConfig.defaultImage,
+  sameAs: [siteConfig.linkedin],
   jobTitle: 'Executive Coach, Leadership Facilitator and Mentor',
+  worksFor: {
+    '@id': `${SITE_URL}/#organization`,
+  },
+  homeLocation: {
+    '@type': 'Place',
+    name: siteConfig.location,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Pune',
+      addressRegion: 'Maharashtra',
+      addressCountry: 'IN',
+    },
+  },
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Pune',
+    addressRegion: 'Maharashtra',
     addressCountry: 'IN',
   },
   knowsAbout: [
@@ -68,10 +94,74 @@ const organizationSchema = {
   name: 'Raj Mali',
   url: SITE_URL,
   email: siteConfig.email,
+  sameAs: [siteConfig.linkedin],
+  logo: siteConfig.defaultImage,
   founder: {
     '@id': `${SITE_URL}/#person`,
   },
   areaServed: ['India', 'Global'],
+};
+
+const professionalServiceSchema = {
+  '@type': 'ProfessionalService',
+  '@id': `${SITE_URL}/#professional-service`,
+  name: 'Raj Mali Executive Coaching and Leadership Facilitation',
+  url: SITE_URL,
+  image: siteConfig.defaultImage,
+  email: siteConfig.email,
+  founder: {
+    '@id': `${SITE_URL}/#person`,
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Pune',
+    addressRegion: 'Maharashtra',
+    addressCountry: 'IN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 18.5204,
+    longitude: 73.8567,
+  },
+  areaServed: [
+    {
+      '@type': 'Country',
+      name: 'India',
+    },
+    {
+      '@type': 'Place',
+      name: 'Global',
+    },
+  ],
+  serviceType: [
+    'Executive coaching',
+    'Leadership facilitation',
+    'Leadership workshops',
+    'Mentoring',
+    'Speaking engagements',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Leadership coaching and facilitation services',
+    itemListElement: [
+      'Executive coaching',
+      'Leadership team facilitation',
+      'Leadership workshops',
+      'Corporate leadership programs',
+      'Mentoring',
+      'Speaking engagements',
+    ].map((name) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name,
+        provider: {
+          '@id': `${SITE_URL}/#professional-service`,
+        },
+        areaServed: ['India', 'Global'],
+      },
+    })),
+  },
 };
 
 const websiteSchema = {
@@ -81,6 +171,11 @@ const websiteSchema = {
   url: SITE_URL,
   publisher: {
     '@id': `${SITE_URL}/#organization`,
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${SITE_URL}/writing?search={search_term_string}`,
+    'query-input': 'required name=search_term_string',
   },
 };
 
@@ -104,17 +199,6 @@ const faqSchema = {
       text: faq.answer,
     },
   })),
-};
-
-const bookSchema = {
-  '@type': 'Book',
-  name: 'The Tao of Leadership',
-  author: {
-    '@id': `${SITE_URL}/#person`,
-  },
-  description:
-    'A book by Raj Mali exploring leadership through the wisdom of Tao and its relevance to contemporary leadership.',
-  url: `${SITE_URL}/writing`,
 };
 
 const articleSchema = {
@@ -142,7 +226,7 @@ const articleSchema = {
   })),
 };
 
-const baseGraph = [personSchema, organizationSchema, websiteSchema];
+const baseGraph = [personSchema, organizationSchema, professionalServiceSchema, websiteSchema];
 
 const page = ({ path, title, description, keywords, schemas = [], noindex = false }) => ({
   path,
@@ -184,11 +268,11 @@ export const seoByPath = {
   }),
   '/writing': page({
     path: '/writing',
-    title: 'Writing & The Tao of Leadership | Raj Mali',
+    title: 'Writing & Reflections | Raj Mali',
     description:
-      'Explore Raj Mali writings, reflections and The Tao of Leadership, with insights on leadership, awareness, play and transformation.',
-    keywords: 'Raj Mali writing, The Tao of Leadership, leadership articles, conscious leadership essays',
-    schemas: [bookSchema, articleSchema],
+      'Explore Raj Mali writings and reflections, with insights on leadership, awareness, play and transformation.',
+    keywords: 'Raj Mali writing, leadership articles, conscious leadership essays, leadership reflections',
+    schemas: [articleSchema],
   }),
   '/workshops': page({
     path: '/workshops',

@@ -88,7 +88,7 @@ export default function About() {
         <section className="about-hero">
           <picture>
             <source media="(max-width: 767px)" srcSet={images.heroMobile} />
-            <img decoding="async" loading="lazy" src={images.hero} alt="Raj Mali speaking on stage" />
+            <img decoding="async" fetchPriority="high" loading="eager" src={images.hero} alt="Raj Mali speaking on stage" />
           </picture>
           <div className="about-hero-aura" />
           <div className="about-hero-wash" />

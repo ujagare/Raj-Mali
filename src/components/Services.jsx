@@ -34,7 +34,7 @@ export default function Services() {
     <section id="work-with-me" className="services-section relative overflow-hidden bg-gradient-to-b from-pearl via-white to-pearl py-20">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-navy/20 to-transparent" />
       <div className="site-shell">
-        <div className="mb-12 grid gap-6 xl:grid-cols-[0.65fr_1fr_0.35fr] xl:items-end">
+        <div className="mb-12 grid gap-6 xl:grid-cols-[0.65fr_1fr] xl:items-end">
           <div>
             <Reveal as="p" className="eyebrow mb-5">Signature Work</Reveal>
             <Reveal as="h2" className="section-title" delay={0.06}>
@@ -44,9 +44,6 @@ export default function Services() {
           <Reveal as="p" className="body-copy max-w-xl lg:justify-self-center" delay={0.1}>
             Deep coaching and facilitation containers designed for leaders, teams and organisations ready to move
             from insight into embodied change.
-          </Reveal>
-          <Reveal as="a" href="/writing" className="nav-link inline-flex items-center gap-2 lg:justify-self-end" delay={0.14}>
-            View All Writings <ArrowRight size={14} />
           </Reveal>
         </div>
 

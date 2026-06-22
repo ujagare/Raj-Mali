@@ -6,8 +6,8 @@ const writingImage = (fileName) =>
   new URL(`../assets/images/Writing/${fileName}`, import.meta.url).href;
 
 const images = {
-  hero: writingImage("chatgpt-image-jun-21-2026-02-07-11-pm.webp"),
-  book: writingImage("chatgpt-image-jun-21-2026-02-41-11-pm.webp"),
+  hero: writingImage("Raj Mali.png"),
+  featuredBook: writingImage("ChatGPT Image Jun 22, 2026, 12_01_51 PM.png"),
   play: writingImage("chatgpt-image-jun-21-2026-02-44-49-pm.webp"),
   awareness: writingImage("chatgpt-image-jun-21-2026-02-45-02-pm.webp"),
   mountain: writingImage("chatgpt-image-jun-21-2026-02-46-26-pm.webp"),
@@ -69,7 +69,7 @@ export default function Writing() {
       <Navbar />
       <main>
         <section className="writing-hero">
-          <img decoding="async" loading="lazy" src={images.hero} alt="The Tao of Leadership book by Raj Mali" />
+          <img decoding="async" fetchPriority="high" loading="eager" src={images.hero} alt="Writing and reflections by Raj Mali" />
           <div className="writing-hero-copy">
             <p>Writing</p>
             <h1>
@@ -91,7 +91,7 @@ export default function Writing() {
         <section className="site-shell writing-feature-wrap">
           <article className="writing-feature-card">
             <div className="writing-feature-image">
-              <img decoding="async" loading="lazy" src={images.book} alt="The Tao of Leadership featured book" />
+              <img decoding="async" loading="lazy" src={images.featuredBook} alt="Raj Mali book displayed with a ceramic vase" />
             </div>
             <div className="writing-feature-copy">
               <p>Featured Book</p>
@@ -99,14 +99,15 @@ export default function Writing() {
               <h3>An Ancient Path to Effective Leadership</h3>
               <span>
                 A timeless exploration of leadership through the wisdom of Tao -
-                simple, profound and deeply relevant to today's world.
+                simple, profound and deeply relevant to today&apos;s world.
               </span>
               <div>
-                <a href="/contact#contact-form" className="primary-button">
+                <a href="#writing-list" className="primary-button">
                   Buy The Book
                 </a>
                 <a href="#writing-list" className="writing-text-link">
-                  Read Excerpts <ArrowRight size={15} />
+                  Read Excerpts
+                  <ArrowRight size={15} strokeWidth={2.4} />
                 </a>
               </div>
             </div>
@@ -139,9 +140,6 @@ export default function Writing() {
                   <span>{item.text}</span>
                   <footer>
                     <strong>{item.time}</strong>
-                    <a href="/contact#contact-form" aria-label={`Enquire about ${item.title}`}>
-                      <ArrowRight size={15} />
-                    </a>
                   </footer>
                 </div>
               </article>
