@@ -71,8 +71,9 @@ export default function Contact() {
   const handleContactSubmit = async (event) => {
     event.preventDefault();
 
+    const form = event.currentTarget;
     setFormStatus("sending");
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const name = formData.get("name")?.toString().trim() || "Website Visitor";
     const email = formData.get("email")?.toString().trim() || "";
     const mobile = formData.get("mobile")?.toString().trim() || "";
@@ -89,7 +90,7 @@ export default function Contact() {
         throw new Error("Message failed");
       }
 
-      event.currentTarget.reset();
+      form.reset();
       setFormStatus("sent");
     } catch {
       setFormStatus("error");
