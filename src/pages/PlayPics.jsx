@@ -177,7 +177,7 @@ export default function PlayPics() {
                   onClick={() => setActiveImageIndex(index)}
                   aria-label={`Open organic play image ${index + 1}`}
                 >
-                  <img decoding="async" loading="lazy" src={image} alt={`Organic play session moment ${index + 1}`} />
+                  <img decoding="async" loading="eager" src={image} alt={`Organic play session moment ${index + 1}`} />
                 </button>
               ))}
             </div>

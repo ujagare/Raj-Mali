@@ -52,7 +52,7 @@ export default function Testimonials() {
         <div className="mb-9 flex flex-col items-center gap-4 text-center">
           <p className="eyebrow">Voices of Transformation</p>
           <h2 className="testimonial-heading font-serif text-3xl font-semibold leading-tight text-ink sm:text-4xl">
-            A single line of leadership shifts.
+            No matter what you are faced with, a breakthrough is possible.
           </h2>
         </div>
       </div>

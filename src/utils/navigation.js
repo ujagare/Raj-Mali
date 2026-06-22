@@ -1,5 +1,5 @@
 export function navigateTo(href) {
-  const targetUrl = new URL(href, window.location.origin);
+  const targetUrl = new URL(href, window.location.href);
   const nextPath = `${targetUrl.pathname}${targetUrl.hash}`;
 
   window.history.pushState({}, "", nextPath);
@@ -45,7 +45,7 @@ export function handleInternalLinkClick(event) {
     return;
   }
 
-  const targetUrl = new URL(href, window.location.origin);
+  const targetUrl = new URL(href, window.location.href);
   if (targetUrl.origin !== window.location.origin) {
     return;
   }

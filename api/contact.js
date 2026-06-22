@@ -9,6 +9,17 @@ const FROM_EMAIL =
 
 const clean = (value) => String(value || "").trim();
 
+async function sendEmail(payload) {
+  const { data, error } = await resend.emails.send(payload);
+
+  if (error) {
+    const message = error.message || "Resend rejected the email request";
+    throw new Error(message);
+  }
+
+  return data;
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
@@ -42,7 +53,7 @@ export default async function handler(req, res) {
       }
     }
 
-    await resend.emails.send({
+    await sendEmail({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: email,
@@ -59,7 +70,7 @@ export default async function handler(req, res) {
         .join("\n"),
     });
 
-    await resend.emails.send({
+    await sendEmail({
       from: FROM_EMAIL,
       to: email,
       replyTo: TO_EMAIL,

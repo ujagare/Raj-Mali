@@ -73,7 +73,7 @@ function handleInternalNavigation(event, href) {
   }
 
   const currentUrl = new URL(window.location.href);
-  const targetUrl = new URL(href, window.location.origin);
+  const targetUrl = new URL(href, window.location.href);
   if (targetUrl.origin !== window.location.origin) {
     return;
   }

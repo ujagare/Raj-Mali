@@ -72,7 +72,8 @@ export default function App() {
   }, [currentPath]);
 
   const normalizedPath = currentPath === '/' ? '/' : currentPath.replace(/\/$/, '');
-  const canonicalPath = routeAliases[normalizedPath] || normalizedPath;
+  const aliasedPath = routeAliases[normalizedPath] || normalizedPath;
+  const canonicalPath = aliasedPath.startsWith('/writing/') ? '/writing' : aliasedPath;
   const Page = routes[canonicalPath] || NotFound;
   const seoConfig = seoByPath[canonicalPath] || notFoundSeo;
 

@@ -54,8 +54,9 @@ export default function Footer() {
   const handleNewsletterSubmit = async (event) => {
     event.preventDefault();
 
+    const form = event.currentTarget;
     setNewsletterStatus('sending');
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const email = formData.get('email')?.toString().trim();
     if (!email) {
       setNewsletterStatus('idle');
@@ -73,7 +74,7 @@ export default function Footer() {
         throw new Error('Subscription failed');
       }
 
-      event.currentTarget.reset();
+      form.reset();
       setNewsletterStatus('sent');
     } catch {
       setNewsletterStatus('error');
